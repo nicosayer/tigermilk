@@ -11,6 +11,7 @@ export default function Home() {
     6,
     shuffle([...Array(NUMBER_OF_PICTURES)].map((_, index) => index + 1))
   ).filter((_, index) => index < 10);
+  console.log(chunks)
 
   return (
     <div className={styles.layout}>
