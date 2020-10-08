@@ -1,4 +1,3 @@
-// @refresh reset
 import { chunk, shuffle } from "lodash/fp";
 
 import styles from "../styles/Gallery.module.css";
@@ -10,6 +9,7 @@ export default function Gallery() {
     6,
     shuffle([...Array(NUMBER_OF_PICTURES)].map((_, index) => index + 1))
   ).filter((_, index) => index < 10);
+  console.log(chunks);
 
   return (
     <div className={styles.grid}>
