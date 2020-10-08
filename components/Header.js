@@ -1,32 +1,96 @@
-import { Button, Dropdown, Menu } from "antd";
+import {
+  Button,
+  Menu,
+  MenuItem,
+  Popover,
+  PopoverInteractionKind,
+  Position,
+} from "@blueprintjs/core";
 
 import styles from "../styles/Header.module.css";
-
-const menu = (
-  <div className="ant-dropdown-menu">
-    <Menu selectedKeys={[]}>
-      <Menu.Item>Brussels</Menu.Item>
-      <Menu.Item>Paris - Canal St Martin</Menu.Item>
-      <Menu.SubMenu title="Paris - Sentier">
-        <Menu.Item>3rd menu item</Menu.Item>
-        <Menu.Item>4th menu item</Menu.Item>
-      </Menu.SubMenu>
-      <Menu.SubMenu title="Paris - South Pigalle">
-        <Menu.Item>3rd menu item</Menu.Item>
-        <Menu.Item>4th menu item</Menu.Item>
-      </Menu.SubMenu>
-    </Menu>
-  </div>
-);
 
 export default function Header() {
   return (
     <div className={styles.header}>
-      <Dropdown overlay={menu} trigger="click">
-        <Button type="link">Menu</Button>
-      </Dropdown>
-      <div>Locations</div>
-      <div>FAQ</div>
+      <Popover
+        interactionKind={PopoverInteractionKind.HOVER}
+        position={Position.BOTTOM}
+        content={
+          <Menu>
+            <MenuItem
+              text="Brussels"
+              popoverProps={{ openOnTargetFocus: false }}
+            >
+              <MenuItem
+                text="Food"
+                href={
+                  process.env.PUBLIC_URL +
+                  `/assets/pdfs/Menu_TGMK_Bruxelles.pdf`
+                }
+                target="_blank"
+              />
+              <MenuItem
+                text="Sunday brunch (11h30-15h)"
+                href={
+                  process.env.PUBLIC_URL + `/assets/pdfs/Menu_Brunch_TGMK.pdf`
+                }
+                target="_blank"
+              />
+            </MenuItem>
+            <MenuItem
+              text="Paris - Canal St Martin"
+              popoverProps={{ openOnTargetFocus: false }}
+            >
+              <MenuItem
+                text="Food"
+                href={
+                  process.env.PUBLIC_URL +
+                  `/assets/pdfs/Menu_TGMK_Canal_St_Martin.pdf`
+                }
+                target="_blank"
+              />
+              <MenuItem
+                text="Sunday brunch (12h-15h)"
+                href={
+                  process.env.PUBLIC_URL + `/assets/pdfs/Menu_Brunch_TGMK.pdf`
+                }
+                target="_blank"
+              />
+            </MenuItem>
+            <MenuItem
+              text="Paris - Sentier"
+              href={
+                process.env.PUBLIC_URL + `/assets/pdfs/Menu_TGMK_Sentier.pdf`
+              }
+              target="_blank"
+            />
+
+            <MenuItem
+              text="Paris - South Pigalle"
+              popoverProps={{ openOnTargetFocus: false }}
+            >
+              <MenuItem
+                text="Food"
+                href={
+                  process.env.PUBLIC_URL +
+                  `/assets/pdfs/Menu_TGMK_South_Pigalle.pdf`
+                }
+                target="_blank"
+              />
+              <MenuItem
+                text="Drinks"
+                href={
+                  process.env.PUBLIC_URL +
+                  `/assets/pdfs/Menu_Drinks_TGMK_South_Pigalle.pdf`
+                }
+                target="_blank"
+              />
+            </MenuItem>
+          </Menu>
+        }
+      >
+        <Button>MENU</Button>
+      </Popover>
     </div>
   );
 }

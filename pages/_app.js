@@ -1,5 +1,5 @@
 import "../styles/globals.css";
-import "antd/dist/antd.css";
+import "@blueprintjs/core/lib/css/blueprint.css";
 
 function MyApp({ Component, pageProps }) {
   return <Component {...pageProps} />;
