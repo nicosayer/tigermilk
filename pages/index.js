@@ -8,12 +8,12 @@ import { useState } from "react";
 const NUMBER_OF_PICTURES = 73;
 
 export default function Home() {
-  const [test, setTest] = useState(0);
-  const chunks = chunk(
-    6,
-    shuffle([...Array(NUMBER_OF_PICTURES)].map((_, index) => index + 1))
-  ).filter((_, index) => index < 10);
-  console.log(chunks);
+  const [chunks] = useState(
+    chunk(
+      6,
+      shuffle([...Array(NUMBER_OF_PICTURES)].map((_, index) => index + 1))
+    ).filter((_, index) => index < 10)
+  );
 
   return (
     <div className={styles.layout}>
