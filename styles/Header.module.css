@@ -1,6 +1,5 @@
 .header {
   height: 50px;
-  background-color: lightgrey;
   display: flex;
   align-items: center;
   justify-content: space-between;
