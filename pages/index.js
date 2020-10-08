@@ -16,8 +16,8 @@ export default function Home({ chunks }) {
       <Header />
       <div className={styles["grid-container"]}>
         <div className={styles.grid}>
-          {chunks.map((array, index) => (
-            <div key={index} className={styles["vertical-grid"]}>
+          {chunks.map((array) => (
+            <div key={array.join('')} className={styles["vertical-grid"]}>
               {array.map((id) => (
                 <img
                   key={id}
