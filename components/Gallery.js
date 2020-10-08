@@ -3,10 +3,12 @@ import { chunk, shuffle } from "lodash/fp";
 
 import styles from "../styles/Gallery.module.css";
 
+const NUMBER_OF_PICTURES = 73;
+
 export default function Gallery() {
   const chunks = chunk(
     6,
-    shuffle([...Array(73)].map((_, index) => index + 1))
+    shuffle([...Array(NUMBER_OF_PICTURES)].map((_, index) => index + 1))
   ).filter((_, index) => index < 10);
 
   return (

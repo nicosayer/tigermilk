@@ -2,7 +2,7 @@ import Head from "next/head";
 import Home from "..";
 import Link from "next/link";
 
-const locations = [
+const LOCATIONS = [
   "brussels",
   "paris-canal-st-martin",
   "paris-sentier",
@@ -24,7 +24,7 @@ export default function Location({ params }) {
 
 export async function getStaticPaths() {
   return {
-    paths: locations.map((location) => `/locations/${location}`),
+    paths: LOCATIONS.map((location) => `/locations/${location}`),
     fallback: false,
   };
 }
