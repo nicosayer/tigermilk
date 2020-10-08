@@ -1,19 +1,23 @@
 import { chunk, shuffle } from "lodash/fp";
+import { useEffect, useState } from "react";
 
 import Head from "next/head";
 import Header from "../components/Header";
 import styles from "../styles/Home.module.css";
-import { useState } from "react";
 
 const NUMBER_OF_PICTURES = 73;
 
 export default function Home() {
-  const [chunks] = useState(
-    chunk(
-      6,
-      shuffle([...Array(NUMBER_OF_PICTURES)].map((_, index) => index + 1))
-    ).filter((_, index) => index < 10)
-  );
+  const [chunks, setChunks] = useState([]);
+
+  useEffect(() => {
+    setChunks(
+      chunk(
+        6,
+        shuffle([...Array(NUMBER_OF_PICTURES)].map((_, index) => index + 1))
+      ).filter((_, index) => index < 10)
+    );
+  }, []);
 
   return (
     <div className={styles.layout}>
