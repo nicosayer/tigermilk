@@ -3,11 +3,15 @@ import { Button, Dropdown, Menu } from "antd";
 import styles from "../styles/Header.module.css";
 
 const menu = (
-  <div>
-    <Menu>
-      <Menu.Item>1st menu item</Menu.Item>
-      <Menu.Item>2nd menu item</Menu.Item>
-      <Menu.SubMenu title="sub menu">
+  <div className="ant-dropdown-menu">
+    <Menu selectedKeys={[]}>
+      <Menu.Item>Brussels</Menu.Item>
+      <Menu.Item>Paris - Canal St Martin</Menu.Item>
+      <Menu.SubMenu title="Paris - Sentier">
+        <Menu.Item>3rd menu item</Menu.Item>
+        <Menu.Item>4th menu item</Menu.Item>
+      </Menu.SubMenu>
+      <Menu.SubMenu title="Paris - South Pigalle">
         <Menu.Item>3rd menu item</Menu.Item>
         <Menu.Item>4th menu item</Menu.Item>
       </Menu.SubMenu>
