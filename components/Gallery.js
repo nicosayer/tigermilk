@@ -8,7 +8,7 @@ const NUMBER_OF_PICTURES = 73;
 
 export default function Gallery() {
   const [chunks, setChunks] = useState([]);
-  console.log(imagesData);
+
   useEffect(() => {
     setChunks(
       chunk(

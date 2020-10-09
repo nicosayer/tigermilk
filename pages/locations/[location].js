@@ -8,11 +8,10 @@ import { useRouter } from "next/router";
 
 export default function Location({ params }) {
   const { location } = params;
+  const router = useRouter();
 
   const restaurant = RESTAURANTS.find(({ slug }) => slug === location);
 
-  const router = useRouter();
-  console.log(location);
   return (
     <div>
       <Head>
