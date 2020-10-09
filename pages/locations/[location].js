@@ -18,7 +18,7 @@ export default function Location({ params }) {
       <Head>
         <title>TIGERMILK - {restaurant.name}</title>
       </Head>
-      <Dialog isOpen onClose={() => router.push("/")} lazy={false}>
+      <Dialog isOpen onClose={() => router.push("/")}>
         <div className={styles.body}>
           <div className={`${styles["text-container"]}`}>
             <div className={`${globalStyles.title} color`}>Adresse</div>
