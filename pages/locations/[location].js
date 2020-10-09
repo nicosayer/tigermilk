@@ -17,7 +17,7 @@ export default function Location({ params, color }) {
   return (
     <div>
       <Head>
-        <title>TIGERMILK - {restaurant.name}</title>
+        <title>TIGERMILK • {restaurant.name}</title>
       </Head>
       <Dialog isOpen onClose={() => router.push("/")}>
         <div

@@ -11,7 +11,7 @@ export default function FAQ() {
   return (
     <div>
       <Head>
-        <title>TIGERMILK - FAQ</title>
+        <title>TIGERMILK • FAQ</title>
       </Head>
       <Dialog isOpen onClose={() => router.push("/")}>
         <div className={styles.body}>
