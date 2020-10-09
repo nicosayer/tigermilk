@@ -33,6 +33,7 @@ export default function Gallery() {
               key={id}
               className={styles.image}
               wrapperClassName={styles.image}
+              placeholderSrc={`/pictures-min/${id}.jpg`}
               src={`/pictures/${id}.jpg`}
               effect="blur"
               height={(imagesData[id].height * 250) / imagesData[id].width}
