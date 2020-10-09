@@ -1,6 +1,8 @@
 import "../styles/globals.css";
 import "@blueprintjs/core/lib/css/blueprint.css";
 
+import { useEffect, useState } from "react";
+
 import { COLORS } from "../enums";
 import Gallery from "../components/Gallery";
 import Head from "next/head";
@@ -8,7 +10,6 @@ import Header from "../components/Header";
 import Logo from "../components/Logo";
 import globalStyles from "../styles/Global.module.css";
 import styles from "../styles/Layout.module.css";
-import { useState } from "react";
 
 const randomColor = (currentColorName) => {
   const remainingColors = COLORS.filter(
@@ -21,6 +22,10 @@ const randomColor = (currentColorName) => {
 
 function MyApp({ Component, pageProps }) {
   const [color, setColor] = useState(randomColor());
+
+  useEffect(() => {
+    setColor(randomColor());
+  }, []);
 
   return (
     <div className={styles.layout}>
