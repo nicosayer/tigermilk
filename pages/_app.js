@@ -66,7 +66,7 @@ function MyApp({ Component, pageProps }) {
         <meta property="og:image" content="/logos/Logo_Lemon_Forest.png" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" type="image/png" href="/logos/favicon.png" />
-        <link href="/fonts/style.css" rel="stylesheet" />
+        {/* <link href="/fonts/style.css" rel="stylesheet" /> */}
       </Head>
       <div className={styles.header}>
         <Header color={color} />
