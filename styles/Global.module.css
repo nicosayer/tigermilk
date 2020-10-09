@@ -1,0 +1,27 @@
+.pointer {
+  cursor: pointer;
+}
+
+.title {
+  font-size: 18px;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.margin-y {
+  margin: 10px 0;
+}
+
+.margin-t {
+  margin-top: 10px;
+}
+
+.margin-b {
+  margin-bottom: 40px;
+}

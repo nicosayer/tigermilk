@@ -1,5 +1,4 @@
 import {
-  Button,
   Menu,
   MenuItem,
   Popover,
@@ -7,6 +6,8 @@ import {
   Position,
 } from "@blueprintjs/core";
 
+import Link from "next/link";
+import { RESTAURANTS } from "../enums";
 import styles from "../styles/Header.module.css";
 
 export default function Header() {
@@ -15,82 +16,60 @@ export default function Header() {
       <Popover
         interactionKind={PopoverInteractionKind.HOVER}
         position={Position.BOTTOM}
+        openOnTargetFocus
         content={
           <Menu>
-            <MenuItem
-              text="Brussels"
-              popoverProps={{ openOnTargetFocus: false }}
-            >
-              <MenuItem
-                text="Food"
-                href={
-                  process.env.PUBLIC_URL +
-                  `/assets/pdfs/Menu_TGMK_Bruxelles.pdf`
-                }
-                target="_blank"
-              />
-              <MenuItem
-                text="Sunday brunch (11h30-15h)"
-                href={
-                  process.env.PUBLIC_URL + `/assets/pdfs/Menu_Brunch_TGMK.pdf`
-                }
-                target="_blank"
-              />
-            </MenuItem>
-            <MenuItem
-              text="Paris - Canal St Martin"
-              popoverProps={{ openOnTargetFocus: false }}
-            >
-              <MenuItem
-                text="Food"
-                href={
-                  process.env.PUBLIC_URL +
-                  `/assets/pdfs/Menu_TGMK_Canal_St_Martin.pdf`
-                }
-                target="_blank"
-              />
-              <MenuItem
-                text="Sunday brunch (12h-15h)"
-                href={
-                  process.env.PUBLIC_URL + `/assets/pdfs/Menu_Brunch_TGMK.pdf`
-                }
-                target="_blank"
-              />
-            </MenuItem>
-            <MenuItem
-              text="Paris - Sentier"
-              href={
-                process.env.PUBLIC_URL + `/assets/pdfs/Menu_TGMK_Sentier.pdf`
+            {RESTAURANTS.map(({ name, menus }) => {
+              if (menus.length < 2) {
+                return (
+                  <MenuItem
+                    key={name}
+                    text={name}
+                    href={`/pdfs/${menus[0].pdf}`}
+                    target="_blank"
+                  />
+                );
               }
-              target="_blank"
-            />
-
-            <MenuItem
-              text="Paris - South Pigalle"
-              popoverProps={{ openOnTargetFocus: false }}
-            >
-              <MenuItem
-                text="Food"
-                href={
-                  process.env.PUBLIC_URL +
-                  `/assets/pdfs/Menu_TGMK_South_Pigalle.pdf`
-                }
-                target="_blank"
-              />
-              <MenuItem
-                text="Drinks"
-                href={
-                  process.env.PUBLIC_URL +
-                  `/assets/pdfs/Menu_Drinks_TGMK_South_Pigalle.pdf`
-                }
-                target="_blank"
-              />
-            </MenuItem>
+              return (
+                <MenuItem
+                  key={name}
+                  text={name}
+                  popoverProps={{ openOnTargetFocus: false }}
+                >
+                  {menus.map(({ name, pdf }) => (
+                    <MenuItem
+                      text={name}
+                      href={`/pdfs/${pdf}`}
+                      target="_blank"
+                    />
+                  ))}
+                </MenuItem>
+              );
+            })}
           </Menu>
         }
       >
-        <Button>MENU</Button>
+        <div className={`color ${styles.title}`}>MENU</div>
       </Popover>
+      <Popover
+        interactionKind={PopoverInteractionKind.HOVER}
+        position={Position.BOTTOM}
+        openOnTargetFocus
+        content={
+          <Menu>
+            {RESTAURANTS.map(({ name, slug }) => (
+              <Link href={`/locations/${slug}`}>
+                <MenuItem text={name} />
+              </Link>
+            ))}
+          </Menu>
+        }
+      >
+        <div className={`color ${styles.title}`}>LOCATIONS</div>
+      </Popover>
+      <Link href={`/faq`}>
+        <div className={`color ${styles.title}`}>FAQ</div>
+      </Link>
     </div>
   );
 }

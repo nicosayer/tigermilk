@@ -1,10 +1,15 @@
 .header {
   height: 50px;
   width: 100vw;
-  background-color: lightgrey;
+  background-color: white;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 100px;
   font-size: 16px;
+}
+
+.title {
+  cursor: pointer;
+  font-size: 18px;
 }
