@@ -25,10 +25,6 @@ export default function Gallery() {
       {chunks.map((array) => (
         <div key={array.join("")} className={styles.column}>
           {array.map((id) => {
-            const ratio =
-              imagesData[id].height > imagesData[id].width
-                ? imagesData[id].width / imagesData[id].height
-                : imagesData[id].height / imagesData[id].width;
             return (
               <div
                 key={id}
@@ -39,11 +35,12 @@ export default function Gallery() {
                   }%`,
                 }}
               >
-                <img
-                  className={`${styles.image} ${globalStyles.blur}`}
-                  src={`/pictures-min/${id}.jpg`}
+                <LazyLoadImage
+                  placeholderSrc={`/pictures-min/${id}.jpg`}
+                  src={`/pictures/${id}.jpg`}
+                  width="100%"
+                  height="100%"
                 />
-                <img className={styles.image} src={`/pictures/${id}.jpg`} />
               </div>
             );
           })}
