@@ -2,6 +2,7 @@ import { chunk, shuffle } from "lodash/fp";
 import { useEffect, useState } from "react";
 
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import globalStyles from "../styles/Global.module.css";
 import imagesData from "../scripts/imagesData.json";
 import styles from "../styles/Gallery.module.css";
 
@@ -23,18 +24,29 @@ export default function Gallery() {
     <div className={styles.grid}>
       {chunks.map((array) => (
         <div key={array.join("")} className={styles.column}>
-          {array.map((id) => (
-            <LazyLoadImage
-              key={id}
-              // className={styles.image}
-              wrapperClassName={styles['image-container']}
-              placeholderSrc={`/pictures-min/${id}.jpg`}
-              src={`/pictures/${id}.jpg`}
-              effect="blur"
-              // height={(imagesData[id].height * 250) / imagesData[id].width}
-              width="100%"
-            />
-          ))}
+          {array.map((id) => {
+            const ratio =
+              imagesData[id].height > imagesData[id].width
+                ? imagesData[id].width / imagesData[id].height
+                : imagesData[id].height / imagesData[id].width;
+            return (
+              <div
+                key={id}
+                className={styles["image-container"]}
+                style={{
+                  paddingTop: `${
+                    (imagesData[id].height / imagesData[id].width) * 100
+                  }%`,
+                }}
+              >
+                <img
+                  className={`${styles.image} ${globalStyles.blur}`}
+                  src={`/pictures-min/${id}.jpg`}
+                />
+                <img className={styles.image} src={`/pictures/${id}.jpg`} />
+              </div>
+            );
+          })}
         </div>
       ))}
     </div>

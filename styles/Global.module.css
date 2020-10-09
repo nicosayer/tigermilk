@@ -25,3 +25,7 @@
 .margin-b {
   margin-bottom: 40px;
 }
+
+.blur {
+  filter: blur(20px);
+}
