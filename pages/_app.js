@@ -1,6 +1,7 @@
 import "../styles/globals.css";
 import "@blueprintjs/core/lib/css/blueprint.css";
 
+import { chunk, shuffle } from "lodash/fp";
 import { useEffect, useState } from "react";
 
 import { COLORS } from "../enums";
@@ -9,6 +10,7 @@ import Head from "next/head";
 import Header from "../components/Header";
 import Logo from "../components/Logo";
 import globalStyles from "../styles/Global.module.css";
+import imagesData from "../scripts/imagesData.json";
 import styles from "../styles/Layout.module.css";
 
 const randomColor = (currentColorName) => {
@@ -20,11 +22,22 @@ const randomColor = (currentColorName) => {
   ];
 };
 
+const randomChunks = () => {
+  return chunk(
+    6,
+    shuffle(
+      [...Array(Object.keys(imagesData).length)].map((_, index) => index + 1)
+    )
+  ).filter((_, index) => index < 10);
+};
+
 function MyApp({ Component, pageProps }) {
-  const [color, setColor] = useState(randomColor());
+  const [color, setColor] = useState({});
+  const [chunks, setChunks] = useState([]);
 
   useEffect(() => {
     setColor(randomColor());
+    setChunks(randomChunks());
   }, []);
 
   return (
@@ -61,11 +74,14 @@ function MyApp({ Component, pageProps }) {
       <div className={styles.body}>
         <div
           className={globalStyles.pointer}
-          onClick={() => setColor(randomColor(color.name))}
+          onClick={() => {
+            setColor(randomColor(color.name));
+            setChunks(randomChunks());
+          }}
         >
           <Logo color={color} />
         </div>
-        <Gallery />
+        <Gallery chunks={chunks} />
       </div>
       <Component {...pageProps} color={color} />;
       <style jsx global>{`

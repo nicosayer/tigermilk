@@ -1,23 +1,7 @@
-import { chunk, shuffle } from "lodash/fp";
-import { useEffect, useState } from "react";
-
 import imagesData from "../scripts/imagesData.json";
 import styles from "../styles/Gallery.module.css";
 
-const NUMBER_OF_PICTURES = 73;
-
-export default function Gallery() {
-  const [chunks, setChunks] = useState([]);
-
-  useEffect(() => {
-    setChunks(
-      chunk(
-        6,
-        shuffle([...Array(NUMBER_OF_PICTURES)].map((_, index) => index + 1))
-      ).filter((_, index) => index < 10)
-    );
-  }, []);
-
+export default function Gallery({ chunks }) {
   return (
     <div className={styles.grid}>
       {chunks.map((array) => (
