@@ -9,6 +9,10 @@
   font-size: 16px;
 }
 
+.title:focus {
+  outline: none;
+}
+
 .title {
   cursor: pointer;
   font-size: 18px;

@@ -20,7 +20,7 @@ export default function Location({ params }) {
       </Head>
       <Dialog isOpen onClose={() => router.push("/")} lazy={false}>
         <div className={styles.body}>
-          <div className={`${Classes.DIALOG_BODY} ${styles["text-container"]}`}>
+          <div className={`${styles["text-container"]}`}>
             <div className={`${globalStyles.title} color`}>Adresse</div>
             <div
               className={`${globalStyles["margin-t"]} ${globalStyles["margin-b"]}`}
@@ -68,10 +68,12 @@ export default function Location({ params }) {
               </table>
             </div>
           </div>
-          <img
-            className={styles.image}
-            src={`/locations/${restaurant.slug}.png`}
-          />
+          <div>
+            <img
+              className={styles.image}
+              src={`/locations/${restaurant.slug}.png`}
+            />
+          </div>
         </div>
       </Dialog>
     </div>

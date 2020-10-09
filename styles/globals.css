@@ -15,10 +15,10 @@ body {
 }
 
 .bp3-dialog {
-  max-height: calc(100vh - 200px);
-  width: calc(100vw - 100px) !important;
-  max-width: 800px;
-  overflow: scroll;
-  text-align: center;
+  height: calc(100vh - 200px);
   padding-bottom: 0px !important;
+  text-align: center;
+  overflow: hidden;
+  background-color: white !important;
+  width: 800px !important;
 }

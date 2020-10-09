@@ -1,5 +1,4 @@
-import { Classes, Dialog } from "@blueprintjs/core";
-
+import { Dialog } from "@blueprintjs/core";
 import Head from "next/head";
 import { QUESTIONS } from "../enums";
 import globalStyles from "../styles/Global.module.css";
@@ -14,8 +13,8 @@ export default function FAQ() {
       <Head>
         <title>TIGERMILK - FAQ</title>
       </Head>
-      <Dialog title="FAQ" isOpen onClose={() => router.push("/")}>
-        <div className={Classes.DIALOG_BODY}>
+      <Dialog isOpen onClose={() => router.push("/")}>
+        <div className={styles.body}>
           {QUESTIONS.map(({ title, content }, index, array) => (
             <div
               key={title.fr}
