@@ -9,7 +9,7 @@
   flex-direction: column;
 }
 
-.image {
-  width: 100%;
+.image-container {
+  display: flex !important;
   margin-bottom: 4px;
 }

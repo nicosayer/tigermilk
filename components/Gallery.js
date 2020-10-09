@@ -24,20 +24,15 @@ export default function Gallery() {
       {chunks.map((array) => (
         <div key={array.join("")} className={styles.column}>
           {array.map((id) => (
-            // <img
-            //   key={id}
-            //   className={styles.image}
-            //   src={`/pictures/${id}.jpg`}
-            // />
             <LazyLoadImage
               key={id}
-              className={styles.image}
-              wrapperClassName={styles.image}
+              // className={styles.image}
+              wrapperClassName={styles['image-container']}
               placeholderSrc={`/pictures-min/${id}.jpg`}
               src={`/pictures/${id}.jpg`}
               effect="blur"
-              height={(imagesData[id].height * 250) / imagesData[id].width}
-              width="250px"
+              // height={(imagesData[id].height * 250) / imagesData[id].width}
+              width="100%"
             />
           ))}
         </div>
