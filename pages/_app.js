@@ -31,7 +31,7 @@ function MyApp({ Component, pageProps }) {
         <Logo color={color} />
         <Gallery />
       </div>
-      <Component {...pageProps} />;
+      <Component {...pageProps} color={color}/>;
       <style jsx global>{`
         a,
         .color {

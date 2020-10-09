@@ -1,14 +1,16 @@
-import { Classes, Dialog } from "@blueprintjs/core";
 import { DAYS, RESTAURANTS } from "../../enums";
 
+import { Dialog } from "@blueprintjs/core";
 import Head from "next/head";
 import globalStyles from "../../styles/Global.module.css";
 import styles from "../../styles/Location.module.css";
+import { useIsMobile } from "../../hooks/useIsMobile";
 import { useRouter } from "next/router";
 
-export default function Location({ params }) {
+export default function Location({ params, color }) {
   const { location } = params;
   const router = useRouter();
+  const isMobile = useIsMobile();
 
   const restaurant = RESTAURANTS.find(({ slug }) => slug === location);
 
@@ -18,7 +20,10 @@ export default function Location({ params }) {
         <title>TIGERMILK - {restaurant.name}</title>
       </Head>
       <Dialog isOpen onClose={() => router.push("/")}>
-        <div className={styles.body}>
+        <div
+          className={styles.body}
+          style={{ gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr" }}
+        >
           <div className={`${styles["text-container"]}`}>
             <div className={`${globalStyles.title} color`}>Adresse</div>
             <div
@@ -67,12 +72,20 @@ export default function Location({ params }) {
               </table>
             </div>
           </div>
-          <div>
-            <img
-              className={styles.image}
-              src={`/locations/${restaurant.slug}.png`}
-            />
-          </div>
+          {!isMobile && (
+            <div className={styles["image-container"]}>
+              <img
+                className={styles["location-image"]}
+                src={`/locations/${restaurant.slug}.png`}
+              />
+              <img
+                className={`${globalStyles[`filter-${color.name}`]} ${
+                  styles.monogram
+                }`}
+                src="/logos/monogram.svg"
+              />
+            </div>
+          )}
         </div>
       </Dialog>
     </div>
