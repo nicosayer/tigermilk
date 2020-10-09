@@ -3,19 +3,9 @@ body {
   padding: 0;
   margin: 0;
   font-family: Archer, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif !important;
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 * {
   box-sizing: border-box;
-}
-
-.ant-menu-vertical {
-  text-align: center !important;
-}
-
-.ant-menu-vertical > .ant-menu-item,
-.ant-menu-vertical > .ant-menu-submenu > .ant-menu-submenu-title {
-  height: 20px !important;
-  line-height: 20px !important;
 }

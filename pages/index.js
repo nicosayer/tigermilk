@@ -24,32 +24,20 @@ export default function Home() {
       <Head>
         <title>TIGERMILK</title>
         <link rel="icon" href="/favicon.ico" />
-        <link href="/fonts/styles.css" rel="stylesheet" />
+        <link href="/fonts/style.css" rel="stylesheet" />
       </Head>
-      <Logo color={color} />
-      <Header />
-      <div className={styles["grid-container"]}>
+
+      <div className={styles.header}>
+        <Header />
+      </div>
+      <div className={styles.body}>
+        <Logo color={color} />
         <Gallery />
       </div>
-      <style jsx global>{`
-        h3,
-        .ant-btn-link,
-        .ant-btn-link:hover,
-        .ant-btn-link:focus,
-        .ant-menu-item:hover,
-        .ant-menu-submenu-title:hover,
-        .ant-menu:not(.ant-menu-inline) .ant-menu-submenu-open,
-        .ant-menu-submenu-active {
-          color: ${color.hex} !important;
-        }
 
-        .ant-menu-submenu-vertical
-          > .ant-menu-submenu-title:hover
-          .ant-menu-submenu-arrow::after,
-        .ant-menu-submenu-vertical
-          > .ant-menu-submenu-title:hover
-          .ant-menu-submenu-arrow::before {
-          background: ${color.hex} !important;
+      <style jsx global>{`
+        div {
+          color: pink;
         }
       `}</style>
     </div>

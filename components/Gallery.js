@@ -20,7 +20,7 @@ export default function Gallery() {
   return (
     <div className={styles.grid}>
       {chunks.map((array) => (
-        <div key={array.join("")} >
+        <div key={array.join("")} className={styles.column} >
           {array.map((id) => (
             <img
               key={id}
