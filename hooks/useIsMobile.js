@@ -1,7 +1,21 @@
-import { useWindowWidth } from "@react-hook/window-size";
+import { useEffect, useState } from "react";
 
 export const useIsMobile = () => {
-  const windowWidth = useWindowWidth();
+  const [windowSize, setWindowSize] = useState();
 
-  return windowWidth < 769;
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      function handleResize() {
+        setWindowSize(window.innerWidth);
+      }
+
+      window.addEventListener("resize", handleResize);
+
+      handleResize();
+
+      return () => window.removeEventListener("resize", handleResize);
+    }
+  }, []);
+
+  return windowSize < 769;
 };
