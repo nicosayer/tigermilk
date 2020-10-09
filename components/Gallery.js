@@ -1,8 +1,6 @@
 import { chunk, shuffle } from "lodash/fp";
 import { useEffect, useState } from "react";
 
-import { LazyLoadImage } from "react-lazy-load-image-component";
-import globalStyles from "../styles/Global.module.css";
 import imagesData from "../scripts/imagesData.json";
 import styles from "../styles/Gallery.module.css";
 
@@ -35,12 +33,7 @@ export default function Gallery() {
                   }%`,
                 }}
               >
-                <LazyLoadImage
-                  placeholderSrc={`/pictures-min/${id}.jpg`}
-                  src={`/pictures/${id}.jpg`}
-                  width="100%"
-                  height="100%"
-                />
+                <img src={`/pictures/${id}.jpg`} />
               </div>
             );
           })}
