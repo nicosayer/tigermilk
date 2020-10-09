@@ -1,13 +1,15 @@
 import { chunk, shuffle } from "lodash/fp";
 import { useEffect, useState } from "react";
 
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import imagesData from "../scripts/imagesData.json";
 import styles from "../styles/Gallery.module.css";
 
 const NUMBER_OF_PICTURES = 73;
 
 export default function Gallery() {
   const [chunks, setChunks] = useState([]);
-
+  console.log(imagesData);
   useEffect(() => {
     setChunks(
       chunk(
@@ -20,12 +22,21 @@ export default function Gallery() {
   return (
     <div className={styles.grid}>
       {chunks.map((array) => (
-        <div key={array.join("")} className={styles.column} >
+        <div key={array.join("")} className={styles.column}>
           {array.map((id) => (
-            <img
+            // <img
+            //   key={id}
+            //   className={styles.image}
+            //   src={`/pictures/${id}.jpg`}
+            // />
+            <LazyLoadImage
               key={id}
               className={styles.image}
+              wrapperClassName={styles.image}
               src={`/pictures/${id}.jpg`}
+              effect="blur"
+              height={(imagesData[id].height * 250) / imagesData[id].width}
+              width="250px"
             />
           ))}
         </div>

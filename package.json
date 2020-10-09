@@ -5,12 +5,17 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "build-images-data": "node scripts/imagesDataBuilder.js"
   },
   "dependencies": {
     "@blueprintjs/core": "^3.33.0",
     "next": "9.5.4",
     "react": "16.13.1",
-    "react-dom": "16.13.1"
+    "react-dom": "16.13.1",
+    "react-lazy-load-image-component": "^1.5.0"
+  },
+  "devDependencies": {
+    "image-size": "^0.9.1"
   }
 }
