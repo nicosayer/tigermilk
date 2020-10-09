@@ -65,7 +65,7 @@ function MyApp({ Component, pageProps }) {
         <meta property="og:url" content="https://tigermilkrestaurants.com/" />
         <meta property="og:image" content="/logos/Logo_Lemon_Forest.png" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" type="image/png" href="/logos/favicon.png" />
+        <link rel="icon" type="image/png" href={`/logos/favicon-${color.name}.png`} />
       </Head>
       <div className={styles.header}>
         <Header color={color} />
