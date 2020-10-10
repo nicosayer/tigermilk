@@ -6,6 +6,9 @@
 .text-container {
   padding: 20px;
   overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .table {
