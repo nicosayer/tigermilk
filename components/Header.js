@@ -1,5 +1,6 @@
 import {
   Menu,
+  MenuDivider,
   MenuItem,
   Popover,
   PopoverInteractionKind,
@@ -20,22 +21,9 @@ export default function Header() {
         content={
           <Menu>
             {RESTAURANTS.map(({ name, menus }) => {
-              if (menus.length < 2) {
-                return (
-                  <MenuItem
-                    key={name}
-                    text={name}
-                    href={`/pdfs/${menus[0].pdf}`}
-                    target="_blank"
-                  />
-                );
-              }
               return (
-                <MenuItem
-                  key={name}
-                  text={name}
-                  popoverProps={{ openOnTargetFocus: false }}
-                >
+                <React.Fragment key={name}>
+                  <MenuDivider title={name} />
                   {menus.map(({ name, pdf }) => (
                     <MenuItem
                       text={name}
@@ -43,7 +31,7 @@ export default function Header() {
                       target="_blank"
                     />
                   ))}
-                </MenuItem>
+                </React.Fragment>
               );
             })}
           </Menu>
