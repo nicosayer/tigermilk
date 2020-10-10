@@ -160,10 +160,23 @@ export const QUESTIONS = [
       en: "Can we privatize for a special event?",
     },
     content: {
-      fr:
-        "Nous ne faisons pas de privatisation, mais pour les groupes d'anniversaire ou d'évènements spéciaux, écrivez nous à hello@tigermilkgroup.com et nous ferons notre possible pour vous accueillir en groupe !",
-      en:
-        "It is not possible to book the entire place, but if you want to celebrate a birthday or special event in our restaurant, feel free to contact us at hello@tigermilkgroup.com and we will do our best to accommodate you.",
+      fr: (
+        <span>
+          Nous ne faisons pas de privatisation, mais pour les groupes
+          d'anniversaire ou d'évènements spéciaux, écrivez nous à{" "}
+          <a href="mailto:hello@tigermilkgroup.com">hello@tigermilkgroup.com</a>{" "}
+          et nous ferons notre possible pour vous accueillir en groupe !
+        </span>
+      ),
+      en: (
+        <span>
+          It is not possible to book the entire place, but if you want to
+          celebrate a birthday or special event in our restaurant, feel free to
+          contact us at{" "}
+          <a href="mailto:hello@tigermilkgroup.com">hello@tigermilkgroup.com</a>{" "}
+          and we will do our best to accommodate you.
+        </span>
+      ),
     },
   },
   {
