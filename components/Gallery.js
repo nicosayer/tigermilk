@@ -13,7 +13,7 @@ export default function Gallery({ chunks }) {
                 className={styles["image-container"]}
                 style={{
                   paddingTop: `${
-                    (imagesData[id].height / imagesData[id].width) * 100
+                    (imagesData[id]?.height / imagesData[id]?.width) * 100
                   }%`,
                 }}
               >
