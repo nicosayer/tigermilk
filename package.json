@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "npm run build-images-data && next build",
     "start": "next start",
     "build-images-data": "node scripts/imagesDataBuilder.js"
   },
