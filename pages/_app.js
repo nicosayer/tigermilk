@@ -24,12 +24,7 @@ const randomColor = (currentColorName) => {
 };
 
 const randomChunks = () => {
-  return chunk(
-    6,
-    shuffle(
-      [...Array(Object.keys(imagesData).length)].map((_, index) => index + 1)
-    )
-  ).filter((_, index) => index < 10);
+  return chunk(6, shuffle(Object.keys(imagesData).slice(0, 60)));
 };
 
 function MyApp({ Component, pageProps }) {
