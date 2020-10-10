@@ -1,6 +1,6 @@
 .layout {
   width: 100vw;
-  height: -webkit-fill-available;
+  height: 100vh;
 }
 
 .header {

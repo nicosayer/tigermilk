@@ -20,7 +20,7 @@ body {
 }
 
 .bp3-dialog {
-  height: calc(-webkit-fill-available - 200px);
+  height: calc(100vh - 200px);
   width: calc(100vw - 200px) !important;
   padding-bottom: 0px !important;
   text-align: center;
