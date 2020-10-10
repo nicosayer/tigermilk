@@ -5,6 +5,7 @@ import { chunk, shuffle } from "lodash/fp";
 import { useEffect, useState } from "react";
 
 import { COLORS } from "../enums";
+import Footer from "../components/Footer";
 import Gallery from "../components/Gallery";
 import Head from "next/head";
 import Header from "../components/Header";
@@ -88,6 +89,7 @@ function MyApp({ Component, pageProps }) {
           <Logo color={color} />
         </div>
         <Gallery chunks={chunks} />
+        <Footer />
       </div>
       <Component {...pageProps} color={color} />;
       <style jsx global>{`
