@@ -33,3 +33,7 @@ body {
 .bp3-button-group {
   display: none !important;
 }
+
+.bp3-toast-container {
+  z-index: 1 !important;
+}
