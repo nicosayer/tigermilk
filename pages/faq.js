@@ -13,7 +13,8 @@ export default function FAQ() {
       <Head>
         <title>TIGERMILK • FAQ</title>
       </Head>
-      <Dialog isOpen onClose={() => router.push("/")}>
+      Salut frere
+      <Dialog isOpen onClose={() => router.push("/")} usePortal={false}>
         <div className={styles.body}>
           {QUESTIONS.map(({ title, content }, index, array) => (
             <div

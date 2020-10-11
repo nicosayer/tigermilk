@@ -19,7 +19,7 @@ export default function Location({ params, color }) {
       <Head>
         <title>TIGERMILK • {restaurant.name}</title>
       </Head>
-      <Dialog isOpen onClose={() => router.push("/")}>
+      <Dialog isOpen onClose={() => router.push("/")} usePortal={false}>
         <div
           className={styles.body}
           style={{ gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr" }}
