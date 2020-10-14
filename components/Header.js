@@ -26,6 +26,7 @@ export default function Header() {
                   <MenuDivider title={name} />
                   {menus.map(({ name, pdf }) => (
                     <MenuItem
+                      key={name}
                       text={name}
                       href={`/pdfs/${pdf}`}
                       target="_blank"
@@ -46,7 +47,7 @@ export default function Header() {
         content={
           <Menu>
             {RESTAURANTS.map(({ name, slug }) => (
-              <Link href={`/locations/${slug}`}>
+              <Link key={name} href={`/locations/${slug}`}>
                 <MenuItem text={name} />
               </Link>
             ))}
