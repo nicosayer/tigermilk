@@ -40,6 +40,10 @@
   color: lightgray;
 }
 
+.black {
+  color: #182026;
+}
+
 .blur {
   filter: blur(20px);
 }
