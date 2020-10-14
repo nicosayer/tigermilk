@@ -48,3 +48,8 @@ body {
   box-shadow: none !important;
   box-shadow: 0 0 10px #00000080 !important;
 }
+
+.bp3-toast:focus,
+.bp3-toast-message:focus {
+  outline: none;
+}
