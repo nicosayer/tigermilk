@@ -49,7 +49,7 @@ export default function Location({ params, color }) {
               {restaurant.phone && <div>Tel : {restaurant.phone}</div>}
               <div>
                 Email :{" "}
-                <a href={`mailto:${restaurant.email}`}>{restaurant.email}</a>
+                <a href={`mailto:${restaurant.email}`} target="_blank">{restaurant.email}</a>
               </div>
             </div>
             <div className={`${globalStyles.title} color`}>Horaires</div>
