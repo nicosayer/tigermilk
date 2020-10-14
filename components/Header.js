@@ -15,9 +15,9 @@ export default function Header() {
   return (
     <div className={styles.header}>
       <Popover
-        interactionKind={PopoverInteractionKind.HOVER}
+        interactionKind={PopoverInteractionKind.HOVER_TARGET_ONLY}
         position={Position.BOTTOM}
-        openOnTargetFocus
+        captureDismiss
         content={
           <Menu>
             {RESTAURANTS.map(({ name, menus }) => {
@@ -40,9 +40,9 @@ export default function Header() {
         <div className={`color ${styles.title}`}>MENU</div>
       </Popover>
       <Popover
-        interactionKind={PopoverInteractionKind.HOVER}
+        interactionKind={PopoverInteractionKind.HOVER_TARGET_ONLY}
         position={Position.BOTTOM}
-        openOnTargetFocus
+        captureDismiss
         content={
           <Menu>
             {RESTAURANTS.map(({ name, slug }) => (
