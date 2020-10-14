@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 export const useIsMobile = () => {
-  const [windowSize, setWindowSize] = useState(0);
+  const [windowSize, setWindowSize] = useState();
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -16,6 +16,10 @@ export const useIsMobile = () => {
       return () => window.removeEventListener("resize", handleResize);
     }
   }, []);
+
+  if (!windowSize) {
+    return undefined;
+  }
 
   return windowSize < 769;
 };

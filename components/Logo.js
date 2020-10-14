@@ -5,6 +5,10 @@ import { useIsMobile } from "../hooks/useIsMobile";
 export default function Logo({ color }) {
   const isMobile = useIsMobile();
 
+  if (isMobile === undefined) {
+    return null;
+  }
+
   return (
     <div className={styles.container}>
       <img
