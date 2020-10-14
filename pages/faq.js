@@ -18,7 +18,9 @@ export default function FAQ({ locale }) {
           {QUESTIONS.map(({ title, content }, index, array) => (
             <div
               key={title.fr}
-              className={index + 1 < array.length && globalStyles["margin-b"]}
+              className={
+                index + 1 < array.length ? globalStyles["margin-b"] : undefined
+              }
             >
               <div className={`${globalStyles.title} color`}>
                 {title[locale]}

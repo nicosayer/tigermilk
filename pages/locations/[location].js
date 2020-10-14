@@ -65,7 +65,9 @@ export default function Location({ params, color, locale }) {
                     <tr
                       key={slug}
                       className={
-                        new Date().getDay() === index + 1 && globalStyles.bold
+                        new Date().getDay() === index + 1
+                          ? globalStyles.bold
+                          : undefined
                       }
                     >
                       <td>{name[locale]}</td>

@@ -87,12 +87,14 @@ export default function Header({ locale, setLocale }) {
               }}
             >
               {isMobile ? (
-                <span className={globalStyles.black}>{LANGUAGES[locale].short}</span>
+                <span className={globalStyles.black}>
+                  {LANGUAGES[locale].short}
+                </span>
               ) : (
                 languagesArray.map(([key, { short }], index) => (
                   <React.Fragment key={key}>
                     {index > 0 && "/"}
-                    <span className={locale === key ? "color" : ""}>
+                    <span className={locale === key ? "color" : undefined}>
                       {short}
                     </span>
                   </React.Fragment>
