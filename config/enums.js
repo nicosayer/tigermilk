@@ -12,7 +12,7 @@ export const RESTAURANTS = [
     phone: "(+32) 2 537 37 73",
     email: "hello@tigermilkgroup.com",
     menus: [
-      { name: { en: "Food", fr: "Nourriture" }, pdf: "Menu_Food_Brussels.pdf" },
+      { name: { en: "Food", fr: "Menu" }, pdf: "Menu_Food_Brussels.pdf" },
       {
         name: {
           en: "Sunday brunch (11:30-15:00)",
@@ -44,7 +44,7 @@ export const RESTAURANTS = [
     email: "hello@tigermilkgroup.com",
     menus: [
       {
-        name: { en: "Food", fr: "Nourriture" },
+        name: { en: "Food", fr: "Menu" },
         pdf: "Menu_Food_Paris_Canal_St_Martin.pdf",
       },
       {
@@ -79,7 +79,7 @@ export const RESTAURANTS = [
     email: "hello@tigermilkgroup.com",
     menus: [
       {
-        name: { en: "Food", fr: "Nourriture" },
+        name: { en: "Food", fr: "Menu" },
         pdf: "Menu_Food_Paris_Sentier.pdf",
       },
     ],
@@ -107,7 +107,7 @@ export const RESTAURANTS = [
     email: "hello@tigermilkgroup.com",
     menus: [
       {
-        name: { en: "Food", fr: "Nourriture" },
+        name: { en: "Food", fr: "Menu" },
         pdf: "Menu_Food_Paris_South_Pigalle.pdf",
       },
       {

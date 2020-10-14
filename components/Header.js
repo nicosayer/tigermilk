@@ -40,7 +40,6 @@ export default function Header({ locale, setLocale }) {
                             key={name[locale]}
                             text={name[locale]}
                             href={`/pdfs/${pdf}`}
-                            target="_blank"
                           />
                         ))}
                       </React.Fragment>
