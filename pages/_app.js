@@ -60,10 +60,6 @@ function MyApp({ Component, pageProps }) {
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://tigermilkrestaurants.com/" />
         <meta property="og:image" content="/logos/Logo_Lemon_Forest.png" />
-        <meta
-          name="viewport"
-          content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi"
-        />
         <link
           rel="icon"
           type="image/png"
