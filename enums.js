@@ -164,7 +164,7 @@ export const QUESTIONS = [
         <span>
           Nous ne faisons pas de privatisation, mais pour les groupes
           d'anniversaire ou d'évènements spéciaux, écrivez nous à{" "}
-          <a href="mailto:hello@tigermilkgroup.com">hello@tigermilkgroup.com</a>{" "}
+          <a href="mailto:hello@tigermilkgroup.com" target="_blank">hello@tigermilkgroup.com</a>{" "}
           et nous ferons notre possible pour vous accueillir en groupe !
         </span>
       ),
@@ -173,7 +173,7 @@ export const QUESTIONS = [
           It is not possible to book the entire place, but if you want to
           celebrate a birthday or special event in our restaurant, feel free to
           contact us at{" "}
-          <a href="mailto:hello@tigermilkgroup.com">hello@tigermilkgroup.com</a>{" "}
+          <a href="mailto:hello@tigermilkgroup.com" target="_blank">hello@tigermilkgroup.com</a>{" "}
           and we will do our best to accommodate you.
         </span>
       ),

@@ -37,3 +37,7 @@ body {
 .bp3-toast-container {
   z-index: 1 !important;
 }
+
+.bp3-toast {
+  min-width: 0px !important;
+}

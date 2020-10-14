@@ -2,13 +2,17 @@ import { Position, Toast, Toaster } from "@blueprintjs/core";
 import { faFacebookF, faInstagram } from "@fortawesome/free-brands-svg-icons";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import globalStyles from "../styles/Global.module.css";
 import styles from "../styles/Footer.module.css";
+import { useIsMobile } from "../hooks/useIsMobile";
 
 function Footer() {
+  const isMobile = useIsMobile();
+
   return (
     <>
-      <Toaster position={Position.BOTTOM}>
+      <Toaster position={isMobile ? Position.BOTTOM : Position.BOTTOM_LEFT}>
         <Toast
           message={
             <div className={`${styles["social-network-toast"]} color`}>
@@ -23,12 +27,14 @@ function Footer() {
                   @tigermilkrestaurants
                 </a>
               </div>
-              <a
-                href="https://www.instagram.com/tigermilkrestaurants"
-                target="_blank"
-              >
-                <FontAwesomeIcon icon={faInstagram} size="lg" />
-              </a>
+              <div className={globalStyles["margin-x"]}>
+                <a
+                  href="https://www.instagram.com/tigermilkrestaurants"
+                  target="_blank"
+                >
+                  <FontAwesomeIcon icon={faInstagram} size="lg" />
+                </a>
+              </div>
               <a
                 href="https://www.facebook.com/tigermilkrestaurants"
                 target="_blank"
@@ -39,6 +45,32 @@ function Footer() {
           }
         />
       </Toaster>
+      {!isMobile && (
+        <Toaster position={Position.BOTTOM_RIGHT}>
+          <Toast
+            message={
+              <div className={`${styles["social-network-toast"]} color`}>
+                <div>
+                  Looking for a job ?
+                  <br />
+                  <a
+                    className={globalStyles.italic}
+                    href="mailto:hello@tigermilkgroup.com"
+                    target="_blank"
+                  >
+                    hello@tigermilkgroup.com
+                  </a>
+                </div>
+                <div className={globalStyles["margin-l"]}>
+                  <a href="mailto:hello@tigermilkgroup.com" target="_blank">
+                    <FontAwesomeIcon icon={faEnvelope} size="lg" />
+                  </a>
+                </div>
+              </div>
+            }
+          />
+        </Toaster>
+      )}
     </>
   );
 }

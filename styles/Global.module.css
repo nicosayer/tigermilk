@@ -15,7 +15,17 @@
 }
 
 .margin-y {
-  margin: 10px 0;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.margin-x {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.margin-l {
+  margin-left: 20px;
 }
 
 .margin-t {
