@@ -82,7 +82,7 @@ function MyApp({ Component, pageProps }) {
         <Gallery chunks={chunks} />
         <Footer />
       </div>
-      <Component {...pageProps} color={color} />;
+      <Component {...pageProps} color={color} />
       <style jsx global>{`
         a,
         .color {
