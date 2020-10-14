@@ -1,12 +1,6 @@
-.header {
-  position: fixed;
-  height: 50px;
-  z-index: 1;
-}
-
 .body {
   position: fixed;
-  top: 50px;
+  top: 4px;
   left: 4px;
   right: 4px;
   bottom: 4px;

@@ -38,6 +38,13 @@ body {
   z-index: 1 !important;
 }
 
+.bp3-popover-target {
+  display: unset !important;
+}
+
 .bp3-toast {
   min-width: 0px !important;
+  max-width: 100vw !important;
+  box-shadow: none !important;
+  box-shadow: 0 0 10px #00000050 !important;
 }

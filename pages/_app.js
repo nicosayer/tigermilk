@@ -66,9 +66,7 @@ function MyApp({ Component, pageProps }) {
           href={`/logos/favicon-${color.name}.png`}
         />
       </Head>
-      <div className={styles.header}>
-        <Header color={color} />
-      </div>
+      <Header color={color} />
       <div className={styles.body}>
         <div
           className={globalStyles.pointer}

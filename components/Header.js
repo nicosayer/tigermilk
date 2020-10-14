@@ -5,6 +5,8 @@ import {
   Popover,
   PopoverInteractionKind,
   Position,
+  Toast,
+  Toaster,
 } from "@blueprintjs/core";
 
 import Link from "next/link";
@@ -13,52 +15,58 @@ import styles from "../styles/Header.module.css";
 
 export default function Header() {
   return (
-    <div className={styles.header}>
-      <Popover
-        interactionKind={PopoverInteractionKind.HOVER}
-        position={Position.BOTTOM}
-        captureDismiss
-        content={
-          <Menu>
-            {RESTAURANTS.map(({ name, menus }) => {
-              return (
-                <React.Fragment key={name}>
-                  <MenuDivider title={name} />
-                  {menus.map(({ name, pdf }) => (
-                    <MenuItem
-                      key={name}
-                      text={name}
-                      href={`/pdfs/${pdf}`}
-                      target="_blank"
-                    />
+    <Toaster position={Position.Top}>
+      <Toast
+        message={
+          <div className={styles.toast}>
+            <Popover
+              interactionKind={PopoverInteractionKind.HOVER}
+              position={Position.BOTTOM}
+              captureDismiss
+              content={
+                <Menu>
+                  {RESTAURANTS.map(({ name, menus }) => {
+                    return (
+                      <React.Fragment key={name}>
+                        <MenuDivider title={name} />
+                        {menus.map(({ name, pdf }) => (
+                          <MenuItem
+                            key={name}
+                            text={name}
+                            href={`/pdfs/${pdf}`}
+                            target="_blank"
+                          />
+                        ))}
+                      </React.Fragment>
+                    );
+                  })}
+                </Menu>
+              }
+            >
+              <div className={`color ${styles.title}`}>MENU</div>
+            </Popover>
+            <Popover
+              interactionKind={PopoverInteractionKind.HOVER}
+              position={Position.BOTTOM}
+              captureDismiss
+              content={
+                <Menu>
+                  {RESTAURANTS.map(({ name, slug }) => (
+                    <Link key={name} href={`/locations/${slug}`}>
+                      <MenuItem text={name} />
+                    </Link>
                   ))}
-                </React.Fragment>
-              );
-            })}
-          </Menu>
+                </Menu>
+              }
+            >
+              <div className={`color ${styles.title}`}>LOCATIONS</div>
+            </Popover>
+            <Link href={`/faq`}>
+              <div className={`color ${styles.title}`}>FAQ</div>
+            </Link>
+          </div>
         }
-      >
-        <div className={`color ${styles.title}`}>MENU</div>
-      </Popover>
-      <Popover
-        interactionKind={PopoverInteractionKind.HOVER}
-        position={Position.BOTTOM}
-        captureDismiss
-        content={
-          <Menu>
-            {RESTAURANTS.map(({ name, slug }) => (
-              <Link key={name} href={`/locations/${slug}`}>
-                <MenuItem text={name} />
-              </Link>
-            ))}
-          </Menu>
-        }
-      >
-        <div className={`color ${styles.title}`}>LOCATIONS</div>
-      </Popover>
-      <Link href={`/faq`}>
-        <div className={`color ${styles.title}`}>FAQ</div>
-      </Link>
-    </div>
+      />
+    </Toaster>
   );
 }
