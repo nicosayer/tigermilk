@@ -1,10 +1,10 @@
 import "../styles/globals.css";
 import "@blueprintjs/core/lib/css/blueprint.css";
 
+import { COLORS, LANGUAGES } from "../config/enums";
 import { chunk, shuffle } from "lodash/fp";
 import { useEffect, useState } from "react";
 
-import { COLORS } from "../enums";
 import Footer from "../components/Footer";
 import Gallery from "../components/Gallery";
 import Head from "next/head";
@@ -13,6 +13,8 @@ import Logo from "../components/Logo";
 import globalStyles from "../styles/Global.module.css";
 import imagesData from "../scripts/imagesData.json";
 import styles from "../styles/Layout.module.css";
+
+const DEFAULT_LANGUAGE = "en";
 
 const randomColor = (currentColorName) => {
   const remainingColors = COLORS.filter(
@@ -27,14 +29,32 @@ const randomChunks = () => {
   return chunk(6, shuffle(Object.keys(imagesData).slice(0, 60)));
 };
 
+const getLocale = (locale) => {
+  if (LANGUAGES[locale]) {
+    return locale;
+  }
+
+  if (LANGUAGES[localStorage.locale]) {
+    return localStorage.locale;
+  }
+
+  return DEFAULT_LANGUAGE;
+};
+
 function MyApp({ Component, pageProps }) {
   const [color, setColor] = useState({});
   const [chunks, setChunks] = useState([]);
+  const [locale, setLocale] = useState(DEFAULT_LANGUAGE);
 
   useEffect(() => {
     setColor(randomColor());
     setChunks(randomChunks());
+    setLocale(getLocale());
   }, []);
+
+  useEffect(() => {
+    localStorage.setItem("locale", getLocale(locale));
+  }, [locale]);
 
   return (
     <>
@@ -51,7 +71,7 @@ function MyApp({ Component, pageProps }) {
         />
         <meta
           property="og:title"
-          content="TIGERMILK - 77 rue d'Aboukir 75002 Paris"
+          content="TIGERMILK - 4 restaurants in Paris & Brussels"
         />
         <meta
           property="og:description"
@@ -66,7 +86,7 @@ function MyApp({ Component, pageProps }) {
           href={`/logos/favicon-${color.name}.png`}
         />
       </Head>
-      <Header color={color} />
+      <Header locale={locale} setLocale={setLocale} />
       <div className={styles.body}>
         <div
           className={globalStyles.pointer}
@@ -78,9 +98,9 @@ function MyApp({ Component, pageProps }) {
           <Logo color={color} />
         </div>
         <Gallery chunks={chunks} />
-        <Footer />
+        <Footer locale={locale} />
       </div>
-      <Component {...pageProps} color={color} />
+      <Component {...pageProps} color={color} locale={locale} />
       <style jsx global>{`
         a,
         .color {

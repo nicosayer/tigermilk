@@ -1,6 +1,6 @@
 export const RESTAURANTS = [
   {
-    name: "Brussels",
+    name: { en: "Brussels", fr: "Bruxelles" },
     slug: "brussels",
     address: (
       <span>
@@ -12,8 +12,14 @@ export const RESTAURANTS = [
     phone: "(+32) 2 537 37 73",
     email: "hello@tigermilkgroup.com",
     menus: [
-      { name: "Food", pdf: "Menu_Food_Brussels.pdf" },
-      { name: "Sunday brunch (11h30-15h)", pdf: "Menu_Brunch.pdf" },
+      { name: { en: "Food", fr: "Nourriture" }, pdf: "Menu_Food_Brussels.pdf" },
+      {
+        name: {
+          en: "Sunday brunch (11:30-15:00)",
+          fr: "Brunch du dimanche (11h30-15h)",
+        },
+        pdf: "Menu_Brunch.pdf",
+      },
     ],
     openingHours: {
       monday: { lunch: "11:45-14:00", diner: "18:45-22:00" },
@@ -26,7 +32,7 @@ export const RESTAURANTS = [
     },
   },
   {
-    name: "Paris - Canal St Martin",
+    name: { en: "Paris - Canal St Martin", fr: "Paris - Canal St Martin" },
     slug: "paris-canal-st-martin",
     address: (
       <span>
@@ -37,8 +43,17 @@ export const RESTAURANTS = [
     ),
     email: "hello@tigermilkgroup.com",
     menus: [
-      { name: "Food", pdf: "Menu_Food_Paris_Canal_St_Martin.pdf" },
-      { name: "Sunday brunch (12h-15h)", pdf: "Menu_Brunch.pdf" },
+      {
+        name: { en: "Food", fr: "Nourriture" },
+        pdf: "Menu_Food_Paris_Canal_St_Martin.pdf",
+      },
+      {
+        name: {
+          en: "Sunday brunch (12:00-15:00)",
+          fr: "Brunch du dimanche (12h-15h)",
+        },
+        pdf: "Menu_Brunch.pdf",
+      },
     ],
     openingHours: {
       monday: { lunch: "12:15-14:15", diner: "19:15-22:30" },
@@ -51,7 +66,7 @@ export const RESTAURANTS = [
     },
   },
   {
-    name: "Paris - Sentier",
+    name: { en: "Paris - Sentier", fr: "Paris - Sentier" },
     slug: "paris-sentier",
     address: (
       <span>
@@ -62,7 +77,12 @@ export const RESTAURANTS = [
     ),
     phone: "(+33) 1 40 15 97 73",
     email: "hello@tigermilkgroup.com",
-    menus: [{ name: "Food", pdf: "Menu_Food_Paris_Sentier.pdf" }],
+    menus: [
+      {
+        name: { en: "Food", fr: "Nourriture" },
+        pdf: "Menu_Food_Paris_Sentier.pdf",
+      },
+    ],
     openingHours: {
       monday: { lunch: "12:15-14:15", diner: "19:00-22:30" },
       tuesday: { lunch: "12:15-14:15", diner: "19:00-22:30" },
@@ -74,7 +94,7 @@ export const RESTAURANTS = [
     },
   },
   {
-    name: "Paris - South Pigalle",
+    name: { en: "Paris - South Pigalle", fr: "Paris - Pigalle sud" },
     slug: "paris-south-pigalle",
     address: (
       <span>
@@ -86,8 +106,14 @@ export const RESTAURANTS = [
     phone: "(+33) 1 40 15 97 73",
     email: "hello@tigermilkgroup.com",
     menus: [
-      { name: "Food", pdf: "Menu_Food_Paris_South_Pigalle.pdf" },
-      { name: "Drinks", pdf: "Menu_Drinks_South_Pigalle.pdf" },
+      {
+        name: { en: "Food", fr: "Nourriture" },
+        pdf: "Menu_Food_Paris_South_Pigalle.pdf",
+      },
+      {
+        name: { en: "Drinks", fr: "Boissons" },
+        pdf: "Menu_Drinks_South_Pigalle.pdf",
+      },
     ],
     openingHours: {
       monday: { lunch: "12:15-14:15", diner: "19:00-22:30" },
@@ -132,12 +158,12 @@ export const QUESTIONS = [
   },
   {
     title: {
-      fr: "Êtes-vous Pet friendly ?",
-      en: "Are you Pet friendly?",
+      fr: "Acceptez-vous les animaux de compagnie ?",
+      en: "Are you pet friendly?",
     },
     content: {
       fr:
-        "Si votre chien ne dépasse pas la taille de nos tables, nous les accueillerons avec plaisir 😊.",
+        "Si votre chien ne dépasse pas la taille de nos tables, nous les accueillerons avec plaisir.",
       en:
         "If your furry friend isn’t taller than our tables, he will be more than welcome in our restaurants.",
     },
@@ -164,8 +190,10 @@ export const QUESTIONS = [
         <span>
           Nous ne faisons pas de privatisation, mais pour les groupes
           d'anniversaire ou d'évènements spéciaux, écrivez nous à{" "}
-          <a href="mailto:hello@tigermilkgroup.com" target="_blank">hello@tigermilkgroup.com</a>{" "}
-          et nous ferons notre possible pour vous accueillir en groupe !
+          <a href="mailto:hello@tigermilkgroup.com" target="_blank">
+            hello@tigermilkgroup.com
+          </a>{" "}
+          et nous ferons notre possible pour vous accueillir en groupe.
         </span>
       ),
       en: (
@@ -173,7 +201,9 @@ export const QUESTIONS = [
           It is not possible to book the entire place, but if you want to
           celebrate a birthday or special event in our restaurant, feel free to
           contact us at{" "}
-          <a href="mailto:hello@tigermilkgroup.com" target="_blank">hello@tigermilkgroup.com</a>{" "}
+          <a href="mailto:hello@tigermilkgroup.com" target="_blank">
+            hello@tigermilkgroup.com
+          </a>{" "}
           and we will do our best to accommodate you.
         </span>
       ),
@@ -222,7 +252,7 @@ export const QUESTIONS = [
     },
     content: {
       fr:
-        "Nous proposons le take-away uniquement au Tigermilk Bruxelles pour le moment !",
+        "Nous proposons le take-away uniquement au Tigermilk Bruxelles pour le moment.",
       en:
         "For the moment, we only offer take-away service at the Tigermilk Brussels.",
     },
@@ -239,3 +269,8 @@ export const QUESTIONS = [
     },
   },
 ];
+
+export const LANGUAGES = {
+  en: { short: "EN" },
+  fr: { short: "FR" },
+};

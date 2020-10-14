@@ -1,13 +1,14 @@
-import { DAYS, RESTAURANTS } from "../../enums";
+import { DAYS, RESTAURANTS } from "../../config/enums";
 
 import { Dialog } from "@blueprintjs/core";
 import Head from "next/head";
 import globalStyles from "../../styles/Global.module.css";
+import lang from "../../lang";
 import styles from "../../styles/Location.module.css";
 import { useIsMobile } from "../../hooks/useIsMobile";
 import { useRouter } from "next/router";
 
-export default function Location({ params, color }) {
+export default function Location({ params, color, locale }) {
   const { location } = params;
   const router = useRouter();
   const isMobile = useIsMobile();
@@ -17,7 +18,7 @@ export default function Location({ params, color }) {
   return (
     <div>
       <Head>
-        <title>TIGERMILK • {restaurant.name}</title>
+        <title>TIGERMILK • {restaurant.name[locale]}</title>
       </Head>
       <Dialog isOpen onClose={() => router.push("/")} usePortal={false}>
         <div
@@ -25,34 +26,38 @@ export default function Location({ params, color }) {
           style={{ gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr" }}
         >
           <div className={`${styles["text-container"]}`}>
-            <div className={`${globalStyles.title} color`}>Adresse</div>
+            <div className={`${globalStyles.title} color`}>
+              {lang[locale]?.locations.Address}
+            </div>
             <div
               className={`${globalStyles["margin-t"]} ${globalStyles["margin-b"]}`}
             >
               {restaurant.address}
             </div>
-            <div className={`${globalStyles.title} color`}>Contact</div>
-            <div className={globalStyles["margin-t"]}>
-              Nous ne prenons pas de réservation, nos restaurants vous
-              accueillent tous les jours de la semaine pour le déjeuner et le
-              diner.
+            <div className={`${globalStyles.title} color`}>
+              {lang[locale]?.locations.Contact}
             </div>
-            <div
-              className={`${globalStyles["margin-t"]} ${globalStyles.italic}`}
-            >
-              The restaurant doesn’t take reservations. Our team welcomes you
-              every day for lunch and dinner.
+            <div className={globalStyles["margin-t"]}>
+              {lang[locale]?.locations.noReservations}
             </div>
             <div
               className={`${globalStyles["margin-t"]} ${globalStyles["margin-b"]}`}
             >
-              {restaurant.phone && <div>Tel : {restaurant.phone}</div>}
+              {restaurant.phone && (
+                <div>
+                  {lang[locale]?.locations.Tel} : {restaurant.phone}
+                </div>
+              )}
               <div>
-                Email :{" "}
-                <a href={`mailto:${restaurant.email}`} target="_blank">{restaurant.email}</a>
+                {lang[locale]?.locations.Email} :{" "}
+                <a href={`mailto:${restaurant.email}`} target="_blank">
+                  {restaurant.email}
+                </a>
               </div>
             </div>
-            <div className={`${globalStyles.title} color`}>Horaires</div>
+            <div className={`${globalStyles.title} color`}>
+              {lang[locale]?.locations.OpeningHours}
+            </div>
             <div className={globalStyles["margin-t"]}>
               <table className={styles.table}>
                 {DAYS.map(({ slug, name }, index) => {
@@ -63,7 +68,7 @@ export default function Location({ params, color }) {
                         new Date().getDay() === index + 1 && globalStyles.bold
                       }
                     >
-                      <td>{name.fr}</td>
+                      <td>{name[locale]}</td>
                       <td>{restaurant.openingHours[slug].lunch}</td>
                       <td>{restaurant.openingHours[slug].diner}</td>
                     </tr>

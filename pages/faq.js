@@ -1,11 +1,11 @@
 import { Dialog } from "@blueprintjs/core";
 import Head from "next/head";
-import { QUESTIONS } from "../enums";
+import { QUESTIONS } from "../config/enums";
 import globalStyles from "../styles/Global.module.css";
 import styles from "../styles/FAQ.module.css";
 import { useRouter } from "next/router";
 
-export default function FAQ() {
+export default function FAQ({ locale }) {
   const router = useRouter();
 
   return (
@@ -13,7 +13,7 @@ export default function FAQ() {
       <Head>
         <title>TIGERMILK • FAQ</title>
       </Head>
-      <Dialog isOpen onClose={() => router.push("/")} usePortal={false} >
+      <Dialog isOpen onClose={() => router.push("/")} usePortal={false}>
         <div className={styles.body}>
           {QUESTIONS.map(({ title, content }, index, array) => (
             <div
@@ -21,14 +21,10 @@ export default function FAQ() {
               className={index + 1 < array.length && globalStyles["margin-b"]}
             >
               <div className={`${globalStyles.title} color`}>
-                <span>{title.fr}</span>{" "}
-                <span className={globalStyles.italic}>{title.en}</span>
+                {title[locale]}
               </div>
               <div className={globalStyles["margin-y"]}>
-                <p>{content.fr}</p>
-              </div>
-              <div className={globalStyles.italic}>
-                <p>{content.en}</p>
+                <p>{content[locale]}</p>
               </div>
             </div>
           ))}

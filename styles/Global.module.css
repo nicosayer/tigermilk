@@ -36,6 +36,10 @@
   margin-bottom: 40px;
 }
 
+.gray {
+  color: lightgray;
+}
+
 .blur {
   filter: blur(20px);
 }

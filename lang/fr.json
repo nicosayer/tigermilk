@@ -1,0 +1,26 @@
+{
+  "header": {
+    "MENU": "MENU",
+    "LOCATIONS": "RESTAURANTS",
+    "FAQ": "FAQ"
+  },
+  "locations": {
+    "Address": "Adresse",
+    "Contact": "Contact",
+    "OpeningHours": "Horaires",
+    "Tel": "Tél",
+    "Email": "Email",
+    "Monday": "Lundi",
+    "Tuesday": "Mardi",
+    "Wednesday": "Mercredi",
+    "Thursday": "Jeudi",
+    "Friday": "Vendredi",
+    "Saturday": "Samedi",
+    "Sunday": "Dimanche",
+    "noReservations": "Nous ne prenons pas de réservation, nos restaurants vous accueillent tous les jours de la semaine pour le déjeuner et le diner."
+  },
+  "footer": {
+    "socialMedias": { "followUs": "Suivez-nous" },
+    "jobOffers": { "joinUs": "Vous voulez rejoindre l'équipe ?" }
+  }
+}

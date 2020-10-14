@@ -39,7 +39,7 @@ body {
 }
 
 .bp3-popover-target {
-  display: flex !important;
+  display: block !important;
 }
 
 .bp3-toast {

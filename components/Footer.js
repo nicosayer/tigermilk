@@ -4,10 +4,11 @@ import { faFacebookF, faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import globalStyles from "../styles/Global.module.css";
+import lang from "../lang";
 import styles from "../styles/Footer.module.css";
 import { useIsMobile } from "../hooks/useIsMobile";
 
-function Footer() {
+function Footer({ locale }) {
   const isMobile = useIsMobile();
 
   return (
@@ -17,7 +18,7 @@ function Footer() {
           message={
             <div className={`${styles["social-network-toast"]} color`}>
               <div>
-                Follow us
+                {lang[locale]?.footer.socialMedias.followUs}
                 <br />
                 <a
                   className={globalStyles.italic}
@@ -51,7 +52,7 @@ function Footer() {
             message={
               <div className={`${styles["social-network-toast"]} color`}>
                 <div>
-                  Looking for a job ?
+                  {lang[locale]?.footer.jobOffers.joinUs}
                   <br />
                   <a
                     className={globalStyles.italic}

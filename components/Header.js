@@ -1,3 +1,4 @@
+import { LANGUAGES, RESTAURANTS } from "../config/enums";
 import {
   Menu,
   MenuDivider,
@@ -10,10 +11,13 @@ import {
 } from "@blueprintjs/core";
 
 import Link from "next/link";
-import { RESTAURANTS } from "../enums";
+import globalStyles from "../styles/Global.module.css";
+import lang from "../lang";
 import styles from "../styles/Header.module.css";
 
-export default function Header() {
+export default function Header({ locale, setLocale }) {
+  const languagesArray = Object.entries(LANGUAGES);
+
   return (
     <Toaster position={Position.Top}>
       <Toast
@@ -27,12 +31,12 @@ export default function Header() {
                 <Menu>
                   {RESTAURANTS.map(({ name, menus }) => {
                     return (
-                      <React.Fragment key={name}>
-                        <MenuDivider title={name} />
+                      <React.Fragment key={name[locale]}>
+                        <MenuDivider title={name[locale]} />
                         {menus.map(({ name, pdf }) => (
                           <MenuItem
-                            key={name}
-                            text={name}
+                            key={name[locale]}
+                            text={name[locale]}
                             href={`/pdfs/${pdf}`}
                             target="_blank"
                           />
@@ -43,7 +47,9 @@ export default function Header() {
                 </Menu>
               }
             >
-              <div className={`color ${styles.title}`}>MENU</div>
+              <div className={`color ${styles.title}`}>
+                {lang[locale]?.header.MENU}
+              </div>
             </Popover>
             <Popover
               interactionKind={PopoverInteractionKind.HOVER}
@@ -52,18 +58,40 @@ export default function Header() {
               content={
                 <Menu>
                   {RESTAURANTS.map(({ name, slug }) => (
-                    <Link key={name} href={`/locations/${slug}`}>
-                      <MenuItem text={name} />
+                    <Link key={name[locale]} href={`/locations/${slug}`}>
+                      <MenuItem text={name[locale]} />
                     </Link>
                   ))}
                 </Menu>
               }
             >
-              <div className={`color ${styles.title}`}>LOCATIONS</div>
+              <div className={`color ${styles.title}`}>
+                {lang[locale]?.header.LOCATIONS}
+              </div>
             </Popover>
             <Link href={`/faq`}>
-              <div className={`color ${styles.title}`}>FAQ</div>
+              <div className={`color ${styles.title}`}>
+                {lang[locale]?.header.FAQ}
+              </div>
             </Link>
+            <div
+              className={`${styles.title} ${globalStyles.gray}`}
+              onClick={() => {
+                const currentIndex = languagesArray.findIndex(
+                  ([key]) => key === locale
+                );
+                const [nextLang] =
+                  languagesArray[currentIndex + 1] || languagesArray[0];
+                setLocale(nextLang);
+              }}
+            >
+              {languagesArray.map(([key, { short }], index) => (
+                <React.Fragment key={key}>
+                  {index > 0 && "/"}
+                  <span className={locale === key ? "color" : ""}>{short}</span>
+                </React.Fragment>
+              ))}
+            </div>
           </div>
         }
       />
