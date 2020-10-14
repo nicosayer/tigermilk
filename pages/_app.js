@@ -37,7 +37,7 @@ function MyApp({ Component, pageProps }) {
   }, []);
 
   return (
-    <div className={styles.layout}>
+    <>
       <Head>
         <meta charset="utf-8" />
         <title>TIGERMILK</title>
@@ -89,7 +89,7 @@ function MyApp({ Component, pageProps }) {
           color: ${color.hex} !important;
         }
       `}</style>
-    </div>
+    </>
   );
 }
 
