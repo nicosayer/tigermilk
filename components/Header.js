@@ -14,9 +14,11 @@ import Link from "next/link";
 import globalStyles from "../styles/Global.module.css";
 import lang from "../lang";
 import styles from "../styles/Header.module.css";
+import { useIsMobile } from "../hooks/useIsMobile";
 
 export default function Header({ locale, setLocale }) {
   const languagesArray = Object.entries(LANGUAGES);
+  const isMobile = useIsMobile();
 
   return (
     <Toaster position={Position.Top}>
@@ -85,12 +87,18 @@ export default function Header({ locale, setLocale }) {
                 setLocale(nextLang);
               }}
             >
-              {languagesArray.map(([key, { short }], index) => (
-                <React.Fragment key={key}>
-                  {index > 0 && "/"}
-                  <span className={locale === key ? "color" : ""}>{short}</span>
-                </React.Fragment>
-              ))}
+              {isMobile ? (
+                <span >{LANGUAGES[locale].short}</span>
+              ) : (
+                languagesArray.map(([key, { short }], index) => (
+                  <React.Fragment key={key}>
+                    {index > 0 && "/"}
+                    <span className={locale === key ? "color" : ""}>
+                      {short}
+                    </span>
+                  </React.Fragment>
+                ))
+              )}
             </div>
           </div>
         }
