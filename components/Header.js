@@ -88,7 +88,7 @@ export default function Header({ locale, setLocale }) {
               }}
             >
               {isMobile ? (
-                <span >{LANGUAGES[locale].short}</span>
+                <span>{LANGUAGES[locale].short}</span>
               ) : (
                 languagesArray.map(([key, { short }], index) => (
                   <React.Fragment key={key}>
