@@ -37,3 +37,7 @@ body {
 .bp3-toast-container {
   z-index: 1 !important;
 }
+
+.bp3-custom-dialog-backdrop {
+  height: 100vh;
+}
