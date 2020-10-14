@@ -15,7 +15,7 @@ export default function Header() {
   return (
     <div className={styles.header}>
       <Popover
-        interactionKind={PopoverInteractionKind.HOVER_TARGET_ONLY}
+        interactionKind={PopoverInteractionKind.HOVER}
         position={Position.BOTTOM}
         captureDismiss
         content={
@@ -40,7 +40,7 @@ export default function Header() {
         <div className={`color ${styles.title}`}>MENU</div>
       </Popover>
       <Popover
-        interactionKind={PopoverInteractionKind.HOVER_TARGET_ONLY}
+        interactionKind={PopoverInteractionKind.HOVER}
         position={Position.BOTTOM}
         captureDismiss
         content={
