@@ -98,7 +98,7 @@ function MyApp({ Component, pageProps }) {
           <Logo color={color} />
         </div>
         <Gallery chunks={chunks} />
-        <Footer locale={locale} />
+        <Footer locale={locale} setLocale={setLocale} />
       </div>
       <Component {...pageProps} color={color} locale={locale} />
       <style jsx global>{`

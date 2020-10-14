@@ -4,3 +4,10 @@
   align-items: center;
   text-align: center;
 }
+
+.language-toast {
+  height: 36px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}

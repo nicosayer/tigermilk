@@ -2,18 +2,21 @@ import { Position, Toast, Toaster } from "@blueprintjs/core";
 import { faFacebookF, faInstagram } from "@fortawesome/free-brands-svg-icons";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { LANGUAGES } from "../config/enums";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import globalStyles from "../styles/Global.module.css";
 import lang from "../lang";
 import styles from "../styles/Footer.module.css";
 import { useIsMobile } from "../hooks/useIsMobile";
 
-function Footer({ locale }) {
+function Footer({ locale,setLocale }) {
   const isMobile = useIsMobile();
+
+  const languagesArray = Object.entries(LANGUAGES);
 
   return (
     <>
-      <Toaster position={isMobile ? Position.BOTTOM : Position.BOTTOM_LEFT}>
+      <Toaster position={Position.BOTTOM_LEFT}>
         <Toast
           message={
             <div className={`${styles["social-network-toast"]} color`}>
@@ -46,8 +49,33 @@ function Footer({ locale }) {
           }
         />
       </Toaster>
-      {!isMobile && (
-        <Toaster position={Position.BOTTOM_RIGHT}>
+      <Toaster position={Position.BOTTOM_RIGHT}>
+        {isMobile ? (
+          <Toast
+            message={
+              <div
+                className={`${styles["language-toast"]} ${globalStyles.gray}`}
+                onClick={() => {
+                  const currentIndex = languagesArray.findIndex(
+                    ([key]) => key === locale
+                  );
+                  const [nextLang] =
+                    languagesArray[currentIndex + 1] || languagesArray[0];
+                  setLocale(nextLang);
+                }}
+              >
+                {languagesArray.map(([key, { short }], index) => (
+                  <React.Fragment key={key}>
+                    {index > 0 && "/"}
+                    <span className={locale === key ? "color" : undefined}>
+                      {short}
+                    </span>
+                  </React.Fragment>
+                ))}
+              </div>
+            }
+          />
+        ) : (
           <Toast
             message={
               <div className={`${styles["social-network-toast"]} color`}>
@@ -70,8 +98,8 @@ function Footer({ locale }) {
               </div>
             }
           />
-        </Toaster>
-      )}
+        )}
+      </Toaster>
     </>
   );
 }

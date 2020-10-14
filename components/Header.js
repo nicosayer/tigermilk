@@ -24,7 +24,12 @@ export default function Header({ locale, setLocale }) {
     <Toaster position={Position.Top}>
       <Toast
         message={
-          <div className={styles.toast}>
+          <div
+            className={styles.toast}
+            style={{
+              gridTemplateColumns: isMobile ? "1fr 1fr 1fr" : "1fr 1fr 1fr 1fr",
+            }}
+          >
             <Popover
               interactionKind={PopoverInteractionKind.HOVER}
               position={Position.BOTTOM}
@@ -86,11 +91,7 @@ export default function Header({ locale, setLocale }) {
                 setLocale(nextLang);
               }}
             >
-              {isMobile ? (
-                <span className={globalStyles.black}>
-                  {LANGUAGES[locale].short}
-                </span>
-              ) : (
+              {!isMobile &&
                 languagesArray.map(([key, { short }], index) => (
                   <React.Fragment key={key}>
                     {index > 0 && "/"}
@@ -98,8 +99,7 @@ export default function Header({ locale, setLocale }) {
                       {short}
                     </span>
                   </React.Fragment>
-                ))
-              )}
+                ))}
             </div>
           </div>
         }
