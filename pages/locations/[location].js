@@ -20,7 +20,12 @@ export default function Location({ params, color, locale }) {
       <Head>
         <title>TIGERMILK • {restaurant.name[locale]}</title>
       </Head>
-      <Dialog isOpen onClose={() => router.push("/")} usePortal={false}>
+      <Dialog
+        isOpen
+        onClose={() => router.push("/")}
+        usePortal={false}
+        backdropClassName="bp3-backdrop"
+      >
         <div
           className={styles.body}
           style={{ gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr" }}
