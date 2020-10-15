@@ -44,10 +44,6 @@
   color: #182026;
 }
 
-.blur {
-  filter: blur(20px);
-}
-
 .filter-jade {
   filter: invert(63%) sepia(50%) saturate(6672%) hue-rotate(128deg)
     brightness(96%) contrast(101%);
