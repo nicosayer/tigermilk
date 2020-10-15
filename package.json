@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "npm run build-images-data && next build",
+    "export": "npm run build && next export",
     "start": "next start",
     "build-images-data": "node scripts/imagesDataBuilder.js",
     "sort-langs": "node scripts/sortLangs.js"
