@@ -1,4 +1,5 @@
 {
+  ":": ": ",
   "days": {
     "friday": "Friday",
     "monday": "Monday",
@@ -10,7 +11,7 @@
   },
   "footer": {
     "jobOffers": {
-      "joinUs": "Want to join the team ?"
+      "joinTheTeam": "Want to join the team ?"
     },
     "socialMedias": {
       "followUs": "Follow us"
@@ -22,11 +23,13 @@
     "MENU": "MENU"
   },
   "locations": {
+    "noReservations": "The restaurant doesn’t take reservations. Our team welcomes you every day for lunch and dinner."
+  },
+  "word": {
     "Address": "Address",
     "Contact": "Contact",
     "Email": "Email",
     "OpeningHours": "OpeningHours",
-    "Tel": "Tel",
-    "noReservations": "The restaurant doesn’t take reservations. Our team welcomes you every day for lunch and dinner."
+    "Tel": "Tel"
   }
 }

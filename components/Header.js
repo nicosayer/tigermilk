@@ -12,7 +12,7 @@ import {
 
 import Link from "next/link";
 import globalStyles from "styles/Global.module.css";
-import lang from "lang";
+import languages from "languages";
 import styles from "styles/Header.module.css";
 import { useIsMobile } from "hooks/useIsMobile";
 
@@ -54,7 +54,7 @@ export default function Header({ locale, setLocale }) {
               }
             >
               <div className={`color ${styles.title}`}>
-                {lang[locale]?.header.MENU}
+                {languages[locale]?.header.MENU}
               </div>
             </Popover>
             <Popover
@@ -72,12 +72,12 @@ export default function Header({ locale, setLocale }) {
               }
             >
               <div className={`color ${styles.title}`}>
-                {lang[locale]?.header.LOCATIONS}
+                {languages[locale]?.header.LOCATIONS}
               </div>
             </Popover>
             <Link href={`/faq`}>
               <div className={`color ${styles.title}`}>
-                {lang[locale]?.header.FAQ}
+                {languages[locale]?.header.FAQ}
               </div>
             </Link>
             <div

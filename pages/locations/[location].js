@@ -3,7 +3,7 @@ import { DAYS, RESTAURANTS } from "config/enums";
 import { Dialog } from "@blueprintjs/core";
 import Head from "next/head";
 import globalStyles from "styles/Global.module.css";
-import lang from "lang";
+import languages from "languages";
 import styles from "styles/Location.module.css";
 import { useIsMobile } from "hooks/useIsMobile";
 import { useRouter } from "next/router";
@@ -27,7 +27,7 @@ export default function Location({ params, color, locale }) {
         >
           <div className={`${styles["text-container"]}`}>
             <div className={`${globalStyles.title} color`}>
-              {lang[locale]?.locations.Address}
+              {languages[locale]?.word.Address}
             </div>
             <div
               className={`${globalStyles["margin-t"]} ${globalStyles["margin-b"]}`}
@@ -35,47 +35,52 @@ export default function Location({ params, color, locale }) {
               {restaurant.address}
             </div>
             <div className={`${globalStyles.title} color`}>
-              {lang[locale]?.locations.Contact}
+              {languages[locale]?.word.Contact}
             </div>
             <div className={globalStyles["margin-t"]}>
-              {lang[locale]?.locations.noReservations}
+              {languages[locale]?.locations.noReservations}
             </div>
             <div
               className={`${globalStyles["margin-t"]} ${globalStyles["margin-b"]}`}
             >
               {restaurant.phone && (
                 <div>
-                  {lang[locale]?.locations.Tel} : {restaurant.phone}
+                  {languages[locale]?.word.Tel}
+                  {languages[locale]?.[":"]}
+                  {restaurant.phone}
                 </div>
               )}
               <div>
-                {lang[locale]?.locations.Email} :{" "}
+                {languages[locale]?.word.Email}
+                {languages[locale]?.[":"]}
                 <a href={`mailto:${restaurant.email}`} target="_blank">
                   {restaurant.email}
                 </a>
               </div>
             </div>
             <div className={`${globalStyles.title} color`}>
-              {lang[locale]?.locations.OpeningHours}
+              {languages[locale]?.word.OpeningHours}
             </div>
             <div className={globalStyles["margin-t"]}>
               <table className={styles.table}>
-                {DAYS.map((slug, index) => {
-                  return (
-                    <tr
-                      key={slug}
-                      className={
-                        new Date().getDay() === index + 1
-                          ? globalStyles.bold
-                          : undefined
-                      }
-                    >
-                      <td>{lang[locale]?.days[slug]}</td>
-                      <td>{restaurant.openingHours[slug].lunch}</td>
-                      <td>{restaurant.openingHours[slug].diner}</td>
-                    </tr>
-                  );
-                })}
+                <tbody>
+                  {DAYS.map((slug, index) => {
+                    return (
+                      <tr
+                        key={slug}
+                        className={
+                          new Date().getDay() === index + 1
+                            ? globalStyles.bold
+                            : undefined
+                        }
+                      >
+                        <td>{languages[locale]?.days[slug]}</td>
+                        <td>{restaurant.openingHours[slug].lunch}</td>
+                        <td>{restaurant.openingHours[slug].diner}</td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
               </table>
             </div>
           </div>

@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { LANGUAGES } from "config/enums";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import globalStyles from "styles/Global.module.css";
-import lang from "lang";
+import languages from "languages";
 import styles from "styles/Footer.module.css";
 import { useIsMobile } from "hooks/useIsMobile";
 
@@ -19,9 +19,9 @@ function Footer({ locale, setLocale }) {
       <Toaster position={Position.BOTTOM_LEFT}>
         <Toast
           message={
-            <div className={`${styles["social-network-toast"]} color`}>
+            <div className={`${styles["social-toast"]} color`}>
               <div>
-                {lang[locale]?.footer.socialMedias.followUs}
+                {languages[locale]?.footer.socialMedias.followUs}
                 <br />
                 <a
                   className={globalStyles.italic}
@@ -78,9 +78,9 @@ function Footer({ locale, setLocale }) {
         ) : (
           <Toast
             message={
-              <div className={`${styles["social-network-toast"]} color`}>
+              <div className={`${styles["social-toast"]} color`}>
                 <div>
-                  {lang[locale]?.footer.jobOffers.joinUs}
+                  {languages[locale]?.footer.jobOffers.joinTheTeam}
                   <br />
                   <a
                     className={globalStyles.italic}
