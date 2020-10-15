@@ -1,5 +1,5 @@
-import imagesData from "../scripts/imagesData.json";
-import styles from "../styles/Gallery.module.css";
+import imagesData from "scripts/imagesData.json";
+import styles from "styles/Gallery.module.css";
 
 export default function Gallery({ chunks }) {
   return (

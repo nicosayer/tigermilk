@@ -1,4 +1,4 @@
-import { LANGUAGES, RESTAURANTS } from "../config/enums";
+import { LANGUAGES, RESTAURANTS } from "config/enums";
 import {
   Menu,
   MenuDivider,
@@ -11,10 +11,10 @@ import {
 } from "@blueprintjs/core";
 
 import Link from "next/link";
-import globalStyles from "../styles/Global.module.css";
-import lang from "../lang";
-import styles from "../styles/Header.module.css";
-import { useIsMobile } from "../hooks/useIsMobile";
+import globalStyles from "styles/Global.module.css";
+import lang from "lang";
+import styles from "styles/Header.module.css";
+import { useIsMobile } from "hooks/useIsMobile";
 
 export default function Header({ locale, setLocale }) {
   const languagesArray = Object.entries(LANGUAGES);

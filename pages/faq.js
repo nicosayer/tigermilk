@@ -1,8 +1,8 @@
 import { Dialog } from "@blueprintjs/core";
 import Head from "next/head";
-import { QUESTIONS } from "../config/enums";
-import globalStyles from "../styles/Global.module.css";
-import styles from "../styles/FAQ.module.css";
+import { QUESTIONS } from "config/enums";
+import globalStyles from "styles/Global.module.css";
+import styles from "styles/FAQ.module.css";
 import { useRouter } from "next/router";
 
 export default function FAQ({ locale }) {

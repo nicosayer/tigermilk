@@ -274,3 +274,5 @@ export const LANGUAGES = {
   en: { short: "EN" },
   fr: { short: "FR" },
 };
+
+export const DEFAULT_LANGUAGE = "en";

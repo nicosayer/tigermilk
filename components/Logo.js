@@ -1,6 +1,6 @@
-import globalStyles from "../styles/Global.module.css";
-import styles from "../styles/Logo.module.css";
-import { useIsMobile } from "../hooks/useIsMobile";
+import globalStyles from "styles/Global.module.css";
+import styles from "styles/Logo.module.css";
+import { useIsMobile } from "hooks/useIsMobile";
 
 export default function Logo({ color }) {
   const isMobile = useIsMobile();

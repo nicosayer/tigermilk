@@ -1,11 +1,11 @@
-import { DAYS, RESTAURANTS } from "../../config/enums";
+import { DAYS, RESTAURANTS } from "config/enums";
 
 import { Dialog } from "@blueprintjs/core";
 import Head from "next/head";
-import globalStyles from "../../styles/Global.module.css";
-import lang from "../../lang";
-import styles from "../../styles/Location.module.css";
-import { useIsMobile } from "../../hooks/useIsMobile";
+import globalStyles from "styles/Global.module.css";
+import lang from "lang";
+import styles from "styles/Location.module.css";
+import { useIsMobile } from "hooks/useIsMobile";
 import { useRouter } from "next/router";
 
 export default function Location({ params, color, locale }) {

@@ -1,45 +1,17 @@
-import "../styles/globals.css";
+import "styles/globals.css";
 import "@blueprintjs/core/lib/css/blueprint.css";
 
-import { COLORS, LANGUAGES } from "../config/enums";
-import { chunk, shuffle } from "lodash/fp";
+import { getLocale, randomChunks, randomColor } from "utils";
 import { useEffect, useState } from "react";
 
-import Footer from "../components/Footer";
-import Gallery from "../components/Gallery";
+import { DEFAULT_LANGUAGE } from "config/enums";
+import Footer from "components/Footer";
+import Gallery from "components/Gallery";
 import Head from "next/head";
-import Header from "../components/Header";
-import Logo from "../components/Logo";
-import globalStyles from "../styles/Global.module.css";
-import imagesData from "../scripts/imagesData.json";
-import styles from "../styles/Layout.module.css";
-
-const DEFAULT_LANGUAGE = "en";
-
-const randomColor = (currentColorName) => {
-  const remainingColors = COLORS.filter(
-    ({ name }) => name !== currentColorName
-  );
-  return remainingColors[
-    Math.floor(Math.random() * Math.floor(remainingColors.length))
-  ];
-};
-
-const randomChunks = () => {
-  return chunk(6, shuffle(Object.keys(imagesData).slice(0, 60)));
-};
-
-const getLocale = (locale) => {
-  if (LANGUAGES[locale]) {
-    return locale;
-  }
-
-  if (LANGUAGES[localStorage.locale]) {
-    return localStorage.locale;
-  }
-
-  return DEFAULT_LANGUAGE;
-};
+import Header from "components/Header";
+import Logo from "components/Logo";
+import globalStyles from "styles/Global.module.css";
+import styles from "styles/Layout.module.css";
 
 function MyApp({ Component, pageProps }) {
   const [color, setColor] = useState({});
@@ -71,7 +43,7 @@ function MyApp({ Component, pageProps }) {
         />
         <meta
           property="og:title"
-          content="TIGERMILK - 4 restaurants in Paris & Brussels"
+          content="TIGERMILK - Paris & Brussels"
         />
         <meta
           property="og:description"

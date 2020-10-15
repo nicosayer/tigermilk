@@ -14,5 +14,6 @@
   display: grid;
   align-items: center;
   text-align: center;
-  padding: 5px 0;
+  padding-top: 4px;
+  padding-bottom: 2px;
 }

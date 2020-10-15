@@ -2,14 +2,14 @@ import { Position, Toast, Toaster } from "@blueprintjs/core";
 import { faFacebookF, faInstagram } from "@fortawesome/free-brands-svg-icons";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { LANGUAGES } from "../config/enums";
+import { LANGUAGES } from "config/enums";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
-import globalStyles from "../styles/Global.module.css";
-import lang from "../lang";
-import styles from "../styles/Footer.module.css";
-import { useIsMobile } from "../hooks/useIsMobile";
+import globalStyles from "styles/Global.module.css";
+import lang from "lang";
+import styles from "styles/Footer.module.css";
+import { useIsMobile } from "hooks/useIsMobile";
 
-function Footer({ locale,setLocale }) {
+function Footer({ locale, setLocale }) {
   const isMobile = useIsMobile();
 
   const languagesArray = Object.entries(LANGUAGES);
