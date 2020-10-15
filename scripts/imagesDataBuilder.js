@@ -1,6 +1,6 @@
 const fs = require("fs");
 const path = require("path");
-var sizeOf = require("image-size");
+const sizeOf = require("image-size");
 
 const data = fs
   .readdirSync(path.join(__dirname, "../public/pictures"))

@@ -1,26 +1,32 @@
 {
+  "days": {
+    "friday": "Vendredi",
+    "monday": "Lundi",
+    "saturday": "Samedi",
+    "sunday": "Dimanche",
+    "thursday": "Jeudi",
+    "tuesday": "Mardi",
+    "wednesday": "Mercredi"
+  },
+  "footer": {
+    "jobOffers": {
+      "joinUs": "Vous voulez rejoindre l'équipe ?"
+    },
+    "socialMedias": {
+      "followUs": "Suivez-nous"
+    }
+  },
   "header": {
-    "MENU": "MENU",
+    "FAQ": "FAQ",
     "LOCATIONS": "RESTAURANTS",
-    "FAQ": "FAQ"
+    "MENU": "MENU"
   },
   "locations": {
     "Address": "Adresse",
     "Contact": "Contact",
+    "Email": "Email",
     "OpeningHours": "Horaires",
     "Tel": "Tél",
-    "Email": "Email",
-    "Monday": "Lundi",
-    "Tuesday": "Mardi",
-    "Wednesday": "Mercredi",
-    "Thursday": "Jeudi",
-    "Friday": "Vendredi",
-    "Saturday": "Samedi",
-    "Sunday": "Dimanche",
     "noReservations": "Nous ne prenons pas de réservation, nos restaurants vous accueillent tous les jours de la semaine pour le déjeuner et le diner."
-  },
-  "footer": {
-    "socialMedias": { "followUs": "Suivez-nous" },
-    "jobOffers": { "joinUs": "Vous voulez rejoindre l'équipe ?" }
   }
 }

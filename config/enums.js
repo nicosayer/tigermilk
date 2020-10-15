@@ -128,13 +128,13 @@ export const RESTAURANTS = [
 ];
 
 export const DAYS = [
-  { name: { en: "Monday", fr: "Lundi" }, slug: "monday" },
-  { name: { en: "Tuesday", fr: "Mardi" }, slug: "tuesday" },
-  { name: { en: "Wednesday", fr: "Mercredi" }, slug: "wednesday" },
-  { name: { en: "Thursday", fr: "Jeudi" }, slug: "thursday" },
-  { name: { en: "Friday", fr: "Vendredi" }, slug: "friday" },
-  { name: { en: "Saturday", fr: "Samedi" }, slug: "saturday" },
-  { name: { en: "Sunday", fr: "Dimanche" }, slug: "sunday" },
+  "monday",
+  "tuesday",
+  "wednesday",
+  "thursday",
+  "friday",
+  "saturday",
+  "sunday",
 ];
 
 export const COLORS = [

@@ -1,26 +1,32 @@
 {
+  "days": {
+    "friday": "Friday",
+    "monday": "Monday",
+    "saturday": "Saturday",
+    "sunday": "Sunday",
+    "thursday": "Thursday",
+    "tuesday": "Tuesday",
+    "wednesday": "Wednesday"
+  },
+  "footer": {
+    "jobOffers": {
+      "joinUs": "Want to join the team ?"
+    },
+    "socialMedias": {
+      "followUs": "Follow us"
+    }
+  },
   "header": {
-    "MENU": "MENU",
+    "FAQ": "FAQ",
     "LOCATIONS": "LOCATIONS",
-    "FAQ": "FAQ"
+    "MENU": "MENU"
   },
   "locations": {
     "Address": "Address",
     "Contact": "Contact",
+    "Email": "Email",
     "OpeningHours": "OpeningHours",
     "Tel": "Tel",
-    "Email": "Email",
-    "Monday": "Monday",
-    "Tuesday": "Tuesday",
-    "Wednesday": "Wednesday",
-    "Thursday": "Thursday",
-    "Friday": "Friday",
-    "Saturday": "Saturday",
-    "Sunday": "Sunday",
     "noReservations": "The restaurant doesn’t take reservations. Our team welcomes you every day for lunch and dinner."
-  },
-  "footer": {
-    "socialMedias": { "followUs": "Follow us" },
-    "jobOffers": { "joinUs": "Want to join the team ?" }
   }
 }

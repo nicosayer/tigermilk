@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "npm run build-images-data && next build",
     "start": "next start",
-    "build-images-data": "node scripts/imagesDataBuilder.js"
+    "build-images-data": "node scripts/imagesDataBuilder.js",
+    "sort-langs": "node scripts/sortLangs.js"
   },
   "dependencies": {
     "@blueprintjs/core": "^3.33.0",
@@ -20,6 +21,7 @@
     "react-dom": "16.13.1"
   },
   "devDependencies": {
-    "image-size": "^0.9.1"
+    "image-size": "^0.9.1",
+    "sort-json": "^2.0.0"
   }
 }

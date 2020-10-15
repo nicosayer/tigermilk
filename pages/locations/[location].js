@@ -60,7 +60,7 @@ export default function Location({ params, color, locale }) {
             </div>
             <div className={globalStyles["margin-t"]}>
               <table className={styles.table}>
-                {DAYS.map(({ slug, name }, index) => {
+                {DAYS.map((slug, index) => {
                   return (
                     <tr
                       key={slug}
@@ -70,7 +70,7 @@ export default function Location({ params, color, locale }) {
                           : undefined
                       }
                     >
-                      <td>{name[locale]}</td>
+                      <td>{lang[locale]?.days[slug]}</td>
                       <td>{restaurant.openingHours[slug].lunch}</td>
                       <td>{restaurant.openingHours[slug].diner}</td>
                     </tr>
