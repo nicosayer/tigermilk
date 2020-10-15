@@ -11,7 +11,7 @@ import Head from "next/head";
 import Header from "components/Header";
 import Logo from "components/Logo";
 import globalStyles from "styles/Global.module.css";
-import styles from "styles/Layout.module.css";
+import layoutStyles from "styles/Layout.module.css";
 
 function MyApp({ Component, pageProps }) {
   const [color, setColor] = useState({});
@@ -41,10 +41,7 @@ function MyApp({ Component, pageProps }) {
           name="keywords"
           content="restaurant, paris, bruxelles, brussels, tigermilk"
         />
-        <meta
-          property="og:title"
-          content="TIGERMILK - Paris & Brussels"
-        />
+        <meta property="og:title" content="TIGERMILK - Paris & Brussels" />
         <meta
           property="og:description"
           content="Fast, Fresh, Fun, affordable latin flavored food! All dishes are made in house. Our sourcing provides you with high quality products from sustainable suppliers. Every day we cook, chop, and bake fresh ingredients to make sure you taste great flavours!"
@@ -59,19 +56,19 @@ function MyApp({ Component, pageProps }) {
         />
       </Head>
       <Header locale={locale} setLocale={setLocale} />
-      <div className={styles.body}>
-        <div
-          className={globalStyles.pointer}
-          onClick={() => {
-            setColor(randomColor(color.name));
-            setChunks(randomChunks());
-          }}
-        >
-          <Logo color={color} />
-        </div>
-        <Gallery chunks={chunks} />
-        <Footer locale={locale} setLocale={setLocale} />
+      <div
+        className={globalStyles.pointer}
+        onClick={() => {
+          setColor(randomColor(color.name));
+          setChunks(randomChunks());
+        }}
+      >
+        <Logo color={color} />
       </div>
+      <div className={layoutStyles.body}>
+        <Gallery chunks={chunks} />
+      </div>
+      <Footer locale={locale} setLocale={setLocale} />
       <Component {...pageProps} color={color} locale={locale} />
       <style jsx global>{`
         a,
