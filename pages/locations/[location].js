@@ -77,9 +77,7 @@ export default function Location({ params, color, locale }) {
                 </div>
               </Box>
             </Box>
-            <Title color={color}>
-              {languages[locale]?.word.OpeningHours}
-            </Title>
+            <Title color={color}>{languages[locale]?.word.OpeningHours}</Title>
             <Box style={{ marginTop: "10px" }}>
               <Box as="table" style={{ width: "100%" }}>
                 <tbody>
@@ -135,13 +133,13 @@ export default function Location({ params, color, locale }) {
   );
 }
 
-export async function getStaticPaths() {
+export const getStaticPaths = () => {
   return {
     paths: RESTAURANTS.map(({ slug }) => `/locations/${slug}`),
     fallback: false,
   };
-}
+};
 
-export async function getStaticProps({ params }) {
+export const getStaticProps = ({ params }) => {
   return { props: { params } };
-}
+};
