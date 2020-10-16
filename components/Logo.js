@@ -13,8 +13,8 @@ export const Logo = ({ color }) => {
     <Box
       style={{
         display: "flex",
-        position: "fixed",
         zIndex: "1",
+        position: "fixed",
         top: "50%",
         left: "50%",
         transform: "translate(-50%, -50%)",
