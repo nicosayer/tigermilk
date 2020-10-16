@@ -1,3 +1,4 @@
+import { Box } from "components/Box";
 import { Dialog } from "@blueprintjs/core";
 import Head from "next/head";
 import { QUESTIONS } from "config/enums";
@@ -25,7 +26,7 @@ export default function FAQ({ locale, color }) {
                 marginBottom: index + 1 < array.length ? "40px" : undefined,
               }}
             >
-              <Box style={{ fontSize: "large", color: color.hex }}>
+              <Box style={{ fontSize: "large", color: color }}>
                 {title[locale]}
               </Box>
               <Box

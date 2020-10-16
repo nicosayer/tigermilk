@@ -75,7 +75,7 @@ export const Header = ({ locale, setLocale, color }) => {
                 </Menu>
               }
             >
-              <Title color={color.hex}>{languages[locale]?.header.MENU}</Title>
+              <Title color={color}>{languages[locale]?.header.MENU}</Title>
             </Popover>
             <Popover
               interactionKind={PopoverInteractionKind.HOVER}
@@ -93,13 +93,13 @@ export const Header = ({ locale, setLocale, color }) => {
                 </Menu>
               }
             >
-              <Title color={color.hex}>
+              <Title color={color}>
                 {languages[locale]?.header.LOCATIONS}
               </Title>
             </Popover>
             <Link href={`/faq`}>
               <div>
-                <Title color={color.hex}>{languages[locale]?.header.FAQ}</Title>
+                <Title color={color}>{languages[locale]?.header.FAQ}</Title>
               </div>
             </Link>
             <Title>

@@ -11,11 +11,11 @@ export const LanguageSwitch = ({ locale, setLocale, color }) => {
         setLocale(locale === "en" ? "fr" : "en");
       }}
     >
-      <Box as="span" style={{ color: locale === "en" ? color.hex : undefined }}>
+      <Box as="span" style={{ color: locale === "en" ? color : undefined }}>
         EN
       </Box>
       /
-      <Box as="span" style={{ color: locale === "fr" ? color.hex : undefined }}>
+      <Box as="span" style={{ color: locale === "fr" ? color : undefined }}>
         FR
       </Box>
     </Box>

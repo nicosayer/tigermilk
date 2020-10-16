@@ -11,9 +11,10 @@ import { Gallery } from "components/Gallery";
 import Head from "next/head";
 import { Header } from "components/Header";
 import { Logo } from "components/Logo";
+import theme from "config/theme";
 
-function MyApp({ Component, pageProps }) {
-  const [color, setColor] = useState({});
+export default function App({ Component, pageProps }) {
+  const [color, setColor] = useState("");
   const [chunks, setChunks] = useState([]);
   const [locale, setLocale] = useState(DEFAULT_LANGUAGE);
 
@@ -51,14 +52,14 @@ function MyApp({ Component, pageProps }) {
         <link
           rel="icon"
           type="image/png"
-          href={`/logos/favicon-${color.name}.png`}
+          href={`/logos/favicon-${color}.png`}
         />
       </Head>
       <Header locale={locale} setLocale={setLocale} color={color} />
       <Box
         style={{ cursor: "pointer" }}
         onClick={() => {
-          setColor(randomColor(color.name));
+          setColor(randomColor(color));
           setChunks(randomChunks());
         }}
       >
@@ -79,13 +80,10 @@ function MyApp({ Component, pageProps }) {
       <Footer locale={locale} setLocale={setLocale} color={color} />
       <Component {...pageProps} color={color} locale={locale} />
       <style jsx global>{`
-        a,
-        .color {
-          color: ${color.hex} !important;
+        a {
+          color: ${theme.color[color]} !important;
         }
       `}</style>
     </>
   );
 }
-
-export default MyApp;
