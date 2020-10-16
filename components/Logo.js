@@ -1,5 +1,5 @@
 import { Box } from "components/Box";
-import { getColorFilter } from "utils";
+import { COLOR_FILTER } from "config/enums";
 import { useIsMobile } from "hooks/useIsMobile";
 
 export const Logo = ({ color }) => {
@@ -29,7 +29,7 @@ export const Logo = ({ color }) => {
         style={{
           maxWidth: "400px",
           maxHeight: "100px",
-          filter: getColorFilter(color),
+          filter: COLOR_FILTER[color],
         }}
         src={isMobile ? "/logos/monogram.svg" : "/logos/logo.svg"}
       />
