@@ -264,12 +264,7 @@ export const QUESTIONS = [
   },
 ];
 
-export const LANGUAGES = {
-  en: { short: "EN" },
-  fr: { short: "FR" },
-};
-
-export const DEFAULT_LANGUAGE = "en";
+export const LANGUAGES = ["en", "fr"];
 
 export const GALLERY_GRID_GAP = "4px";
 

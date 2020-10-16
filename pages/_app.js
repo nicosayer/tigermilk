@@ -1,7 +1,7 @@
 import "styles/globals.css";
 import "@blueprintjs/core/lib/css/blueprint.css";
 
-import { DEFAULT_LANGUAGE, GALLERY_GRID_GAP } from "config/enums";
+import { GALLERY_GRID_GAP, LANGUAGES } from "config/enums";
 import { getLocale, randomChunks, randomColor } from "utils";
 import { useEffect, useState } from "react";
 
@@ -16,7 +16,7 @@ import theme from "config/theme";
 export default function App({ Component, pageProps }) {
   const [color, setColor] = useState("");
   const [chunks, setChunks] = useState([]);
-  const [locale, setLocale] = useState(DEFAULT_LANGUAGE);
+  const [locale, setLocale] = useState(LANGUAGES[0]);
 
   useEffect(() => {
     setColor(randomColor());
