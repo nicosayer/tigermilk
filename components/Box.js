@@ -20,6 +20,7 @@ export const Box = ({
   ...rest
 }) => {
   const Element = as;
+
   return (
     <Element
       className={cx(
