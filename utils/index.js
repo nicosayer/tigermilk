@@ -1,4 +1,4 @@
-import { COLORS, DEFAULT_LANGUAGE, LANGUAGES } from "config/enums";
+import { COLORS, LANGUAGES } from "config/enums";
 import { chunk, shuffle } from "lodash/fp";
 
 import imagesData from "scripts/imagesData.json";
@@ -15,13 +15,17 @@ export const randomChunks = () => {
 };
 
 export const getLocale = (locale) => {
-  if (LANGUAGES[locale]) {
+  if (LANGUAGES.includes(locale)) {
     return locale;
   }
 
-  if (LANGUAGES[localStorage.locale]) {
+  if (LANGUAGES.includes(localStorage.locale)) {
     return localStorage.locale;
   }
 
-  return DEFAULT_LANGUAGE;
+  if (LANGUAGES.includes(navigator.language.substring(0, 2))) {
+    return navigator.language.substring(0, 2);
+  }
+
+  return LANGUAGES[0];
 };
