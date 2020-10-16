@@ -1,17 +1,16 @@
 import "styles/globals.css";
 import "@blueprintjs/core/lib/css/blueprint.css";
 
+import { DEFAULT_LANGUAGE, GALLERY_GRID_GAP } from "config/enums";
 import { getLocale, randomChunks, randomColor } from "utils";
 import { useEffect, useState } from "react";
 
-import { DEFAULT_LANGUAGE } from "config/enums";
-import Footer from "components/Footer";
-import Gallery from "components/Gallery";
+import { Box } from "components/Box";
+import { Footer } from "components/Footer";
+import { Gallery } from "components/Gallery";
 import Head from "next/head";
-import Header from "components/Header";
-import Logo from "components/Logo";
-import globalStyles from "styles/Global.module.css";
-import layoutStyles from "styles/Layout.module.css";
+import { Header } from "components/Header";
+import { Logo } from "components/Logo";
 
 function MyApp({ Component, pageProps }) {
   const [color, setColor] = useState({});
@@ -55,20 +54,29 @@ function MyApp({ Component, pageProps }) {
           href={`/logos/favicon-${color.name}.png`}
         />
       </Head>
-      <Header locale={locale} setLocale={setLocale} />
-      <div
-        className={globalStyles.pointer}
+      <Header locale={locale} setLocale={setLocale} color={color} />
+      <Box
+        style={{ cursor: "pointer" }}
         onClick={() => {
           setColor(randomColor(color.name));
           setChunks(randomChunks());
         }}
       >
         <Logo color={color} />
-      </div>
-      <div className={layoutStyles.body}>
+      </Box>
+      <Box
+        style={{
+          position: "fixed",
+          top: GALLERY_GRID_GAP,
+          left: GALLERY_GRID_GAP,
+          right: GALLERY_GRID_GAP,
+          bottom: GALLERY_GRID_GAP,
+          overflow: "hidden",
+        }}
+      >
         <Gallery chunks={chunks} />
-      </div>
-      <Footer locale={locale} setLocale={setLocale} />
+      </Box>
+      <Footer locale={locale} setLocale={setLocale} color={color} />
       <Component {...pageProps} color={color} locale={locale} />
       <style jsx global>{`
         a,

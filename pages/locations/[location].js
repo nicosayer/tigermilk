@@ -1,12 +1,26 @@
 import { DAYS, RESTAURANTS } from "config/enums";
 
+import { Box } from "components/Box";
 import { Dialog } from "@blueprintjs/core";
 import Head from "next/head";
-import globalStyles from "styles/Global.module.css";
+import { getColorFilter } from "utils";
 import languages from "languages";
-import styles from "styles/Location.module.css";
 import { useIsMobile } from "hooks/useIsMobile";
 import { useRouter } from "next/router";
+
+const Title = ({ color, ...rest }) => {
+  return (
+    <Box
+      style={{
+        fontSize: "large",
+        lineHeight: "large",
+        color,
+        marginBottom: "10px",
+      }}
+      {...rest}
+    />
+  );
+};
 
 export default function Location({ params, color, locale }) {
   const { location } = params;
@@ -26,84 +40,97 @@ export default function Location({ params, color, locale }) {
         usePortal={false}
         backdropClassName="bp3-backdrop"
       >
-        <div
-          className={styles.body}
-          style={{ gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr" }}
+        <Box
+          style={{
+            display: "grid",
+            gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr",
+          }}
         >
-          <div className={`${styles["text-container"]}`}>
-            <div className={`${globalStyles.title} color`}>
-              {languages[locale]?.word.Address}
-            </div>
-            <div
-              className={`${globalStyles["margin-t"]} ${globalStyles["margin-b"]}`}
-            >
-              {restaurant.address}
-            </div>
-            <div className={`${globalStyles.title} color`}>
-              {languages[locale]?.word.Contact}
-            </div>
-            <div className={globalStyles["margin-t"]}>
-              {languages[locale]?.locations.noReservations}
-            </div>
-            <div
-              className={`${globalStyles["margin-t"]} ${globalStyles["margin-b"]}`}
-            >
-              {restaurant.phone && (
+          <Box
+            style={{
+              padding: "20px",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+            }}
+          >
+            <Box style={{ marginBottom: "40px" }}>
+              <Title color={color.hex}>{languages[locale]?.word.Address}</Title>
+              <div>{restaurant.address}</div>
+            </Box>
+            <Box style={{ marginTop: "10px", marginBottom: "40px" }}>
+              <Title color={color.hex}>{languages[locale]?.word.Contact}</Title>
+              <div>{languages[locale]?.locations.noReservations}</div>
+              <Box style={{ marginTop: "10px" }}>
+                {restaurant.phone && (
+                  <div>
+                    {languages[locale]?.word.Tel}
+                    {languages[locale]?.[":"]}
+                    {restaurant.phone}
+                  </div>
+                )}
                 <div>
-                  {languages[locale]?.word.Tel}
+                  {languages[locale]?.word.Email}
                   {languages[locale]?.[":"]}
-                  {restaurant.phone}
+                  <a href={`mailto:${restaurant.email}`} target="_blank">
+                    {restaurant.email}
+                  </a>
                 </div>
-              )}
-              <div>
-                {languages[locale]?.word.Email}
-                {languages[locale]?.[":"]}
-                <a href={`mailto:${restaurant.email}`} target="_blank">
-                  {restaurant.email}
-                </a>
-              </div>
-            </div>
-            <div className={`${globalStyles.title} color`}>
+              </Box>
+            </Box>
+            <Title color={color.hex}>
               {languages[locale]?.word.OpeningHours}
-            </div>
-            <div className={globalStyles["margin-t"]}>
-              <table className={styles.table}>
+            </Title>
+            <Box style={{ marginTop: "10px" }}>
+              <Box as="table" style={{ width: "100%" }}>
                 <tbody>
                   {DAYS.map((slug, index) => {
                     return (
-                      <tr
+                      <Box
+                        as="tr"
+                        style={{
+                          fontWeight:
+                            new Date().getDay() === index + 1
+                              ? "bold"
+                              : undefined,
+                        }}
                         key={slug}
-                        className={
-                          new Date().getDay() === index + 1
-                            ? globalStyles.bold
-                            : undefined
-                        }
                       >
                         <td>{languages[locale]?.days[slug]}</td>
                         <td>{restaurant.openingHours[slug].lunch}</td>
                         <td>{restaurant.openingHours[slug].diner}</td>
-                      </tr>
+                      </Box>
                     );
                   })}
                 </tbody>
-              </table>
-            </div>
-          </div>
+              </Box>
+            </Box>
+          </Box>
           {!isMobile && (
-            <div className={styles["image-container"]}>
-              <img
-                className={styles["location-image"]}
+            <Box style={{ position: "relative", width: "100%" }}>
+              <Box
+                as="img"
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                }}
                 src={`/locations/${restaurant.slug}.png`}
               />
-              <img
-                className={`${globalStyles[`filter-${color.name}`]} ${
-                  styles.monogram
-                }`}
+              <Box
+                as="img"
+                style={{
+                  position: "absolute",
+                  top: "calc(50% - 15px)",
+                  left: "calc(50% - 15px)",
+                  width: "30px",
+                  filter: getColorFilter(color.name),
+                }}
                 src="/logos/monogram.svg"
               />
-            </div>
+            </Box>
           )}
-        </div>
+        </Box>
       </Dialog>
     </div>
   );
