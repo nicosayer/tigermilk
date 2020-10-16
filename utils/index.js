@@ -4,9 +4,7 @@ import { chunk, shuffle } from "lodash/fp";
 import imagesData from "scripts/imagesData.json";
 
 export const randomColor = (currentColorName) => {
-  const remainingColors = COLORS.filter(
-    ({ name }) => name !== currentColorName
-  );
+  const remainingColors = COLORS.filter((name) => name !== currentColorName);
   return remainingColors[
     Math.floor(Math.random() * Math.floor(remainingColors.length))
   ];

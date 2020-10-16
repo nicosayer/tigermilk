@@ -41,6 +41,7 @@ export const RESTAURANTS = [
         75010 Paris, France
       </span>
     ),
+    phone: "(+33) 1 42 41 17 01",
     email: "hello@tigermilkgroup.com",
     menus: [
       {
@@ -103,7 +104,6 @@ export const RESTAURANTS = [
         75009 Paris, France
       </span>
     ),
-    phone: "(+33) 1 40 15 97 73",
     email: "hello@tigermilkgroup.com",
     menus: [
       {
@@ -135,12 +135,6 @@ export const DAYS = [
   "friday",
   "saturday",
   "sunday",
-];
-
-export const COLORS = [
-  { name: "orange", hex: "#F06A37" },
-  { name: "jade", hex: "#00B675" },
-  { name: "pink", hex: "#FD1BAB" },
 ];
 
 export const QUESTIONS = [
@@ -277,4 +271,6 @@ export const LANGUAGES = {
 
 export const DEFAULT_LANGUAGE = "en";
 
-export const GALLERY_GRID_GAP = '4px'
+export const GALLERY_GRID_GAP = "4px";
+
+export const COLORS = ["orange", "jade", "pink"];

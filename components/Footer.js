@@ -3,7 +3,6 @@ import { faFacebookF, faInstagram } from "@fortawesome/free-brands-svg-icons";
 
 import { Box } from "components/Box";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { LANGUAGES } from "config/enums";
 import { LanguageSwitch } from "components/LanguageSwitch";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import languages from "languages";
@@ -11,8 +10,6 @@ import { useIsMobile } from "hooks/useIsMobile";
 
 export const Footer = ({ locale, setLocale, color }) => {
   const isMobile = useIsMobile();
-
-  const languagesArray = Object.entries(LANGUAGES);
 
   return (
     <>
@@ -25,7 +22,7 @@ export const Footer = ({ locale, setLocale, color }) => {
                 justifyContent: "space-between",
                 alignItems: "center",
                 textAlign: "center",
-                color: color.hex,
+                color: color,
               }}
             >
               <div>
@@ -91,7 +88,7 @@ export const Footer = ({ locale, setLocale, color }) => {
                   justifyContent: "space-between",
                   alignItems: "center",
                   textAlign: "center",
-                  color: color.hex,
+                  color: color,
                 }}
               >
                 <div>

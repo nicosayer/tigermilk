@@ -29,7 +29,7 @@ export const Logo = ({ color }) => {
         style={{
           maxWidth: "400px",
           maxHeight: "100px",
-          filter: getColorFilter(color.name),
+          filter: getColorFilter(color),
         }}
         src={isMobile ? "/logos/monogram.svg" : "/logos/logo.svg"}
       />

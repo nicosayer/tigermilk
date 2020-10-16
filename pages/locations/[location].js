@@ -55,11 +55,11 @@ export default function Location({ params, color, locale }) {
             }}
           >
             <Box style={{ marginBottom: "40px" }}>
-              <Title color={color.hex}>{languages[locale]?.word.Address}</Title>
+              <Title color={color}>{languages[locale]?.word.Address}</Title>
               <div>{restaurant.address}</div>
             </Box>
             <Box style={{ marginTop: "10px", marginBottom: "40px" }}>
-              <Title color={color.hex}>{languages[locale]?.word.Contact}</Title>
+              <Title color={color}>{languages[locale]?.word.Contact}</Title>
               <div>{languages[locale]?.locations.noReservations}</div>
               <Box style={{ marginTop: "10px" }}>
                 {restaurant.phone && (
@@ -78,7 +78,7 @@ export default function Location({ params, color, locale }) {
                 </div>
               </Box>
             </Box>
-            <Title color={color.hex}>
+            <Title color={color}>
               {languages[locale]?.word.OpeningHours}
             </Title>
             <Box style={{ marginTop: "10px" }}>
@@ -124,7 +124,7 @@ export default function Location({ params, color, locale }) {
                   top: "calc(50% - 15px)",
                   left: "calc(50% - 15px)",
                   width: "30px",
-                  filter: getColorFilter(color.name),
+                  filter: getColorFilter(color),
                 }}
                 src="/logos/monogram.svg"
               />
