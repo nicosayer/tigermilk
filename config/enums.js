@@ -276,3 +276,5 @@ export const LANGUAGES = {
 };
 
 export const DEFAULT_LANGUAGE = "en";
+
+export const GALLERY_GRID_GAP = '4px'

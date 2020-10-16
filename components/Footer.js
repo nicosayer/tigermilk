@@ -1,15 +1,15 @@
 import { Position, Toast, Toaster } from "@blueprintjs/core";
 import { faFacebookF, faInstagram } from "@fortawesome/free-brands-svg-icons";
 
+import { Box } from "components/Box";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { LANGUAGES } from "config/enums";
+import { LanguageSwitch } from "components/LanguageSwitch";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
-import globalStyles from "styles/Global.module.css";
 import languages from "languages";
-import styles from "styles/Footer.module.css";
 import { useIsMobile } from "hooks/useIsMobile";
 
-function Footer({ locale, setLocale }) {
+export const Footer = ({ locale, setLocale, color }) => {
   const isMobile = useIsMobile();
 
   const languagesArray = Object.entries(LANGUAGES);
@@ -19,33 +19,47 @@ function Footer({ locale, setLocale }) {
       <Toaster position={Position.BOTTOM_LEFT}>
         <Toast
           message={
-            <div className={`${styles["social-toast"]} color`}>
+            <Box
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+                textAlign: "center",
+                color: color.hex,
+              }}
+            >
               <div>
                 {languages[locale]?.footer.socialMedias.followUs}
                 <br />
-                <a
-                  className={globalStyles.italic}
+                <Box
+                  as="a"
+                  style={{ fontStyle: "italic" }}
                   href="https://www.instagram.com/tigermilkrestaurants"
                   target="_blank"
                 >
                   @tigermilkrestaurants
-                </a>
+                </Box>
               </div>
-              <div className={globalStyles["margin-x"]}>
+              <Box
+                style={{
+                  marginLeft: "20px",
+                  marginRight: "20px",
+                }}
+              >
                 <a
                   href="https://www.instagram.com/tigermilkrestaurants"
                   target="_blank"
                 >
                   <FontAwesomeIcon icon={faInstagram} size="lg" />
                 </a>
-              </div>
+              </Box>
               <a
                 href="https://www.facebook.com/tigermilkrestaurants"
                 target="_blank"
               >
                 <FontAwesomeIcon icon={faFacebookF} size="lg" />
               </a>
-            </div>
+            </Box>
           }
         />
       </Toaster>
@@ -53,55 +67,55 @@ function Footer({ locale, setLocale }) {
         {isMobile ? (
           <Toast
             message={
-              <div
-                className={`${styles["language-toast"]} ${globalStyles.gray}`}
-                onClick={() => {
-                  const currentIndex = languagesArray.findIndex(
-                    ([key]) => key === locale
-                  );
-                  const [nextLang] =
-                    languagesArray[currentIndex + 1] || languagesArray[0];
-                  setLocale(nextLang);
+              <Box
+                style={{
+                  height: "36px",
+                  display: "flex",
+                  alignItems: "center",
                 }}
               >
-                {languagesArray.map(([key, { short }], index) => (
-                  <React.Fragment key={key}>
-                    {index > 0 && "/"}
-                    <span className={locale === key ? "color" : undefined}>
-                      {short}
-                    </span>
-                  </React.Fragment>
-                ))}
-              </div>
+                <LanguageSwitch
+                  locale={locale}
+                  setLocale={setLocale}
+                  color={color}
+                />
+              </Box>
             }
           />
         ) : (
           <Toast
             message={
-              <div className={`${styles["social-toast"]} color`}>
+              <Box
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  textAlign: "center",
+                  color: color.hex,
+                }}
+              >
                 <div>
                   {languages[locale]?.footer.jobOffers.joinTheTeam}
                   <br />
-                  <a
-                    className={globalStyles.italic}
+                  <Box
+                    as="a"
+                    style={{ fontStyle: "italic" }}
                     href="mailto:hello@tigermilkgroup.com"
                     target="_blank"
                   >
                     hello@tigermilkgroup.com
-                  </a>
+                  </Box>
                 </div>
-                <div className={globalStyles["margin-l"]}>
+                <Box style={{ marginLeft: "20px" }}>
                   <a href="mailto:hello@tigermilkgroup.com" target="_blank">
                     <FontAwesomeIcon icon={faEnvelope} size="lg" />
                   </a>
-                </div>
-              </div>
+                </Box>
+              </Box>
             }
           />
         )}
       </Toaster>
     </>
   );
-}
-
-export default Footer;
+};

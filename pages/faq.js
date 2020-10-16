@@ -1,11 +1,9 @@
 import { Dialog } from "@blueprintjs/core";
 import Head from "next/head";
 import { QUESTIONS } from "config/enums";
-import globalStyles from "styles/Global.module.css";
-import styles from "styles/FAQ.module.css";
 import { useRouter } from "next/router";
 
-export default function FAQ({ locale }) {
+export default function FAQ({ locale, color }) {
   const router = useRouter();
 
   return (
@@ -13,24 +11,34 @@ export default function FAQ({ locale }) {
       <Head>
         <title>TIGERMILK • FAQ</title>
       </Head>
-      <Dialog isOpen onClose={() => router.push("/")} usePortal={false} backdropClassName='bp3-backdrop'>
-        <div className={styles.body}>
+      <Dialog
+        isOpen
+        onClose={() => router.push("/")}
+        usePortal={false}
+        backdropClassName="bp3-backdrop"
+      >
+        <Box style={{ padding: "20px" }}>
           {QUESTIONS.map(({ title, content }, index, array) => (
-            <div
+            <Box
               key={title.fr}
-              className={
-                index + 1 < array.length ? globalStyles["margin-b"] : undefined
-              }
+              style={{
+                marginBottom: index + 1 < array.length ? "40px" : undefined,
+              }}
             >
-              <div className={`${globalStyles.title} color`}>
+              <Box style={{ fontSize: "large", color: color.hex }}>
                 {title[locale]}
-              </div>
-              <div className={globalStyles["margin-y"]}>
+              </Box>
+              <Box
+                style={{
+                  marginTop: "10px",
+                  marginBottom: "10px",
+                }}
+              >
                 <p>{content[locale]}</p>
-              </div>
-            </div>
+              </Box>
+            </Box>
           ))}
-        </div>
+        </Box>
       </Dialog>
     </div>
   );

@@ -27,3 +27,16 @@ export const getLocale = (locale) => {
 
   return DEFAULT_LANGUAGE;
 };
+
+export const getColorFilter = (color) => {
+  switch (color) {
+    case "jade":
+      return "invert(63%) sepia(50%) saturate(6672%) hue-rotate(128deg) brightness(96%) contrast(101%)";
+    case "orange":
+      return "invert(54%) sepia(91%) saturate(2309%) hue-rotate(338deg) brightness(97%) contrast(95%)";
+    case "pink":
+      return "invert(28%) sepia(65%) saturate(4651%) hue-rotate(306deg) brightness(99%) contrast(109%)";
+    default:
+      return "";
+  }
+};

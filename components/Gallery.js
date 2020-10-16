@@ -1,28 +1,53 @@
+import { Box } from "components/Box";
+import { GALLERY_GRID_GAP } from "config/enums";
 import imagesData from "scripts/imagesData.json";
-import styles from "styles/Gallery.module.css";
 
-export default function Gallery({ chunks }) {
+export const Gallery = ({ chunks }) => {
   return (
-    <div className={styles.grid}>
+    <Box
+      style={{
+        display: "grid",
+        gridTemplateColumns: "repeat(auto-fill, minmax(250px, 1fr))",
+        gridGap: GALLERY_GRID_GAP,
+      }}
+    >
       {chunks.map((array) => (
-        <div key={array.join("")} className={styles.column}>
+        <Box
+          key={array.join("")}
+          style={{
+            display: "flex",
+            flexDirection: "column",
+          }}
+        >
           {array.map((id) => {
             return (
-              <div
+              <Box
                 key={id}
-                className={styles["image-container"]}
                 style={{
+                  position: "relative",
+                  width: "100%",
+                  marginBottom: GALLERY_GRID_GAP,
+                  overflow: "hidden",
                   paddingTop: `${
                     (imagesData[id]?.height / imagesData[id]?.width) * 100
                   }%`,
                 }}
               >
-                <img src={`/pictures/${id}.jpg`} />
-              </div>
+                <Box
+                  as="img"
+                  style={{
+                    position: "absolute",
+                    top: "0",
+                    left: "0",
+                    width: "100%",
+                  }}
+                  src={`/pictures/${id}.jpg`}
+                />
+              </Box>
             );
           })}
-        </div>
+        </Box>
       ))}
-    </div>
+    </Box>
   );
-}
+};

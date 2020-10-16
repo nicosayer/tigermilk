@@ -1,4 +1,3 @@
-import { LANGUAGES, RESTAURANTS } from "config/enums";
 import {
   Menu,
   MenuDivider,
@@ -10,23 +9,46 @@ import {
   Toaster,
 } from "@blueprintjs/core";
 
+import { Box } from "components/Box";
+import { LanguageSwitch } from "components/LanguageSwitch";
 import Link from "next/link";
-import globalStyles from "styles/Global.module.css";
+import { RESTAURANTS } from "config/enums";
 import languages from "languages";
-import styles from "styles/Header.module.css";
 import { useIsMobile } from "hooks/useIsMobile";
 
-export default function Header({ locale, setLocale }) {
-  const languagesArray = Object.entries(LANGUAGES);
+const Title = ({ color, ...rest }) => {
+  return (
+    <Box
+      style={{
+        cursor: "pointer",
+        fontSize: 'large',
+        lineHeight: 'large',
+        color,
+      }}
+      focus={{
+        outline: "none",
+      }}
+      {...rest}
+    />
+  );
+};
+
+export const Header = ({ locale, setLocale, color }) => {
   const isMobile = useIsMobile();
 
   return (
     <Toaster position={Position.Top}>
       <Toast
         message={
-          <div
-            className={styles.toast}
+          <Box
             style={{
+              whiteSpace: "nowrap",
+              width: "calc(100vw - 62px)",
+              display: "grid",
+              alignItems: "center",
+              textAlign: "center",
+              paddingTop: "4px",
+              paddingBottom: "2px",
               gridTemplateColumns: isMobile ? "1fr 1fr 1fr" : "1fr 1fr 1fr 1fr",
             }}
           >
@@ -53,9 +75,7 @@ export default function Header({ locale, setLocale }) {
                 </Menu>
               }
             >
-              <div className={`color ${styles.title}`}>
-                {languages[locale]?.header.MENU}
-              </div>
+              <Title color={color.hex}>{languages[locale]?.header.MENU}</Title>
             </Popover>
             <Popover
               interactionKind={PopoverInteractionKind.HOVER}
@@ -65,45 +85,33 @@ export default function Header({ locale, setLocale }) {
                 <Menu>
                   {RESTAURANTS.map(({ name, slug }) => (
                     <Link key={name[locale]} href={`/locations/${slug}`}>
-                      <MenuItem text={name[locale]} />
+                      <div>
+                        <MenuItem text={name[locale]} />
+                      </div>
                     </Link>
                   ))}
                 </Menu>
               }
             >
-              <div className={`color ${styles.title}`}>
+              <Title color={color.hex}>
                 {languages[locale]?.header.LOCATIONS}
-              </div>
+              </Title>
             </Popover>
             <Link href={`/faq`}>
-              <div className={`color ${styles.title}`}>
-                {languages[locale]?.header.FAQ}
+              <div>
+                <Title color={color.hex}>{languages[locale]?.header.FAQ}</Title>
               </div>
             </Link>
-            <div
-              className={`${styles.title} ${globalStyles.gray}`}
-              onClick={() => {
-                const currentIndex = languagesArray.findIndex(
-                  ([key]) => key === locale
-                );
-                const [nextLang] =
-                  languagesArray[currentIndex + 1] || languagesArray[0];
-                setLocale(nextLang);
-              }}
-            >
-              {!isMobile &&
-                languagesArray.map(([key, { short }], index) => (
-                  <React.Fragment key={key}>
-                    {index > 0 && "/"}
-                    <span className={locale === key ? "color" : undefined}>
-                      {short}
-                    </span>
-                  </React.Fragment>
-                ))}
-            </div>
-          </div>
+            <Title>
+              <LanguageSwitch
+                locale={locale}
+                setLocale={setLocale}
+                color={color}
+              />
+            </Title>
+          </Box>
         }
       />
     </Toaster>
   );
-}
+};
