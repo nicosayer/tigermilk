@@ -31,7 +31,7 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <meta charset="utf-8" />
+        <meta charSet="utf-8" />
         <title>TIGERMILK</title>
         <meta
           name="description"
