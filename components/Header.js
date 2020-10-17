@@ -16,13 +16,12 @@ import { RESTAURANTS } from "config/enums";
 import languages from "languages";
 import { useIsMobile } from "hooks/useIsMobile";
 
-const Title = ({ color, ...rest }) => {
+const Title = ({ ...rest }) => {
   return (
     <Box
       style={{
         fontSize: "large",
         lineHeight: "large",
-        color: color,
       }}
       {...rest}
     />
@@ -49,7 +48,11 @@ export const Header = ({ locale, setLocale, color }) => {
             }}
           >
             <Popover
-              interactionKind={PopoverInteractionKind.HOVER}
+              interactionKind={
+                isMobile
+                  ? PopoverInteractionKind.CLICK
+                  : PopoverInteractionKind.HOVER
+              }
               position={Position.BOTTOM}
               captureDismiss
               content={
@@ -72,11 +75,15 @@ export const Header = ({ locale, setLocale, color }) => {
               }
             >
               <Title color={color}>
-                <Link href="">{languages[locale]?.header.MENU}</Link>
+                <a>{languages[locale]?.header.MENU}</a>
               </Title>
             </Popover>
             <Popover
-              interactionKind={PopoverInteractionKind.HOVER}
+              interactionKind={
+                isMobile
+                  ? PopoverInteractionKind.CLICK
+                  : PopoverInteractionKind.HOVER
+              }
               position={Position.BOTTOM}
               captureDismiss
               content={
@@ -92,7 +99,7 @@ export const Header = ({ locale, setLocale, color }) => {
               }
             >
               <Title color={color}>
-                <Link href="">{languages[locale]?.header.LOCATIONS}</Link>
+                <a>{languages[locale]?.header.LOCATIONS}</a>
               </Title>
             </Popover>
             <Title color={color}>

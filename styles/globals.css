@@ -15,6 +15,10 @@ body {
   box-sizing: border-box;
 }
 
+a:focus {
+  outline: none;
+}
+
 .bp3-menu {
   text-align: center !important;
 }
