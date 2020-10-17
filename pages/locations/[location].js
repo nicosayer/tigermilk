@@ -135,7 +135,7 @@ export default function Location({ params, color, locale }) {
 
 export async function getStaticPaths() {
   return {
-    paths: RESTAURANTS.map(({ slug }) => `/locations/${slug}`),
+    paths: RESTAURANTS.map(({ slug }) => ({ params: { location: slug } })),
     fallback: false,
   };
 }
