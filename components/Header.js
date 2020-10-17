@@ -20,13 +20,9 @@ const Title = ({ color, ...rest }) => {
   return (
     <Box
       style={{
-        cursor: "pointer",
-        fontSize: 'large',
-        lineHeight: 'large',
-        color,
-      }}
-      focus={{
-        outline: "none",
+        fontSize: "large",
+        lineHeight: "large",
+        color: color,
       }}
       {...rest}
     />
@@ -75,7 +71,9 @@ export const Header = ({ locale, setLocale, color }) => {
                 </Menu>
               }
             >
-              <Title color={color}>{languages[locale]?.header.MENU}</Title>
+              <Title color={color}>
+                <Link href="">{languages[locale]?.header.MENU}</Link>
+              </Title>
             </Popover>
             <Popover
               interactionKind={PopoverInteractionKind.HOVER}
@@ -94,21 +92,21 @@ export const Header = ({ locale, setLocale, color }) => {
               }
             >
               <Title color={color}>
-                {languages[locale]?.header.LOCATIONS}
+                <Link href="">{languages[locale]?.header.LOCATIONS}</Link>
               </Title>
             </Popover>
-            <Link href={`/faq`}>
-              <div>
-                <Title color={color}>{languages[locale]?.header.FAQ}</Title>
-              </div>
-            </Link>
-            <Title>
-              <LanguageSwitch
-                locale={locale}
-                setLocale={setLocale}
-                color={color}
-              />
+            <Title color={color}>
+              <Link href="/faq">{languages[locale]?.header.FAQ}</Link>
             </Title>
+            {!isMobile && (
+              <Title>
+                <LanguageSwitch
+                  locale={locale}
+                  setLocale={setLocale}
+                  color={color}
+                />
+              </Title>
+            )}
           </Box>
         }
       />
