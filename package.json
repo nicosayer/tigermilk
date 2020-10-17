@@ -7,6 +7,7 @@
     "@fortawesome/react-fontawesome": "^0.1.11",
     "emotion": "^10.0.27",
     "next": "9.5.4",
+    "next-on-netlify": "^2.5.1",
     "react": "16.13.1",
     "react-dom": "16.13.1"
   },
@@ -18,10 +19,11 @@
   "name": "tigermilk-next",
   "private": true,
   "scripts": {
-    "build": "npm run build-images-data && next build",
+    "build": "next build",
     "build-images-data": "node scripts/imagesDataBuilder.js",
     "dev": "next dev",
     "export": "npm run build && next export",
+    "postbuild": "next-on-netlify",
     "sort-json": "node scripts/sortJson.js",
     "start": "next start"
   },
