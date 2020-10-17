@@ -77,9 +77,7 @@ export default function Location({ params, color, locale }) {
                 </div>
               </Box>
             </Box>
-            <Title color={color}>
-              {languages[locale]?.word.OpeningHours}
-            </Title>
+            <Title color={color}>{languages[locale]?.word.OpeningHours}</Title>
             <Box style={{ marginTop: "10px" }}>
               <Box as="table" style={{ width: "100%" }}>
                 <tbody>
