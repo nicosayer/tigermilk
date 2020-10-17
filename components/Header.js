@@ -23,6 +23,9 @@ const Title = ({ ...rest }) => {
         fontSize: "large",
         lineHeight: "large",
       }}
+      focus={{
+        outline: "none",
+      }}
       {...rest}
     />
   );
