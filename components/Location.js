@@ -131,14 +131,3 @@ export const Location = ({ location, color, locale }) => {
     </div>
   );
 };
-
-export async function getStaticPaths() {
-  return {
-    paths: RESTAURANTS.map(({ slug }) => ({ params: { location: slug } })),
-    fallback: false,
-  };
-}
-
-export async function getStaticProps({ params }) {
-  return { props: { params } };
-}
