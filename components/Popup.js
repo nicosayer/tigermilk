@@ -12,8 +12,10 @@ export const Popup = ({ color }) => {
       <Box
         style={{
           display: "grid",
+          cursor: "pointer",
           gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr",
         }}
+        onClick={() => setIsOpen(false)}
       >
         <Box style={{ marginLeft: "20px", marginRight: "20px" }}>
           <Box
