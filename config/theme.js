@@ -1,7 +1,7 @@
 export const cssKeyToThemeKey = {
   fontSize: "fontSize",
   lineHeight: "fontSize",
-  borderRadius: "borderRadius",
+  borderRadius: "radius",
   boxShadow: "boxShadow",
   color: "color",
   backgroundColor: "color",
@@ -9,7 +9,7 @@ export const cssKeyToThemeKey = {
 
 export default {
   fontSize: { large: "18px" },
-  borderRadius: { classic: "4px" },
+  radius: { classic: "4px" },
   boxShadow: { classic: "0 0 10px #00000080" },
   color: {
     orange: "#F06A37",

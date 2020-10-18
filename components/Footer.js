@@ -2,6 +2,8 @@ import { Position, Toast, Toaster } from "@blueprintjs/core";
 import { faFacebookF, faInstagram } from "@fortawesome/free-brands-svg-icons";
 
 import { Box } from "components/Box";
+import { EMAIL } from "config/enums";
+import { Email } from "components/Email";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { LanguageSwitch } from "components/LanguageSwitch";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
@@ -94,17 +96,10 @@ export const Footer = ({ locale, setLocale, color }) => {
                 <div>
                   {languages[locale]?.footer.jobOffers.joinTheTeam}
                   <br />
-                  <Box
-                    as="a"
-                    style={{ fontStyle: "italic" }}
-                    href="mailto:hello@tigermilkgroup.com"
-                    target="_blank"
-                  >
-                    hello@tigermilkgroup.com
-                  </Box>
+                  <Email />
                 </div>
                 <Box style={{ marginLeft: "20px" }}>
-                  <a href="mailto:hello@tigermilkgroup.com" target="_blank">
+                  <a href={`mailto:${EMAIL}`} target="_blank">
                     <FontAwesomeIcon icon={faEnvelope} size="lg" />
                   </a>
                 </Box>

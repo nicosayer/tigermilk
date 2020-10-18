@@ -1,3 +1,5 @@
+import { Email } from "components/Email";
+
 export const RESTAURANTS = [
   {
     name: { en: "Brussels", fr: "Bruxelles" },
@@ -10,7 +12,7 @@ export const RESTAURANTS = [
       </span>
     ),
     phone: "(+32) 2 537 37 73",
-    email: "hello@tigermilkgroup.com",
+    email: <Email />,
     menus: [
       { name: { en: "Food", fr: "Menu" }, pdf: "Menu_Food_Brussels.pdf" },
       {
@@ -42,7 +44,7 @@ export const RESTAURANTS = [
       </span>
     ),
     phone: "(+33) 1 42 41 17 01",
-    email: "hello@tigermilkgroup.com",
+    email: <Email />,
     menus: [
       {
         name: { en: "Food", fr: "Menu" },
@@ -77,7 +79,7 @@ export const RESTAURANTS = [
       </span>
     ),
     phone: "(+33) 1 40 15 97 73",
-    email: "hello@tigermilkgroup.com",
+    email: <Email />,
     menus: [
       {
         name: { en: "Food", fr: "Menu" },
@@ -104,7 +106,7 @@ export const RESTAURANTS = [
         75009 Paris, France
       </span>
     ),
-    email: "hello@tigermilkgroup.com",
+    email: <Email />,
     menus: [
       {
         name: { en: "Food", fr: "Menu" },
@@ -128,13 +130,13 @@ export const RESTAURANTS = [
 ];
 
 export const DAYS = [
-  "monday",
-  "tuesday",
-  "wednesday",
-  "thursday",
-  "friday",
-  "saturday",
-  "sunday",
+  { slug: "monday", index: 1 },
+  { slug: "tuesday", index: 2 },
+  { slug: "wednesday", index: 3 },
+  { slug: "thursday", index: 4 },
+  { slug: "friday", index: 5 },
+  { slug: "saturday", index: 6 },
+  { slug: "sunday", index: 0 },
 ];
 
 export const QUESTIONS = [
@@ -183,22 +185,15 @@ export const QUESTIONS = [
       fr: (
         <span>
           Nous ne faisons pas de privatisation, mais pour les groupes
-          d'anniversaire ou d'évènements spéciaux, écrivez nous à{" "}
-          <a href="mailto:hello@tigermilkgroup.com" target="_blank">
-            hello@tigermilkgroup.com
-          </a>{" "}
-          et nous ferons notre possible pour vous accueillir en groupe.
+          d'anniversaire ou d'évènements spéciaux, écrivez nous à <Email /> et
+          nous ferons notre possible pour vous accueillir en groupe.
         </span>
       ),
       en: (
         <span>
           It is not possible to book the entire place, but if you want to
           celebrate a birthday or special event in our restaurant, feel free to
-          contact us at{" "}
-          <a href="mailto:hello@tigermilkgroup.com" target="_blank">
-            hello@tigermilkgroup.com
-          </a>{" "}
-          and we will do our best to accommodate you.
+          contact us at <Email /> and we will do our best to accommodate you.
         </span>
       ),
     },
@@ -263,6 +258,8 @@ export const QUESTIONS = [
     },
   },
 ];
+
+export const EMAIL = "hello@tigermilkgroup.com";
 
 export const LANGUAGES = ["en", "fr"];
 

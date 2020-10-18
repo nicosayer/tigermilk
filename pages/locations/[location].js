@@ -71,9 +71,7 @@ export default function Location({ params, color, locale }) {
                 <div>
                   {languages[locale]?.word.Email}
                   {languages[locale]?.[":"]}
-                  <a href={`mailto:${restaurant.email}`} target="_blank">
-                    {restaurant.email}
-                  </a>
+                  {restaurant.email}
                 </div>
               </Box>
             </Box>
@@ -81,17 +79,15 @@ export default function Location({ params, color, locale }) {
             <Box style={{ marginTop: "10px" }}>
               <Box as="table" style={{ width: "100%" }}>
                 <tbody>
-                  {DAYS.map((slug, index) => {
+                  {DAYS.map(({ slug, index }) => {
                     return (
                       <Box
+                        key={slug}
                         as="tr"
                         style={{
                           fontWeight:
-                            new Date().getDay() === index + 1
-                              ? "bold"
-                              : undefined,
+                            new Date().getDay() === index ? "bold" : undefined,
                         }}
-                        key={slug}
                       >
                         <td>{languages[locale]?.days[slug]}</td>
                         <td>{restaurant.openingHours[slug].lunch}</td>
