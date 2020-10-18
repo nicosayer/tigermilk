@@ -31,19 +31,10 @@ export const Gallery = ({ chunks }) => {
                   paddingTop: `${
                     (imagesData[id]?.height / imagesData[id]?.width) * 100
                   }%`,
+                  backgroundImage: `url("/pictures/${id}.jpg")`,
+                  backgroundSize: "cover",
                 }}
-              >
-                <Box
-                  as="img"
-                  style={{
-                    position: "absolute",
-                    top: "0",
-                    left: "0",
-                    width: "100%",
-                  }}
-                  src={`/pictures/${id}.jpg`}
-                />
-              </Box>
+              />
             );
           })}
         </Box>

@@ -275,3 +275,13 @@ export const COLOR_FILTER = {
   pink:
     "invert(28%) sepia(65%) saturate(4651%) hue-rotate(306deg) brightness(99%) contrast(109%)",
 };
+
+export const INSTAGRAM = {
+  name: "@tigermilkrestaurants",
+  url: "https://www.instagram.com/tigermilkrestaurants",
+};
+
+export const FACEBOOK = {
+  name: "@tigermilkrestaurants",
+  url: "https://www.facebook.com/tigermilkrestaurants",
+};

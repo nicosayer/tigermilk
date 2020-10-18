@@ -1,8 +1,8 @@
+import { EMAIL, FACEBOOK, INSTAGRAM } from "config/enums";
 import { Position, Toast, Toaster } from "@blueprintjs/core";
 import { faFacebookF, faInstagram } from "@fortawesome/free-brands-svg-icons";
 
 import { Box } from "components/Box";
-import { EMAIL } from "config/enums";
 import { Email } from "components/Email";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { LanguageSwitch } from "components/LanguageSwitch";
@@ -33,10 +33,10 @@ export const Footer = ({ locale, setLocale, color }) => {
                 <Box
                   as="a"
                   style={{ fontStyle: "italic" }}
-                  href="https://www.instagram.com/tigermilkrestaurants"
+                  href={INSTAGRAM.url}
                   target="_blank"
                 >
-                  @tigermilkrestaurants
+                  {INSTAGRAM.name}
                 </Box>
               </div>
               <Box
@@ -45,17 +45,11 @@ export const Footer = ({ locale, setLocale, color }) => {
                   marginRight: "20px",
                 }}
               >
-                <a
-                  href="https://www.instagram.com/tigermilkrestaurants"
-                  target="_blank"
-                >
+                <a href={INSTAGRAM.url} target="_blank">
                   <FontAwesomeIcon icon={faInstagram} size="lg" />
                 </a>
               </Box>
-              <a
-                href="https://www.facebook.com/tigermilkrestaurants"
-                target="_blank"
-              >
+              <a href={FACEBOOK.url} target="_blank">
                 <FontAwesomeIcon icon={faFacebookF} size="lg" />
               </a>
             </Box>

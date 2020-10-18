@@ -39,7 +39,7 @@ export default function App({ Component, pageProps }) {
         />
         <meta
           name="keywords"
-          content="restaurant, paris, bruxelles, brussels, tigermilk"
+          content="restaurant, paris, bruxelles, brussels, tigermilk, food, south, america"
         />
         <meta property="og:title" content="TIGERMILK - Paris & Brussels" />
         <meta

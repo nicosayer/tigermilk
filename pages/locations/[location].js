@@ -102,15 +102,17 @@ export default function Location({ params, color, locale }) {
           {!isMobile && (
             <Box style={{ position: "relative", width: "100%" }}>
               <Box
-                as="img"
                 style={{
                   width: "100%",
                   height: "100%",
-                  objectFit: "cover",
+                  backgroundSize: "cover",
+                  backgroundImage: `url("/locations/${restaurant.slug}.png")`,
+                  borderTopRightRadius: "classic",
+                  borderBottomRightRadius: "classic",
                 }}
-                src={`/locations/${restaurant.slug}.png`}
               />
               <Box
+                alt="Tigermilk logo"
                 as="img"
                 style={{
                   position: "absolute",

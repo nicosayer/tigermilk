@@ -25,6 +25,7 @@ export const Logo = ({ color }) => {
       }}
     >
       <Box
+        alt="Tigermilk logo"
         as="img"
         style={{
           maxWidth: "400px",
