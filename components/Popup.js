@@ -20,7 +20,7 @@ export const Popup = ({ color }) => {
         <Box style={{ marginLeft: "20px", marginRight: "20px" }}>
           <Box
             as="img"
-            src={`logos/owl-${color}.png`}
+            src={`/logos/owl-${color}.png`}
             style={{
               height: "200px",
               width: "200px",
@@ -60,7 +60,7 @@ export const Popup = ({ color }) => {
           </Box>
           <Box
             as="img"
-            src={`logos/giraffe-${color}.png`}
+            src={`/logos/giraffe-${color}.png`}
             style={{
               height: "200px",
               width: "200px",
@@ -71,7 +71,7 @@ export const Popup = ({ color }) => {
         {!isMobile && (
           <Box
             style={{
-              backgroundImage: 'url("pictures/40.jpg")',
+              backgroundImage: 'url("/pictures/40.jpg")',
               backgroundSize: "cover",
               height: "100%",
               width: "100%",
