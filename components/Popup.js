@@ -27,7 +27,13 @@ export const Popup = ({ color }) => {
               objectFit: "contain",
             }}
           />
-          <Box style={{ marginBottom: "40px" }}>
+          <Box
+            style={{
+              marginBottom: "40px",
+              textAlign: "justify",
+              textAlignLast: "center",
+            }}
+          >
             À compter du 17 octobre, tous nos restaurants parisiens seront{" "}
             <Box as="span" style={{ color: color }}>
               ouverts dès 18h30
@@ -36,7 +42,14 @@ export const Popup = ({ color }) => {
             BIG NEWS, notre restaurant Canal St-Martin propose désormais le
             brunch samedi et dimanche !
           </Box>
-          <Box style={{ marginBottom: "10px", fontStyle: "italic" }}>
+          <Box
+            style={{
+              marginBottom: "10px",
+              fontStyle: "italic",
+              textAlign: "justify",
+              textAlignLast: "center",
+            }}
+          >
             From October 17, all of our Parisian restaurants will be{" "}
             <Box as="span" style={{ color: color }}>
               open from 6.30 p.m.
