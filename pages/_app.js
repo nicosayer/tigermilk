@@ -11,6 +11,7 @@ import { Gallery } from "components/Gallery";
 import Head from "next/head";
 import { Header } from "components/Header";
 import { Logo } from "components/Logo";
+import { Popup } from "components/Popup";
 import theme from "config/theme";
 
 export default function App({ Component, pageProps }) {
@@ -78,6 +79,7 @@ export default function App({ Component, pageProps }) {
         <Gallery chunks={chunks} />
       </Box>
       <Footer locale={locale} setLocale={setLocale} color={color} />
+      <Popup color={color} />
       <Component {...pageProps} color={color} locale={locale} />
       <style jsx global>{`
         a {
