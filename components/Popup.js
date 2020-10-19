@@ -14,6 +14,8 @@ export const Popup = ({ color }) => {
           display: "grid",
           cursor: "pointer",
           gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr",
+          overflow: "hidden",
+          borderRadius: "classic",
         }}
         onClick={() => setIsOpen(false)}
       >
