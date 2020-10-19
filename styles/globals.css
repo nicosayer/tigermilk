@@ -1,6 +1,6 @@
 @font-face {
   font-family: Archer;
-  src: url("public/fonts/Archer-Medium.otf") format("opentype");
+  src: url("../public/fonts/Archer-Medium.otf") format("opentype");
 }
 
 html,
