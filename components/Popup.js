@@ -72,6 +72,7 @@ export const Popup = ({ color }) => {
           <Box
             style={{
               backgroundImage: 'url("/pictures/40.jpg")',
+              backgroundPosition: "center",
               backgroundSize: "cover",
               height: "100%",
               width: "100%",

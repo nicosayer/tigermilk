@@ -107,6 +107,7 @@ export default function Location({ params, color, locale }) {
                   height: "100%",
                   backgroundSize: "cover",
                   backgroundImage: `url("/locations/${restaurant.slug}.png")`,
+                  backgroundPosition: "center",
                   borderTopRightRadius: "classic",
                   borderBottomRightRadius: "classic",
                 }}
