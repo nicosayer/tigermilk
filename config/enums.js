@@ -263,18 +263,7 @@ export const EMAIL = "hello@tigermilkgroup.com";
 
 export const LANGUAGES = ["en", "fr"];
 
-export const GALLERY_GRID_GAP = "4px";
-
-export const COLORS = ["orange", "jade", "pink"];
-
-export const COLOR_FILTER = {
-  jade:
-    "invert(63%) sepia(50%) saturate(6672%) hue-rotate(128deg) brightness(96%) contrast(101%)",
-  orange:
-    "invert(54%) sepia(91%) saturate(2309%) hue-rotate(338deg) brightness(97%) contrast(95%)",
-  pink:
-    "invert(28%) sepia(65%) saturate(4651%) hue-rotate(306deg) brightness(99%) contrast(109%)",
-};
+export const MAIN_COLORS = ["orange", "jade", "pink"];
 
 export const INSTAGRAM = {
   name: "@tigermilkrestaurants",

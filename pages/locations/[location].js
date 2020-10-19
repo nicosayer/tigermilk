@@ -1,4 +1,4 @@
-import { COLOR_FILTER, DAYS, RESTAURANTS } from "config/enums";
+import { DAYS, RESTAURANTS } from "config/enums";
 
 import { Box } from "components/Box";
 import { Dialog } from "@blueprintjs/core";
@@ -119,7 +119,7 @@ export default function Location({ params, color, locale }) {
                   top: "calc(50% - 15px)",
                   left: "calc(50% - 15px)",
                   width: "30px",
-                  filter: COLOR_FILTER[color],
+                  filter: color,
                 }}
                 src="/logos/monogram.svg"
               />

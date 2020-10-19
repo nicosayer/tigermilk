@@ -3,11 +3,15 @@ import theme, { cssKeyToThemeKey } from "config/theme";
 
 import { kebabCase } from "lodash/fp";
 
+const getValueFromTheme = (key, value) => {
+  return theme[cssKeyToThemeKey[key]]?.[value] ?? value;
+};
+
 const withTheme = (style = {}) => {
   return Object.entries(style).reduce(
     (acc, [key, value]) => ({
       ...acc,
-      [key]: theme[cssKeyToThemeKey[key]]?.[value] ?? value,
+      [key]: getValueFromTheme(key, value),
     }),
     {}
   );
@@ -20,7 +24,7 @@ const jsToCss = (style = {}) => {
     }
     return `
     ${acc}
-    ${kebabCase(key)}:${theme[cssKeyToThemeKey[key]]?.[value] ?? value};
+    ${kebabCase(key)}:${getValueFromTheme(key, value)};
     `;
   }, "");
 };

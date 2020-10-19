@@ -1,7 +1,6 @@
 import "styles/globals.css";
 import "@blueprintjs/core/lib/css/blueprint.css";
 
-import { GALLERY_GRID_GAP, LANGUAGES } from "config/enums";
 import { getLocale, randomChunks, randomColor } from "utils";
 import { useEffect, useState } from "react";
 
@@ -10,6 +9,7 @@ import { Footer } from "components/Footer";
 import { Gallery } from "components/Gallery";
 import Head from "next/head";
 import { Header } from "components/Header";
+import { LANGUAGES } from "config/enums";
 import { Logo } from "components/Logo";
 import { Popup } from "components/Popup";
 import theme from "config/theme";
@@ -69,10 +69,10 @@ export default function App({ Component, pageProps }) {
       <Box
         style={{
           position: "fixed",
-          top: GALLERY_GRID_GAP,
-          left: GALLERY_GRID_GAP,
-          right: GALLERY_GRID_GAP,
-          bottom: GALLERY_GRID_GAP,
+          top: "grid-gap",
+          left: "grid-gap",
+          right: "grid-gap",
+          bottom: "grid-gap",
           overflow: "hidden",
         }}
       >
