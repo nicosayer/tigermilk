@@ -97,7 +97,7 @@ export const RESTAURANTS = [
     },
   },
   {
-    name: { en: "Paris - South Pigalle", fr: "Paris - Pigalle sud" },
+    name: { en: "Paris - South Pigalle", fr: "Paris - South Pigalle" },
     slug: "paris-south-pigalle",
     address: (
       <span>
@@ -241,9 +241,9 @@ export const QUESTIONS = [
     },
     content: {
       fr:
-        "Nous proposons le take-away uniquement au Tigermilk Bruxelles pour le moment.",
+        "Nous proposons le take-away uniquement aux Tigermilk Bruxelles et Paris Canal St-Martin pour le moment.",
       en:
-        "For the moment, we only offer take-away service at the Tigermilk Brussels.",
+        "For the moment, we only offer take-away service at the Tigermilk Brussels and Paris Canal St-Martin.",
     },
   },
   {
