@@ -51,6 +51,7 @@ export const Header = ({ locale, setLocale, color }) => {
             }}
           >
             <Popover
+              hoverOpenDelay={50}
               interactionKind={
                 isMobile
                   ? PopoverInteractionKind.CLICK
@@ -82,6 +83,7 @@ export const Header = ({ locale, setLocale, color }) => {
               </Title>
             </Popover>
             <Popover
+              hoverOpenDelay={50}
               interactionKind={
                 isMobile
                   ? PopoverInteractionKind.CLICK
