@@ -2,7 +2,7 @@ import {
   Menu,
   MenuDivider,
   MenuItem,
-  Popover,
+  Popover as BPPopover,
   PopoverInteractionKind,
   Position,
   Toast,
@@ -32,6 +32,26 @@ const Title = ({ ...rest }) => {
   );
 };
 
+const Popover = ({ content, text }) => {
+  const isMobile = useIsMobile();
+
+  return (
+    <BPPopover
+      hoverOpenDelay={50}
+      interactionKind={
+        isMobile ? PopoverInteractionKind.CLICK : PopoverInteractionKind.HOVER
+      }
+      position={Position.BOTTOM}
+      captureDismiss
+      content={content}
+    >
+      <Title>
+        <a>{text}</a>
+      </Title>
+    </BPPopover>
+  );
+};
+
 export const Header = ({ locale, setLocale, color }) => {
   const isMobile = useIsMobile();
 
@@ -51,14 +71,7 @@ export const Header = ({ locale, setLocale, color }) => {
             }}
           >
             <Popover
-              hoverOpenDelay={50}
-              interactionKind={
-                isMobile
-                  ? PopoverInteractionKind.CLICK
-                  : PopoverInteractionKind.HOVER
-              }
-              position={Position.BOTTOM}
-              captureDismiss
+              text={languages[locale]?.header.MENU}
               content={
                 <Menu>
                   {RESTAURANTS.map(({ name, menus }) => {
@@ -77,36 +90,23 @@ export const Header = ({ locale, setLocale, color }) => {
                   })}
                 </Menu>
               }
-            >
-              <Title>
-                <a>{languages[locale]?.header.MENU}</a>
-              </Title>
-            </Popover>
+            />
             <Popover
-              hoverOpenDelay={50}
-              interactionKind={
-                isMobile
-                  ? PopoverInteractionKind.CLICK
-                  : PopoverInteractionKind.HOVER
-              }
-              position={Position.BOTTOM}
-              captureDismiss
+              text={languages[locale]?.header.LOCATIONS}
               content={
                 <Menu>
-                  {RESTAURANTS.map(({ name, slug }) => (
-                    <Link key={name[locale]} href={`/locations/${slug}`}>
-                      <div>
-                        <MenuItem text={name[locale]} />
-                      </div>
-                    </Link>
-                  ))}
+                  {RESTAURANTS.map(({ name, slug }) => {
+                    return (
+                      <Link key={name[locale]} href={`/locations/${slug}`}>
+                        <div>
+                          <MenuItem text={name[locale]} />
+                        </div>
+                      </Link>
+                    );
+                  })}
                 </Menu>
               }
-            >
-              <Title>
-                <a>{languages[locale]?.header.LOCATIONS}</a>
-              </Title>
-            </Popover>
+            />
             <Title>
               <Link href="/faq">{languages[locale]?.header.FAQ}</Link>
             </Title>
