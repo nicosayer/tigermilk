@@ -249,7 +249,7 @@ export const QUESTIONS = [
   {
     title: {
       fr: "Comment régler mon addition ?",
-      en: "How do I pay the check?",
+      en: "How do I pay the bill?",
     },
     content: {
       fr:
