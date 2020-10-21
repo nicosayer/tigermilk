@@ -22,6 +22,7 @@ const Title = ({ ...rest }) => {
       style={{
         fontSize: "large",
         lineHeight: "large",
+        fontFamily: "title",
       }}
       focus={{
         outline: "none",
@@ -45,8 +46,7 @@ export const Header = ({ locale, setLocale, color }) => {
               display: "grid",
               alignItems: "center",
               textAlign: "center",
-              paddingTop: "4px",
-              paddingBottom: "2px",
+              paddingTop: "2px",
               gridTemplateColumns: isMobile ? "1fr 1fr 1fr" : "1fr 1fr 1fr 1fr",
             }}
           >
@@ -77,7 +77,7 @@ export const Header = ({ locale, setLocale, color }) => {
                 </Menu>
               }
             >
-              <Title color={color}>
+              <Title>
                 <a>{languages[locale]?.header.MENU}</a>
               </Title>
             </Popover>
@@ -101,11 +101,11 @@ export const Header = ({ locale, setLocale, color }) => {
                 </Menu>
               }
             >
-              <Title color={color}>
+              <Title>
                 <a>{languages[locale]?.header.LOCATIONS}</a>
               </Title>
             </Popover>
-            <Title color={color}>
+            <Title>
               <Link href="/faq">{languages[locale]?.header.FAQ}</Link>
             </Title>
             {!isMobile && (

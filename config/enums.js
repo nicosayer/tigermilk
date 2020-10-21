@@ -248,6 +248,18 @@ export const QUESTIONS = [
   },
   {
     title: {
+      fr: "Comment régler mon addition ?",
+      en: "How do I pay the check?",
+    },
+    content: {
+      fr:
+        "Nous acceptons uniquement les cartes de crédit (et tickets restaurants pour les midis de semaine), nous ne prenons pas le liquide !",
+      en:
+        "We only accept credit cards (and restaurant vouchers for weekday lunchtimes), we do not take cash!",
+    },
+  },
+  {
+    title: {
       fr: "Prenez vous les tickets restaurant ?",
       en: "Do you accept luncheon vouchers?",
     },

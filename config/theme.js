@@ -23,9 +23,13 @@ export const cssKeyToThemeKey = {
   paddingLeft: "size",
   paddingRight: "size",
   gridGap: "size",
+  fontFamily: "fontFamily",
 };
 
+const fallbackFonts= 'Ubuntu, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,  Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif'
+
 export default {
+  fontFamily: { title: `Druk, ${fallbackFonts}` },
   fontSize: { large: "18px" },
   radius: { classic: "4px" },
   boxShadow: { classic: "0 0 10px #00000080" },

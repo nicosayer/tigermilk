@@ -14,6 +14,7 @@ const Title = ({ color, ...rest }) => {
         fontSize: "large",
         lineHeight: "large",
         color,
+        fontFamily: "title",
         marginBottom: "10px",
       }}
       {...rest}

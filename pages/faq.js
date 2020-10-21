@@ -26,16 +26,17 @@ export default function FAQ({ locale, color }) {
                 marginBottom: index + 1 < array.length ? "40px" : undefined,
               }}
             >
-              <Box style={{ fontSize: "large", color: color }}>
+              <Box
+                style={{ fontSize: "large", color: color, fontFamily: "title" }}
+              >
                 {title[locale]}
               </Box>
               <Box
                 style={{
                   marginTop: "10px",
-                  marginBottom: "10px",
                 }}
               >
-                <p>{content[locale]}</p>
+                {content[locale]}
               </Box>
             </Box>
           ))}
