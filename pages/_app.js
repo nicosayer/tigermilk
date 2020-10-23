@@ -56,6 +56,39 @@ export default function App({ Component, pageProps }) {
           href={`/logos/favicon-${color}.png`}
         />
       </Head>
+      {!color && (
+        <Box
+          style={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            bottom: 0,
+            right: 0,
+            backgroundColor: color,
+            zIndex: 1000,
+          }}
+        >
+          <Box
+            style={{
+              position: "fixed",
+              top: "50%",
+              left: "50%",
+              transform: "translate(-50%, -50%)",
+            }}
+          >
+            <Box
+              alt="Tigermilk logo"
+              as="img"
+              style={{
+                maxWidth: "400px",
+                maxHeight: "100px",
+                filter: "white",
+              }}
+              src="/logos/monogram.svg"
+            />
+          </Box>
+        </Box>
+      )}
       <Header locale={locale} setLocale={setLocale} color={color} />
       <Box
         style={{ cursor: "pointer" }}

@@ -35,7 +35,9 @@ export default function FAQ({ locale, color }) {
             </div>
           )).reduce((acc, cur) => [
             acc,
-            <Box style={{ marginTop: "40px" }}>{cur}</Box>,
+            <Box key={cur.key} style={{ marginTop: "40px" }}>
+              {cur}
+            </Box>,
           ])}
         </Box>
       </Dialog>
