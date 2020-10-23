@@ -81,6 +81,7 @@ export const Header = ({ locale, setLocale, color }) => {
                           key={name[locale]}
                           text={name[locale]}
                           href={`/pdfs/${menus[0].pdf}`}
+                          target={!isMobile && "_blank"}
                         />
                       );
                     }
@@ -88,13 +89,14 @@ export const Header = ({ locale, setLocale, color }) => {
                       <MenuItem
                         key={name[locale]}
                         text={name[locale]}
-                        popoverProps={{ openOnTargetFocus: false, }}
+                        popoverProps={{ openOnTargetFocus: false }}
                       >
                         {menus.map(({ name, pdf }) => (
                           <MenuItem
                             key={name[locale]}
                             text={name[locale]}
                             href={`/pdfs/${pdf}`}
+                            target={!isMobile && "_blank"}
                           />
                         ))}
                       </MenuItem>

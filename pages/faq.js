@@ -20,24 +20,22 @@ export default function FAQ({ locale, color }) {
       >
         <Box style={{ padding: "20px" }}>
           {QUESTIONS.map(({ title, content }) => (
-            <Box key={title.fr}>
+            <div key={title.fr}>
               <Box
-                style={{ fontSize: "large", color: color, fontFamily: "title" }}
+                style={{
+                  fontSize: "large",
+                  color: color,
+                  fontFamily: "title",
+                  marginBottom: "10px",
+                }}
               >
                 {title[locale]}
               </Box>
-              <Box
-                style={{
-                  marginTop: "10px",
-                }}
-              >
-                {content[locale]}
-              </Box>
-            </Box>
+              <div>{content[locale]}</div>
+            </div>
           )).reduce((acc, cur) => [
             acc,
-            <Box style={{ marginBottom: "40px" }} />,
-            cur,
+            <Box style={{ marginTop: "40px" }}>{cur}</Box>,
           ])}
         </Box>
       </Dialog>
