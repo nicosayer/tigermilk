@@ -27,8 +27,8 @@
   },
   "word": {
     "Address": "Address",
-    "Delivery": "Delivery",
     "Contact": "Contact",
+    "Delivery": "Delivery",
     "Email": "Email",
     "OpeningHours": "Opening hours",
     "Tel": "Tel"
