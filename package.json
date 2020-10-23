@@ -22,7 +22,7 @@
     "build-images-data": "node scripts/imagesDataBuilder.js",
     "dev": "next dev",
     "export": "npm run build && next export",
-    "sort-json": "node scripts/sortJson.js",
+    "sort-json": "node scripts/jsonSorter.js",
     "start": "next start"
   },
   "version": "0.1.0"
