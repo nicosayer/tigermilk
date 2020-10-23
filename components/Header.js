@@ -75,9 +75,21 @@ export const Header = ({ locale, setLocale, color }) => {
               content={
                 <Menu>
                   {RESTAURANTS.map(({ name, menus }) => {
+                    if (menus.length === 1) {
+                      return (
+                        <MenuItem
+                          key={name[locale]}
+                          text={name[locale]}
+                          href={`/pdfs/${menus[0].pdf}`}
+                        />
+                      );
+                    }
                     return (
-                      <React.Fragment key={name[locale]}>
-                        <MenuDivider title={name[locale]} />
+                      <MenuItem
+                        key={name[locale]}
+                        text={name[locale]}
+                        popoverProps={{ openOnTargetFocus: false, }}
+                      >
                         {menus.map(({ name, pdf }) => (
                           <MenuItem
                             key={name[locale]}
@@ -85,7 +97,7 @@ export const Header = ({ locale, setLocale, color }) => {
                             href={`/pdfs/${pdf}`}
                           />
                         ))}
-                      </React.Fragment>
+                      </MenuItem>
                     );
                   })}
                 </Menu>

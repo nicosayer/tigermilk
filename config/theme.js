@@ -30,7 +30,7 @@ const fallbackFonts= 'Ubuntu, -apple-system, BlinkMacSystemFont, Segoe UI, Robot
 
 export default {
   fontFamily: { title: `Druk, ${fallbackFonts}` },
-  fontSize: { large: "18px" },
+  fontSize: { large: "20px" },
   radius: { classic: "4px" },
   boxShadow: { classic: "0 0 10px #00000080" },
   size: {
