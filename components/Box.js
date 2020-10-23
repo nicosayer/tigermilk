@@ -2,6 +2,7 @@ import { css, cx } from "emotion";
 import theme, { cssKeyToThemeKey } from "config/theme";
 
 import { kebabCase } from "lodash/fp";
+import { isUnset } from "utils";
 
 const getValueFromTheme = (key, value) => {
   return theme[cssKeyToThemeKey[key]]?.[value] ?? value;
@@ -19,7 +20,7 @@ const withTheme = (style = {}) => {
 
 const jsToCss = (style = {}) => {
   return Object.entries(style).reduce((acc, [key, value]) => {
-    if (value === undefined) {
+    if (isUnset(value)) {
       return acc;
     }
     return `

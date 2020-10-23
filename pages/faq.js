@@ -19,13 +19,8 @@ export default function FAQ({ locale, color }) {
         backdropClassName="bp3-backdrop"
       >
         <Box style={{ padding: "20px" }}>
-          {QUESTIONS.map(({ title, content }, index, array) => (
-            <Box
-              key={title.fr}
-              style={{
-                marginBottom: index + 1 < array.length ? "40px" : undefined,
-              }}
-            >
+          {QUESTIONS.map(({ title, content }) => (
+            <Box key={title.fr}>
               <Box
                 style={{ fontSize: "large", color: color, fontFamily: "title" }}
               >
@@ -39,7 +34,11 @@ export default function FAQ({ locale, color }) {
                 {content[locale]}
               </Box>
             </Box>
-          ))}
+          )).reduce((acc, cur) => [
+            acc,
+            <Box style={{ marginBottom: "40px" }} />,
+            cur,
+          ])}
         </Box>
       </Dialog>
     </div>

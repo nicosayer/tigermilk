@@ -76,6 +76,18 @@ export default function Location({ params, color, locale }) {
                 </div>
               </Box>
             </Box>
+            {restaurant.delivery && (
+              <Box style={{ marginBottom: "40px" }}>
+                <Title color={color}>{languages[locale]?.word.Delivery}</Title>
+                {restaurant.delivery
+                  .map(({ name, url }) => (
+                    <a key={name} href={url}>
+                      {name}
+                    </a>
+                  ))
+                  .reduce((acc, cur) => [acc, " - ", cur])}
+              </Box>
+            )}
             <Title color={color}>{languages[locale]?.word.OpeningHours}</Title>
             <Box as="table" style={{ width: "100%" }}>
               <tbody>

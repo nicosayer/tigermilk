@@ -13,6 +13,12 @@ export const RESTAURANTS = [
     ),
     phone: "(+32) 2 537 37 73",
     email: <Email />,
+    delivery: [
+      {
+        name: "Deliveroo",
+        url: "https://deliveroo.be/fr/menu/brussels/chatelain/2ms-bailli",
+      },
+    ],
     menus: [
       { name: { en: "Food", fr: "Menu" }, pdf: "Menu_Food_Brussels.pdf" },
       {
@@ -43,6 +49,18 @@ export const RESTAURANTS = [
         75010 Paris, France
       </span>
     ),
+    delivery: [
+      {
+        name: "Deliveroo",
+        url:
+          "https://deliveroo.fr/fr/menu/paris/paris-10eme-gare-de-lest/tigermilk-paris",
+      },
+      {
+        name: "Uber Eats",
+        url:
+          "https://www.ubereats.com/fr-en/paris/food-delivery/tigermilk-canal/JVaeD7tFScem3SbwcI5PYw",
+      },
+    ],
     phone: "(+33) 1 42 41 17 01",
     email: <Email />,
     menus: [

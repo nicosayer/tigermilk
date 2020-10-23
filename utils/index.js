@@ -4,8 +4,10 @@ import { chunk, shuffle } from "lodash/fp";
 import imagesData from "scripts/imagesData.json";
 
 export const randomColor = (currentColorName) => {
-  const remainingColors = MAIN_COLORS.filter((name) => name !== currentColorName);
- 
+  const remainingColors = MAIN_COLORS.filter(
+    (name) => name !== currentColorName
+  );
+
   return remainingColors[
     Math.floor(Math.random() * Math.floor(remainingColors.length))
   ];
@@ -29,4 +31,12 @@ export const getLocale = (locale) => {
   }
 
   return LANGUAGES[0];
+};
+
+export const isUnset = (value) => {
+  return [null, undefined].includes(value);
+};
+
+export const isSet = (value) => {
+  return !isUnset(value);
 };
