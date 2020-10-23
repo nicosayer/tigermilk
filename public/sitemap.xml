@@ -1,23 +1,21 @@
-
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://tigermilkrestaurants.com</loc>
-  </url>
-  <url>
-    <loc>https://tigermilkrestaurants.com/locations/brussels</loc>
-  </url>
-   <url>
-    <loc>https://tigermilkrestaurants.com/locations/paris-canal-st-martin</loc>
-  </url>
-   <url>
-    <loc>https://tigermilkrestaurants.com/locations/paris-sentier</loc>
-  </url>
-   <url>
-    <loc>https://tigermilkrestaurants.com/locations/paris-south-pigalle</loc>
-  </url>
-  <url>
-    <loc>https://tigermilkrestaurants.com/faq</loc>
-  </url>
+      <url>
+            <loc>https://tigermilkrestaurants.com</loc>
+      </url>
+      <url>
+            <loc>https://tigermilkrestaurants.com/locations/brussels</loc>
+      </url>
+      <url>
+            <loc>https://tigermilkrestaurants.com/locations/paris-canal-st-martin</loc>
+      </url>
+      <url>
+            <loc>https://tigermilkrestaurants.com/locations/paris-sentier</loc>
+      </url>
+      <url>
+            <loc>https://tigermilkrestaurants.com/locations/paris-south-pigalle</loc>
+      </url>
+      <url>
+            <loc>https://tigermilkrestaurants.com/faq</loc>
+      </url>
 </urlset>
-  
