@@ -1,12 +1,9 @@
 import {
   Menu,
-  MenuDivider,
   MenuItem,
   Popover as BPPopover,
   PopoverInteractionKind,
   Position,
-  Toast,
-  Toaster,
 } from "@blueprintjs/core";
 
 import { Box } from "components/Box";
@@ -15,6 +12,7 @@ import Link from "next/link";
 import { RESTAURANTS } from "config/enums";
 import languages from "languages";
 import { useIsMobile } from "hooks/useIsMobile";
+import { Toast } from "components/Toast";
 
 const Title = ({ ...rest }) => {
   return (
@@ -56,86 +54,82 @@ export const Header = ({ locale, setLocale, color }) => {
   const isMobile = useIsMobile();
 
   return (
-    <Toaster position={Position.Top}>
-      <Toast
-        message={
-          <Box
-            style={{
-              whiteSpace: "nowrap",
-              width: "calc(100vw - 62px)",
-              display: "grid",
-              alignItems: "center",
-              textAlign: "center",
-              paddingTop: "3px",
-              gridTemplateColumns: isMobile ? "1fr 1fr 1fr" : "1fr 1fr 1fr 1fr",
-            }}
-          >
-            <Popover
-              text={languages[locale]?.header.MENU}
-              content={
-                <Menu>
-                  {RESTAURANTS.map(({ name, menus }) => {
-                    if (menus.length === 1) {
-                      return (
-                        <MenuItem
-                          key={name[locale]}
-                          text={name[locale]}
-                          href={`/pdfs/${menus[0].pdf}`}
-                          target={!isMobile && "_blank"}
-                        />
-                      );
-                    }
-                    return (
+    <Toast top left right>
+      <Box
+        style={{
+          whiteSpace: "nowrap",
+          width: "calc(100vw - 62px)",
+          display: "grid",
+          alignItems: "center",
+          textAlign: "center",
+          paddingTop: "3px",
+          gridTemplateColumns: isMobile ? "1fr 1fr 1fr" : "1fr 1fr 1fr 1fr",
+        }}
+      >
+        <Popover
+          text={languages[locale]?.header.MENU}
+          content={
+            <Menu>
+              {RESTAURANTS.map(({ name, menus }) => {
+                if (menus.length === 1) {
+                  return (
+                    <MenuItem
+                      key={name[locale]}
+                      text={name[locale]}
+                      href={`/pdfs/${menus[0].pdf}`}
+                      target={!isMobile && "_blank"}
+                    />
+                  );
+                }
+                return (
+                  <MenuItem
+                    key={name[locale]}
+                    text={name[locale]}
+                    popoverProps={{ openOnTargetFocus: false }}
+                  >
+                    {menus.map(({ name, pdf }) => (
                       <MenuItem
                         key={name[locale]}
                         text={name[locale]}
-                        popoverProps={{ openOnTargetFocus: false }}
-                      >
-                        {menus.map(({ name, pdf }) => (
-                          <MenuItem
-                            key={name[locale]}
-                            text={name[locale]}
-                            href={`/pdfs/${pdf}`}
-                            target={!isMobile && "_blank"}
-                          />
-                        ))}
-                      </MenuItem>
-                    );
-                  })}
-                </Menu>
-              }
+                        href={`/pdfs/${pdf}`}
+                        target={!isMobile && "_blank"}
+                      />
+                    ))}
+                  </MenuItem>
+                );
+              })}
+            </Menu>
+          }
+        />
+        <Popover
+          text={languages[locale]?.header.LOCATIONS}
+          content={
+            <Menu>
+              {RESTAURANTS.map(({ name, slug }) => {
+                return (
+                  <Link key={name[locale]} href={`/locations/${slug}`}>
+                    <div>
+                      <MenuItem text={name[locale]} />
+                    </div>
+                  </Link>
+                );
+              })}
+            </Menu>
+          }
+        />
+        <Title>
+          <Link href="/faq">{languages[locale]?.header.FAQ}</Link>
+        </Title>
+        {!isMobile && (
+          <Title>
+            <LanguageSwitch
+              locale={locale}
+              setLocale={setLocale}
+              color={color}
             />
-            <Popover
-              text={languages[locale]?.header.LOCATIONS}
-              content={
-                <Menu>
-                  {RESTAURANTS.map(({ name, slug }) => {
-                    return (
-                      <Link key={name[locale]} href={`/locations/${slug}`}>
-                        <div>
-                          <MenuItem text={name[locale]} />
-                        </div>
-                      </Link>
-                    );
-                  })}
-                </Menu>
-              }
-            />
-            <Title>
-              <Link href="/faq">{languages[locale]?.header.FAQ}</Link>
-            </Title>
-            {!isMobile && (
-              <Title>
-                <LanguageSwitch
-                  locale={locale}
-                  setLocale={setLocale}
-                  color={color}
-                />
-              </Title>
-            )}
-          </Box>
-        }
-      />
-    </Toaster>
+          </Title>
+        )}
+      </Box>
+    </Toast>
   );
 };

@@ -22,6 +22,7 @@ export const Popup = ({ color }) => {
         <Box style={{ marginLeft: "20px", marginRight: "20px" }}>
           <Box
             as="img"
+            alt='Owl'
             src={`/logos/owl-${color}.png`}
             style={{
               height: "200px",
@@ -62,6 +63,7 @@ export const Popup = ({ color }) => {
           </Box>
           <Box
             as="img"
+            alt='Giraffe'
             src={`/logos/giraffe-${color}.png`}
             style={{
               height: "200px",
