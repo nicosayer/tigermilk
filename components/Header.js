@@ -66,7 +66,7 @@ export const Header = ({ locale, setLocale, color }) => {
               display: "grid",
               alignItems: "center",
               textAlign: "center",
-              paddingTop: "2px",
+              paddingTop: "3px",
               gridTemplateColumns: isMobile ? "1fr 1fr 1fr" : "1fr 1fr 1fr 1fr",
             }}
           >
