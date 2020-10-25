@@ -1,14 +1,25 @@
 import { Box } from "components/Box";
 import { Dialog } from "@blueprintjs/core";
 import { useIsMobile } from "hooks/useIsMobile";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export const Popup = ({ color }) => {
   const [isOpen, setIsOpen] = useState(true);
   const isMobile = useIsMobile();
 
+  useEffect(() => {
+    if (new Date() - new Date(localStorage.popupClosedAt) < 60000) {
+      setIsOpen(false);
+    }
+  }, []);
+
+  const handleClose = () => {
+    setIsOpen(false);
+    localStorage.setItem("popupClosedAt", new Date());
+  };
+
   return (
-    <Dialog isOpen={isOpen} onClose={() => setIsOpen(false)}>
+    <Dialog isOpen={isOpen} onClose={handleClose}>
       <Box
         style={{
           display: "grid",
@@ -17,12 +28,12 @@ export const Popup = ({ color }) => {
           overflow: "hidden",
           borderRadius: "classic",
         }}
-        onClick={() => setIsOpen(false)}
+        onClick={handleClose}
       >
         <Box style={{ marginLeft: "20px", marginRight: "20px" }}>
           <Box
             as="img"
-            alt='Owl'
+            alt="Owl"
             src={`/logos/owl-${color}.png`}
             style={{
               height: "200px",
@@ -63,7 +74,7 @@ export const Popup = ({ color }) => {
           </Box>
           <Box
             as="img"
-            alt='Giraffe'
+            alt="Giraffe"
             src={`/logos/giraffe-${color}.png`}
             style={{
               height: "200px",

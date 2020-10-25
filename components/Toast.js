@@ -2,16 +2,19 @@ import { Box } from "components/Box";
 import { useEffect, useState } from "react";
 
 export const Toast = ({ top, right, bottom, left, ...rest }) => {
-  const [visibility, setVisibility] = useState("hidden");
+  const [opacity, setOpacity] = useState(0);
 
   useEffect(() => {
-    setVisibility("visible");
+    setTimeout(() => {
+      setOpacity(1);
+    }, 500);
   }, []);
 
   return (
     <Box
       style={{
-        visibility: visibility,
+        opacity: opacity,
+        transition: "opacity 0.5s ease-in",
         position: "fixed",
         top: top ? "20px" : undefined,
         right: right ? "20px" : undefined,
