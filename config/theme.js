@@ -26,7 +26,8 @@ export const cssKeyToThemeKey = {
   fontFamily: "fontFamily",
 };
 
-const fallbackFonts= 'Ubuntu, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,  Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif'
+const fallbackFonts =
+  "Ubuntu, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,  Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif";
 
 export default {
   fontFamily: { title: `Druk, ${fallbackFonts}` },
@@ -48,5 +49,7 @@ export default {
       "invert(54%) sepia(91%) saturate(2309%) hue-rotate(338deg) brightness(97%) contrast(95%)",
     pink:
       "invert(28%) sepia(65%) saturate(4651%) hue-rotate(306deg) brightness(99%) contrast(109%)",
+    white:
+      "invert(100%) sepia(0%) saturate(0%) hue-rotate(56deg) brightness(101%) contrast(104%)",
   },
 };

@@ -79,8 +79,8 @@ export default function App({ Component, pageProps }) {
         <Gallery chunks={chunks} />
       </Box>
       <Footer locale={locale} setLocale={setLocale} color={color} />
-      <Popup color={color} />
       <Component {...pageProps} color={color} locale={locale} />
+      <Popup color={color} />
       <style jsx global>{`
         a {
           color: ${theme.color[color]} !important;
