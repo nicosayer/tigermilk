@@ -7,7 +7,7 @@ export const Toast = ({ top, right, bottom, left, ...rest }) => {
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
-    }, 200);
+    }, 0);
   }, []);
 
   if (loading) {
