@@ -5,9 +5,7 @@ export const Toast = ({ top, right, bottom, left, ...rest }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    setTimeout(() => {
-      setLoading(false);
-    }, 0);
+    setLoading(false);
   }, []);
 
   if (loading) {
