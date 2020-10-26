@@ -1,21 +1,14 @@
 import { Box } from "components/Box";
 import { Dialog } from "@blueprintjs/core";
 import { useIsMobile } from "hooks/useIsMobile";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export const Popup = ({ color }) => {
   const [isOpen, setIsOpen] = useState(true);
   const isMobile = useIsMobile();
 
-  useEffect(() => {
-    if (new Date() - new Date(localStorage.popupClosedAt) < 60000) {
-      setIsOpen(false);
-    }
-  }, []);
-
   const handleClose = () => {
     setIsOpen(false);
-    localStorage.setItem("popupClosedAt", new Date());
   };
 
   return (
