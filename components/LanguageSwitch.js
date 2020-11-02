@@ -1,6 +1,6 @@
 import { Box } from "components/Box";
 
-export const LanguageSwitch = ({ locale, setLocale, color }) => {
+export const LanguageSwitch = ({ locale, setLocale, color, long }) => {
   return (
     <Box
       style={{
@@ -12,11 +12,11 @@ export const LanguageSwitch = ({ locale, setLocale, color }) => {
       }}
     >
       <Box as="span" style={{ color: locale === "en" ? color : undefined }}>
-        EN
+        {long ? "English" : "EN"}
       </Box>
       /
       <Box as="span" style={{ color: locale === "fr" ? color : undefined }}>
-        FR
+        {long ? "Français" : "FR"}
       </Box>
     </Box>
   );

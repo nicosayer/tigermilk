@@ -124,8 +124,9 @@ export default function Location({ params, color, locale }) {
                 }}
               />
               <Box
-                alt="Tigermilk logo"
                 as="img"
+                alt="Tigermilk logo"
+                src="/logos/monogram.svg"
                 style={{
                   position: "absolute",
                   top: "calc(50% - 15px)",
@@ -133,7 +134,6 @@ export default function Location({ params, color, locale }) {
                   width: "30px",
                   filter: color,
                 }}
-                src="/logos/monogram.svg"
               />
             </Box>
           )}

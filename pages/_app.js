@@ -11,7 +11,6 @@ import Head from "next/head";
 import { Header } from "components/Header";
 import { LANGUAGES } from "config/enums";
 import { Logo } from "components/Logo";
-import { Popup } from "components/Popup";
 import theme from "config/theme";
 
 export default function App({ Component, pageProps }) {
@@ -79,8 +78,13 @@ export default function App({ Component, pageProps }) {
         <Gallery chunks={chunks} />
       </Box>
       <Footer locale={locale} setLocale={setLocale} color={color} />
-      <Component {...pageProps} color={color} locale={locale} />
-      <Popup color={color} />
+      <Component
+        {...pageProps}
+        color={color}
+        locale={locale}
+        setLocale={setLocale}
+      />
+      {/* <Popup color={color} /> */}
       <style jsx global>{`
         a {
           color: ${theme.color[color]} !important;

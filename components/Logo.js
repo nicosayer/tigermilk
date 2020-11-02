@@ -24,14 +24,14 @@ export const Logo = ({ color }) => {
       }}
     >
       <Box
-        alt="Tigermilk logo"
         as="img"
+        alt="Tigermilk logo"
+        src={isMobile ? "/logos/monogram.svg" : "/logos/logo.svg"}
         style={{
           maxWidth: "400px",
           maxHeight: "100px",
           filter: color,
         }}
-        src={isMobile ? "/logos/monogram.svg" : "/logos/logo.svg"}
       />
     </Box>
   );

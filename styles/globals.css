@@ -58,23 +58,8 @@ a:focus {
   display: none !important;
 }
 
-.bp3-toast-container {
-  z-index: 1 !important;
-}
-
 .bp3-popover-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.bp3-toast {
-  min-width: 0px !important;
-  max-width: 100vw !important;
-  box-shadow: 0 0 10px #00000080 !important;
-}
-
-.bp3-toast:focus,
-.bp3-toast-message:focus {
-  outline: none;
 }

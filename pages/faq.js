@@ -3,8 +3,9 @@ import { Dialog } from "@blueprintjs/core";
 import Head from "next/head";
 import { QUESTIONS } from "config/enums";
 import { useRouter } from "next/router";
+import { LanguageSwitch } from "components/LanguageSwitch";
 
-export default function FAQ({ locale, color }) {
+export default function FAQ({ locale, setLocale, color }) {
   const router = useRouter();
 
   return (
@@ -19,6 +20,20 @@ export default function FAQ({ locale, color }) {
         backdropClassName="bp3-backdrop"
       >
         <Box style={{ padding: "20px" }}>
+          <Box
+            style={{
+              fontFamily: "title",
+              fontSize: "large",
+              marginBottom: "40px",
+            }}
+          >
+            <LanguageSwitch
+              locale={locale}
+              setLocale={setLocale}
+              color={color}
+              long
+            />
+          </Box>
           {QUESTIONS.map(({ title, content }) => (
             <div key={title.fr}>
               <Box
