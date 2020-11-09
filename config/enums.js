@@ -21,7 +21,7 @@ export const RESTAURANTS = [
     ],
     menus: [
       {
-        name: { en: "Take-away & delivery", fr: "À emporter & livraison" },
+        name: { en: "Take-away", fr: "À emporter" },
         pdf: "Menu_Delivery.pdf",
       },
       { name: { en: "Food", fr: "Menu" }, pdf: "Menu_Food_Brussels.pdf" },
@@ -69,7 +69,7 @@ export const RESTAURANTS = [
     email: <Email />,
     menus: [
       {
-        name: { en: "Take-away & delivery", fr: "À emporter & livraison" },
+        name: { en: "Take-away", fr: "À emporter" },
         pdf: "Menu_Delivery.pdf",
       },
       {
