@@ -20,6 +20,10 @@ export const RESTAURANTS = [
       },
     ],
     menus: [
+      {
+        name: { en: "Take-away & delivery", fr: "À emporter & livraison" },
+        pdf: "Menu_Delivery.pdf",
+      },
       { name: { en: "Food", fr: "Menu" }, pdf: "Menu_Food_Brussels.pdf" },
       {
         name: {
@@ -64,6 +68,10 @@ export const RESTAURANTS = [
     phone: "(+33) 1 42 41 17 01",
     email: <Email />,
     menus: [
+      {
+        name: { en: "Take-away & delivery", fr: "À emporter & livraison" },
+        pdf: "Menu_Delivery.pdf",
+      },
       {
         name: { en: "Food", fr: "Menu" },
         pdf: "Menu_Food_Paris_Canal_St_Martin.pdf",

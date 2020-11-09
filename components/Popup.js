@@ -1,7 +1,8 @@
 import { Box } from "components/Box";
-import { Dialog } from "@blueprintjs/core";
+import { Button, Dialog, Intent } from "@blueprintjs/core";
 import { useIsMobile } from "hooks/useIsMobile";
 import { useState } from "react";
+import Link from "next/link";
 
 export const Popup = ({ color }) => {
   const [isOpen, setIsOpen] = useState(true);
@@ -26,8 +27,8 @@ export const Popup = ({ color }) => {
         <Box style={{ marginLeft: "20px", marginRight: "20px" }}>
           <Box
             as="img"
-            alt="Owl"
-            src={`/logos/owl-${color}.png`}
+            alt="Giraffe"
+            src={`/logos/giraffe-${color}.png`}
             style={{
               height: "200px",
               width: "200px",
@@ -36,39 +37,172 @@ export const Popup = ({ color }) => {
           />
           <Box
             style={{
-              marginBottom: "40px",
+              marginBottom: "20px",
               textAlign: "justify",
               textAlignLast: "center",
             }}
           >
-            À compter du 17 octobre, tous nos restaurants parisiens seront{" "}
-            <Box as="span" style={{ color: color }}>
-              ouverts dès 18h30
-            </Box>{" "}
-            pour le service du soir, les services du midi restent inchangés. Et
-            BIG NEWS, notre restaurant Canal St-Martin propose désormais le
-            brunch samedi et dimanche !
+            Nos restaurants Tigermilk{" "}
+            <Link href="/locations/brussels">
+              <Box
+                as="span"
+                style={{ color: color }}
+                hover={{ textDecoration: "underline" }}
+                onClick={handleClose}
+              >
+                Brussels
+              </Box>
+            </Link>{" "}
+            et{" "}
+            <Link href="/locations/paris-canal-st-martin">
+              <Box
+                as="span"
+                style={{ color: color }}
+                hover={{ textDecoration: "underline" }}
+                onClick={handleClose}
+              >
+                Canal St-Martin
+              </Box>
+            </Link>{" "}
+            restent ouverts midi et soir en livraison et à emporter.
           </Box>
           <Box
             style={{
-              marginBottom: "10px",
               fontStyle: "italic",
               textAlign: "justify",
               textAlignLast: "center",
             }}
           >
-            From October 17, all of our Parisian restaurants will be{" "}
-            <Box as="span" style={{ color: color }}>
-              open from 6.30 p.m.
-            </Box>{" "}
-            for evening service, lunchtime services remain unchanged. And BIG
-            NEWS, our Canal St-Martin restaurant now offers brunch on Saturday
-            and Sunday!
+            Our restaurants Tigermilk{" "}
+            <Link href="/locations/brussels">
+              <Box
+                as="span"
+                style={{ color: color }}
+                hover={{ textDecoration: "underline" }}
+                onClick={handleClose}
+              >
+                Brussels
+              </Box>
+            </Link>{" "}
+            and{" "}
+            <Link href="/locations/paris-canal-st-martin">
+              <Box
+                as="span"
+                style={{ color: color }}
+                hover={{ textDecoration: "underline" }}
+                onClick={handleClose}
+              >
+                Canal St-Martin
+              </Box>
+            </Link>{" "}
+            remain open for lunch and dinner for delivery and take-away.
+          </Box>
+          <Box
+            style={{
+              margin: "20px",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <Box
+              style={{
+                fontFamily: "title",
+                color,
+                fontSize: isMobile ? undefined : "large",
+                marginRight: "10px",
+              }}
+            >
+              Take-away:
+            </Box>
+            <Box
+              as="a"
+              href="/pdfs/Menu_Delivery.pdf"
+              target="_blank"
+              hover={{ textDecoration: "none" }}
+              onClick={(event) => event.stopPropagation()}
+            >
+              <Button fill outlined rightIcon="document-open">
+                Menu
+              </Button>
+            </Box>
+          </Box>
+          <Box
+            style={{
+              margin: "20px",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <Box
+              style={{
+                fontSize: isMobile ? undefined : "large",
+                fontFamily: "title",
+                color,
+                marginRight: "10px",
+              }}
+            >
+              Brussels:
+            </Box>
+            <Box
+              as="a"
+              href="https://deliveroo.be/fr/menu/brussels/chatelain/2ms-bailli"
+              target="_blank"
+              hover={{ textDecoration: "none" }}
+              onClick={(event) => event.stopPropagation()}
+            >
+              <Button rightIcon="share" outlined>
+                Deliveroo
+              </Button>
+            </Box>
+          </Box>
+          <Box
+            style={{
+              margin: "20px",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <Box
+              style={{
+                fontFamily: "title",
+                fontSize: isMobile ? undefined : "large",
+                color,
+                marginRight: "10px",
+              }}
+            >
+              Paris:
+            </Box>
+            <Box
+              as="a"
+              href="https://deliveroo.fr/fr/menu/paris/paris-10eme-gare-de-lest/tigermilk-paris"
+              target="_blank"
+              hover={{ textDecoration: "none" }}
+              onClick={(event) => event.stopPropagation()}
+              style={{ marginRight: "10px" }}
+            >
+              <Button rightIcon="share" outlined>
+                Deliveroo
+              </Button>
+            </Box>
+            <Box
+              as="a"
+              href="https://www.ubereats.com/fr-en/paris/food-delivery/tigermilk-canal/JVaeD7tFScem3SbwcI5PYw"
+              target="_blank"
+              hover={{ textDecoration: "none" }}
+              onClick={(event) => event.stopPropagation()}
+            >
+              <Button rightIcon="share" outlined>
+                Uber Eats
+              </Button>
+            </Box>
           </Box>
           <Box
             as="img"
             alt="Giraffe"
-            src={`/logos/giraffe-${color}.png`}
+            src={`/logos/owl-${color}.png`}
             style={{
               height: "200px",
               width: "200px",
