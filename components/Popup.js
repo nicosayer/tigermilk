@@ -114,7 +114,7 @@ export const Popup = ({ color }) => {
                 marginBottom: "6px",
               }}
             >
-           À emporter / Take-away:
+           À emporter / Take-away :
             </Box>
             <Box
               as="a"
@@ -123,7 +123,7 @@ export const Popup = ({ color }) => {
               hover={{ textDecoration: "none" }}
               onClick={(event) => event.stopPropagation()}
             >
-              <Button fill outlined rightIcon="document-open">
+              <Button fill large minimal rightIcon="clipboard">
                 Menu
               </Button>
             </Box>
@@ -145,7 +145,7 @@ export const Popup = ({ color }) => {
                 marginBottom: "6px",
               }}
             >
-              Brussels:
+              Brussels :
             </Box>
             <Box
               as="a"
@@ -154,7 +154,7 @@ export const Popup = ({ color }) => {
               hover={{ textDecoration: "none" }}
               onClick={(event) => event.stopPropagation()}
             >
-              <Button rightIcon="share" outlined>
+              <Button rightIcon="share" large minimal>
                 Deliveroo
               </Button>
             </Box>
@@ -176,7 +176,7 @@ export const Popup = ({ color }) => {
                 marginBottom: "6px",
               }}
             >
-              Paris:
+              Paris :
             </Box>
             <Box
               as="a"
@@ -188,7 +188,7 @@ export const Popup = ({ color }) => {
                 marginBottom: "10px",
               }}
             >
-              <Button rightIcon="share" outlined>
+              <Button rightIcon="share" large minimal>
                 Deliveroo
               </Button>
             </Box>
@@ -199,7 +199,7 @@ export const Popup = ({ color }) => {
               hover={{ textDecoration: "none" }}
               onClick={(event) => event.stopPropagation()}
             >
-              <Button rightIcon="share" outlined>
+              <Button rightIcon="share" large minimal>
                 Uber Eats
               </Button>
             </Box>
