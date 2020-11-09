@@ -101,6 +101,7 @@ export const Popup = ({ color }) => {
             style={{
               margin: "20px",
               display: "flex",
+              flexDirection: "column",
               alignItems: "center",
               justifyContent: "center",
             }}
@@ -109,11 +110,11 @@ export const Popup = ({ color }) => {
               style={{
                 fontFamily: "title",
                 color,
-                fontSize: isMobile ? undefined : "large",
-                marginRight: "10px",
+                fontSize: "large",
+                marginBottom: "6px",
               }}
             >
-              Take-away:
+           À emporter / Take-away:
             </Box>
             <Box
               as="a"
@@ -131,16 +132,17 @@ export const Popup = ({ color }) => {
             style={{
               margin: "20px",
               display: "flex",
+              flexDirection: "column",
               alignItems: "center",
               justifyContent: "center",
             }}
           >
             <Box
               style={{
-                fontSize: isMobile ? undefined : "large",
+                fontSize: "large",
                 fontFamily: "title",
                 color,
-                marginRight: "10px",
+                marginBottom: "6px",
               }}
             >
               Brussels:
@@ -163,14 +165,15 @@ export const Popup = ({ color }) => {
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
+              flexDirection: "column",
             }}
           >
             <Box
               style={{
                 fontFamily: "title",
-                fontSize: isMobile ? undefined : "large",
+                fontSize: "large",
                 color,
-                marginRight: "10px",
+                marginBottom: "6px",
               }}
             >
               Paris:
@@ -181,7 +184,9 @@ export const Popup = ({ color }) => {
               target="_blank"
               hover={{ textDecoration: "none" }}
               onClick={(event) => event.stopPropagation()}
-              style={{ marginRight: "10px" }}
+              style={{
+                marginBottom: "10px",
+              }}
             >
               <Button rightIcon="share" outlined>
                 Deliveroo
@@ -199,16 +204,6 @@ export const Popup = ({ color }) => {
               </Button>
             </Box>
           </Box>
-          <Box
-            as="img"
-            alt="Giraffe"
-            src={`/logos/owl-${color}.png`}
-            style={{
-              height: "200px",
-              width: "200px",
-              objectFit: "contain",
-            }}
-          />
         </Box>
         {!isMobile && (
           <Box
