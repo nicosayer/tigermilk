@@ -12,6 +12,32 @@ export const Popup = ({ color }) => {
     setIsOpen(false);
   };
 
+  const BigButton = ({ children, href }) => {
+    return (
+      <Box style={{ marginBottom: "4px" }}>
+        <Box
+          as="a"
+          href={href}
+          target="_blank"
+          hover={{ textDecoration: "none" }}
+          onClick={(event) => event.stopPropagation()}
+        >
+          <Button minimal>
+            <Box
+              style={{
+                fontSize: "large",
+                fontFamily: "classic",
+                color,
+              }}
+            >
+              {children}
+            </Box>
+          </Button>
+        </Box>
+      </Box>
+    );
+  };
+
   return (
     <Dialog isOpen={isOpen} onClose={handleClose}>
       <Box
@@ -97,112 +123,44 @@ export const Popup = ({ color }) => {
             </Link>{" "}
             remain open for lunch and dinner for delivery and take-away.
           </Box>
-          <Box
-            style={{
-              margin: "20px",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            <Box
-              style={{
-                fontFamily: "title",
-                color,
-                fontSize: "large",
-                marginBottom: "6px",
-              }}
-            >
-           À emporter / Take-away :
-            </Box>
-            <Box
-              as="a"
-              href="/pdfs/Menu_Delivery.pdf"
-              target="_blank"
-              hover={{ textDecoration: "none" }}
-              onClick={(event) => event.stopPropagation()}
-            >
-              <Button fill large minimal rightIcon="clipboard">
-                Menu
-              </Button>
-            </Box>
+
+          <Box style={{ marginTop: "20px", marginBottom: "20px" }}>
+            <BigButton href="/pdfs/Menu_Delivery.pdf">Menu</BigButton>
           </Box>
-          <Box
-            style={{
-              margin: "20px",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            <Box
-              style={{
-                fontSize: "large",
-                fontFamily: "title",
-                color,
-                marginBottom: "6px",
-              }}
-            >
-              Brussels :
-            </Box>
-            <Box
-              as="a"
-              href="https://deliveroo.be/fr/menu/brussels/chatelain/2ms-bailli"
-              target="_blank"
-              hover={{ textDecoration: "none" }}
-              onClick={(event) => event.stopPropagation()}
-            >
-              <Button rightIcon="share" large minimal>
-                Deliveroo
-              </Button>
-            </Box>
-          </Box>
-          <Box
-            style={{
-              margin: "20px",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              flexDirection: "column",
-            }}
-          >
+          <Box style={{ marginBottom: "20px" }}>
             <Box
               style={{
                 fontFamily: "title",
                 fontSize: "large",
-                color,
-                marginBottom: "6px",
               }}
             >
               Paris :
             </Box>
+            <BigButton href="https://clicks.tastycloud.fr/4aa4df5ff7b1e63ad3313e336deffde61ba13d19c905173733f523078ffbeaad">
+              Click & Collect
+            </BigButton>
+            <BigButton href="https://deliveroo.fr/fr/menu/paris/paris-10eme-gare-de-lest/tigermilk-paris">
+              Deliveroo
+            </BigButton>
+            <BigButton href="https://www.ubereats.com/fr-en/paris/food-delivery/tigermilk-canal/JVaeD7tFScem3SbwcI5PYw">
+              Uber Eats
+            </BigButton>
+          </Box>
+          <Box style={{ marginBottom: "20px" }}>
             <Box
-              as="a"
-              href="https://deliveroo.fr/fr/menu/paris/paris-10eme-gare-de-lest/tigermilk-paris"
-              target="_blank"
-              hover={{ textDecoration: "none" }}
-              onClick={(event) => event.stopPropagation()}
               style={{
-                marginBottom: "10px",
+                fontFamily: "title",
+                fontSize: "large",
               }}
             >
-              <Button rightIcon="share" large minimal>
-                Deliveroo
-              </Button>
+              Brussels :
             </Box>
-            <Box
-              as="a"
-              href="https://www.ubereats.com/fr-en/paris/food-delivery/tigermilk-canal/JVaeD7tFScem3SbwcI5PYw"
-              target="_blank"
-              hover={{ textDecoration: "none" }}
-              onClick={(event) => event.stopPropagation()}
-            >
-              <Button rightIcon="share" large minimal>
-                Uber Eats
-              </Button>
-            </Box>
+            <BigButton href="https://deliveroo.be/fr/menu/brussels/chatelain/2ms-bailli">
+              Deliveroo
+            </BigButton>
+            <BigButton href="https://www.ubereats.com/be/brussels/food-delivery/tigermilk/NwtYEog9TVqQYoe5LKZ1Sg">
+              Uber Eats
+            </BigButton>
           </Box>
         </Box>
         {!isMobile && (

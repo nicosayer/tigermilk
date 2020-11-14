@@ -30,7 +30,10 @@ const fallbackFonts =
   "Ubuntu, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,  Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif";
 
 export default {
-  fontFamily: { title: `Druk, ${fallbackFonts}` },
+  fontFamily: {
+    title: `Druk, ${fallbackFonts}`,
+    classic: `Archer, ${fallbackFonts}`,
+  },
   fontSize: { large: "20px" },
   radius: { classic: "4px" },
   boxShadow: { classic: "0 0 10px #00000080" },
