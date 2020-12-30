@@ -25,7 +25,7 @@ export const Popup = ({ color }) => {
           <Button minimal>
             <Box
               style={{
-                fontSize: "large",
+                // fontSize: "large",
                 fontFamily: "classic",
                 color,
               }}
@@ -136,7 +136,7 @@ export const Popup = ({ color }) => {
             >
               Paris :
             </Box>
-            <BigButton href="https://clicks.tastycloud.fr/4aa4df5ff7b1e63ad3313e336deffde61ba13d19c905173733f523078ffbeaad">
+            <BigButton href="https://joinpulp.com/tigermilkcanal">
               Click & Collect
             </BigButton>
             <BigButton href="https://deliveroo.fr/fr/menu/paris/paris-10eme-gare-de-lest/tigermilk-paris">
