@@ -155,6 +155,9 @@ export const Popup = ({ color }) => {
             >
               Brussels :
             </Box>
+            <BigButton href="https://joinpulp.com/tigermilkbruxelles">
+              Click & Collect
+            </BigButton>
             <BigButton href="https://deliveroo.be/fr/menu/brussels/chatelain/2ms-bailli">
               Deliveroo
             </BigButton>
