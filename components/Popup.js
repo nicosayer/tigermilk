@@ -27,7 +27,9 @@ export const Popup = ({ color }) => {
             as="img"
             alt="Giraffe"
             src={`/logos/giraffe-${color}.png`}
+            onClick={handleClose}
             style={{
+              cursor: 'pointer',
               height: "200px",
               width: "200px",
               objectFit: "contain",
