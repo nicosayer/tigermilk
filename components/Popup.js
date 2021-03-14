@@ -49,7 +49,7 @@ export const Popup = ({ color }) => {
               textAlignLast: "center",
             }}
           >
-            Our restaurants Tigermilk remain open for lunch and dinner for delivery and take-away.
+            Our Tigermilk restaurants remain open for lunch and dinner for delivery and take-away.
           </Box>
 
           <Box style={{ marginTop: "20px", marginBottom: "20px" }}>
@@ -82,7 +82,7 @@ export const Popup = ({ color }) => {
                   target="_blank"
                   href='https://deliveroo.fr/fr/menu/paris/paris-10eme-gare-de-lest/tigermilk-paris' />
                 <MenuItem
-                  text="Uber eats"
+                  text="Uber Eats"
                   target="_blank"
                   href='https://www.ubereats.com/fr-en/paris/food-delivery/tigermilk-canal/JVaeD7tFScem3SbwcI5PYw' />
               </Menu>
@@ -96,10 +96,12 @@ export const Popup = ({ color }) => {
 
             <Popover content={
               <Menu large>
+                <MenuDivider title="Click & collect" />
                 <MenuItem
-                  text="Click & collect"
+                  text="Bailli"
                   target="_blank"
                   href='https://joinpulp.com/tigermilkbruxelles' />
+                <MenuDivider title="Livraison / Delivery" />
                 <MenuItem
                   text="Deliveroo"
                   target="_blank"
