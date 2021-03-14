@@ -17,7 +17,6 @@ export const Popup = ({ color }) => {
       <Box
         style={{
           display: "grid",
-          cursor: "pointer",
           gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr",
           overflow: "hidden",
           borderRadius: "classic",
@@ -91,7 +90,8 @@ export const Popup = ({ color }) => {
               <AnchorButton
                 large
                 minimal
-                text="Paris" />
+                text="Paris"
+              />
             </Popover>
 
             <Popover content={
@@ -113,15 +113,16 @@ export const Popup = ({ color }) => {
               <AnchorButton
                 large
                 minimal
-                text="Brussels" />
+                text="Brussels"
+              />
             </Popover>
-
-
           </Box>
         </Box>
         {!isMobile && (
           <Box
+            onClick={handleClose}
             style={{
+              cursor: 'pointer',
               backgroundImage: 'url("/pictures/40.jpg")',
               backgroundPosition: "center",
               backgroundSize: "cover",
