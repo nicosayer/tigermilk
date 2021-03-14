@@ -1,5 +1,5 @@
 import { Box } from "components/Box";
-import { Button, Dialog, Intent } from "@blueprintjs/core";
+import { AnchorButton, Button, Dialog, Menu, MenuDivider, MenuItem, Popover, } from "@blueprintjs/core";
 import { useIsMobile } from "hooks/useIsMobile";
 import { useState } from "react";
 import Link from "next/link";
@@ -12,32 +12,6 @@ export const Popup = ({ color }) => {
     setIsOpen(false);
   };
 
-  const BigButton = ({ children, href }) => {
-    return (
-      <Box style={{ marginBottom: "4px" }}>
-        <Box
-          as="a"
-          href={href}
-          target="_blank"
-          hover={{ textDecoration: "none" }}
-          onClick={(event) => event.stopPropagation()}
-        >
-          <Button minimal>
-            <Box
-              style={{
-                // fontSize: "large",
-                fontFamily: "classic",
-                color,
-              }}
-            >
-              {children}
-            </Box>
-          </Button>
-        </Box>
-      </Box>
-    );
-  };
-
   return (
     <Dialog isOpen={isOpen} onClose={handleClose}>
       <Box
@@ -48,7 +22,6 @@ export const Popup = ({ color }) => {
           overflow: "hidden",
           borderRadius: "classic",
         }}
-        onClick={handleClose}
       >
         <Box style={{ marginLeft: "20px", marginRight: "20px" }}>
           <Box
@@ -68,29 +41,7 @@ export const Popup = ({ color }) => {
               textAlignLast: "center",
             }}
           >
-            Nos restaurants Tigermilk{" "}
-            <Link href="/locations/brussels">
-              <Box
-                as="span"
-                style={{ color: color }}
-                hover={{ textDecoration: "underline" }}
-                onClick={handleClose}
-              >
-                Brussels
-              </Box>
-            </Link>{" "}
-            et{" "}
-            <Link href="/locations/paris-canal-st-martin">
-              <Box
-                as="span"
-                style={{ color: color }}
-                hover={{ textDecoration: "underline" }}
-                onClick={handleClose}
-              >
-                Canal St-Martin
-              </Box>
-            </Link>{" "}
-            restent ouverts midi et soir en livraison et à emporter.
+            Nos restaurants Tigermilk restent ouverts midi et soir en livraison et à emporter.
           </Box>
           <Box
             style={{
@@ -99,71 +50,73 @@ export const Popup = ({ color }) => {
               textAlignLast: "center",
             }}
           >
-            Our restaurants Tigermilk{" "}
-            <Link href="/locations/brussels">
-              <Box
-                as="span"
-                style={{ color: color }}
-                hover={{ textDecoration: "underline" }}
-                onClick={handleClose}
-              >
-                Brussels
-              </Box>
-            </Link>{" "}
-            and{" "}
-            <Link href="/locations/paris-canal-st-martin">
-              <Box
-                as="span"
-                style={{ color: color }}
-                hover={{ textDecoration: "underline" }}
-                onClick={handleClose}
-              >
-                Canal St-Martin
-              </Box>
-            </Link>{" "}
-            remain open for lunch and dinner for delivery and take-away.
+            Our restaurants Tigermilk remain open for lunch and dinner for delivery and take-away.
           </Box>
 
           <Box style={{ marginTop: "20px", marginBottom: "20px" }}>
-            <BigButton href="/pdfs/Menu_Delivery.pdf">Menu</BigButton>
-          </Box>
-          <Box style={{ marginBottom: "20px" }}>
-            <Box
-              style={{
-                fontFamily: "title",
-                fontSize: "large",
-              }}
-            >
-              Paris :
-            </Box>
-            <BigButton href="https://joinpulp.com/tigermilkcanal">
-              Click & Collect
-            </BigButton>
-            <BigButton href="https://deliveroo.fr/fr/menu/paris/paris-10eme-gare-de-lest/tigermilk-paris">
-              Deliveroo
-            </BigButton>
-            <BigButton href="https://www.ubereats.com/fr-en/paris/food-delivery/tigermilk-canal/JVaeD7tFScem3SbwcI5PYw">
-              Uber Eats
-            </BigButton>
-          </Box>
-          <Box style={{ marginBottom: "20px" }}>
-            <Box
-              style={{
-                fontFamily: "title",
-                fontSize: "large",
-              }}
-            >
-              Brussels :
-            </Box>
-            <BigButton href="https://joinpulp.com/tigermilkbruxelles">
-              Click & Collect
-            </BigButton>
-            <BigButton href="https://deliveroo.be/fr/menu/brussels/chatelain/2ms-bailli">
-              Deliveroo
-            </BigButton>
-            <BigButton href="https://www.ubereats.com/be/brussels/food-delivery/tigermilk/NwtYEog9TVqQYoe5LKZ1Sg">
-              Uber Eats
-            </BigButton>
+            <AnchorButton
+              large
+              minimal
+              text="Menu"
+              target="_blank"
+              href="/pdfs/Menu_Delivery.pdf"
+            />
+
+            <Popover content={
+              <Menu large>
+                <MenuDivider title="Click & collect" />
+                <MenuItem
+                  text="Canal St Martin"
+                  target="_blank"
+                  href="https://joinpulp.com/tigermilkcanal" />
+                <MenuItem
+                  text="Sentier"
+                  target="_blank"
+                  href="https://app.joinpulp.com/shop/21c195ed-7e98-477b-bec3-2c0e436c4ffa" />
+                <MenuItem
+                  text="South Pigalle"
+                  target="_blank"
+                  href="https://app.joinpulp.com/shop/f62f0423-c47c-4ceb-9790-9c8710490680" />
+                <MenuDivider title="Livraison / Delivery" />
+                <MenuItem
+                  text="Deliveroo"
+                  target="_blank"
+                  href='https://deliveroo.fr/fr/menu/paris/paris-10eme-gare-de-lest/tigermilk-paris' />
+                <MenuItem
+                  text="Uber eats"
+                  target="_blank"
+                  href='https://www.ubereats.com/fr-en/paris/food-delivery/tigermilk-canal/JVaeD7tFScem3SbwcI5PYw' />
+              </Menu>
+            }>
+              <AnchorButton
+                large
+                minimal
+                text="Paris" />
+            </Popover>
+
+            <Popover content={
+              <Menu large>
+                <MenuItem
+                  text="Click & collect"
+                  target="_blank"
+                  href='https://joinpulp.com/tigermilkbruxelles' />
+                <MenuItem
+                  text="Deliveroo"
+                  target="_blank"
+                  href='https://deliveroo.be/fr/menu/brussels/chatelain/2ms-bailli' />
+                <MenuItem
+                  text="Uber Eats"
+                  target="_blank"
+                  href='https://www.ubereats.com/be/brussels/food-delivery/tigermilk/NwtYEog9TVqQYoe5LKZ1Sg' />
+              </Menu>
+            }>
+              <AnchorButton
+                large
+                minimal
+                text="Brussels" />
+            </Popover>
+
+
           </Box>
         </Box>
         {!isMobile && (
