@@ -40,7 +40,6 @@ a:focus {
 .bp3-dialog {
   padding-bottom: 0px !important;
   text-align: center;
-  background-color: white !important;
   width: calc(100vw - 200px) !important;
   min-width: 300px;
   max-width: 800px;

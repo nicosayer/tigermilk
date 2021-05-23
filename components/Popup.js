@@ -13,20 +13,15 @@ export const Popup = ({ color }) => {
   };
 
   return (
-    <Dialog isOpen={isOpen} onClose={handleClose}>
-      <Box
-        style={{
-          display: "grid",
-          gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr",
-          overflow: "hidden",
-          borderRadius: "classic",
-        }}
-      >
-        <Box style={{ marginLeft: "20px", marginRight: "20px" }}>
+    <Dialog isOpen={isOpen} onClose={handleClose} style={{ background: '#0f3053' }} >
+      <Box style={{
+        // backgroundColor: 'jade'
+      }} >
+        <Box style={{ marginLeft: "20px", marginRight: "20px", }}>
           <Box
             as="img"
-            alt="Giraffe"
-            src={`/logos/giraffe-${color}.png`}
+            alt="Elephant"
+            src={`/logos/elephant-pink.png`}
             onClick={handleClose}
             style={{
               cursor: 'pointer',
@@ -40,103 +35,19 @@ export const Popup = ({ color }) => {
               marginBottom: "20px",
               textAlign: "justify",
               textAlignLast: "center",
+              color: 'white',
+              fontSize: 'larger'
             }}
           >
-            Nos restaurants Tigermilk restent ouverts midi et soir en livraison et à emporter.
-          </Box>
-          <Box
-            style={{
-              fontStyle: "italic",
-              textAlign: "justify",
-              textAlignLast: "center",
-            }}
-          >
-            Our Tigermilk restaurants remain open for lunch and dinner for delivery and take-away.
-          </Box>
-
-          <Box style={{ marginTop: "20px", marginBottom: "20px" }}>
-            <AnchorButton
-              large
-              minimal
-              text="Menu"
-              target="_blank"
-              href="/pdfs/Menu_Delivery.pdf"
-            />
-
-            <Popover content={
-              <Menu large>
-                <MenuDivider title="Click & collect" />
-                <MenuItem
-                  text="Canal St Martin"
-                  target="_blank"
-                  href="https://joinpulp.com/tigermilkcanal" />
-                <MenuItem
-                  text="Sentier"
-                  target="_blank"
-                  href="https://app.joinpulp.com/shop/21c195ed-7e98-477b-bec3-2c0e436c4ffa" />
-                <MenuItem
-                  text="South Pigalle"
-                  target="_blank"
-                  href="https://app.joinpulp.com/shop/f62f0423-c47c-4ceb-9790-9c8710490680" />
-                <MenuDivider title="Livraison / Delivery" />
-                <MenuItem
-                  text="Deliveroo"
-                  target="_blank"
-                  href='https://deliveroo.fr/fr/menu/paris/paris-10eme-gare-de-lest/tigermilk-paris' />
-                <MenuItem
-                  text="Uber Eats"
-                  target="_blank"
-                  href='https://www.ubereats.com/fr-en/paris/food-delivery/tigermilk-canal/JVaeD7tFScem3SbwcI5PYw' />
-              </Menu>
-            }>
-              <AnchorButton
-                large
-                minimal
-                text="Paris"
-              />
-            </Popover>
-
-            <Popover content={
-              <Menu large>
-                <MenuDivider title="Click & collect" />
-                <MenuItem
-                  text="Bailli"
-                  target="_blank"
-                  href='https://joinpulp.com/tigermilkbruxelles' />
-                <MenuDivider title="Livraison / Delivery" />
-                <MenuItem
-                  text="Deliveroo"
-                  target="_blank"
-                  href='https://deliveroo.be/fr/menu/brussels/chatelain/2ms-bailli' />
-                <MenuItem
-                  text="Uber Eats"
-                  target="_blank"
-                  href='https://www.ubereats.com/be/brussels/food-delivery/tigermilk/NwtYEog9TVqQYoe5LKZ1Sg' />
-              </Menu>
-            }>
-              <AnchorButton
-                large
-                minimal
-                text="Brussels"
-              />
-            </Popover>
+            Holà !
+            <br /><br />
+            Nous sommes toujours en Click & Collect au <a href='https://joinpulp.com/tigermilkcanal'>Tigermilk Canal</a> et au <a href='https://app.joinpulp.com/shop/f62f0423-c47c-4ceb-9790-9c8710490680'>Tigermilk South Pigalle</a> !
+            <br /><br />
+            Le delivery est aussi disponible <a href='https://deliveroo.fr/fr/menu/paris/paris-10eme-gare-de-lest/tigermilk-paris'>ici</a> et <a href='https://www.ubereats.com/fr-en/paris/food-delivery/tigermilk-canal/JVaeD7tFScem3SbwcI5PYw'>ici</a> pour Tigermilk, et <a href='https://deliveroo.fr/fr/menu/paris/9eme-opera/2-ms-lamartine-compte'>ici</a> et <a href='https://www.ubereats.com/fr/paris/food-delivery/nomas-de-papa-taqueria-by-tigermilk-south-pigalle/ag4tqNMDSmaKzLErFs7Ncw'>ici</a> pour Nomás de Papa.
+            <br /><br />
+            Sinon (et surtout!) venez-nous voir au Tigermilk Sentier en réservant une table sur notre terrasse.
           </Box>
         </Box>
-        {!isMobile && (
-          <Box
-            onClick={handleClose}
-            style={{
-              cursor: 'pointer',
-              backgroundImage: 'url("/pictures/40.jpg")',
-              backgroundPosition: "center",
-              backgroundSize: "cover",
-              height: "100%",
-              width: "100%",
-              borderTopRightRadius: "classic",
-              borderBottomRightRadius: "classic",
-            }}
-          />
-        )}
       </Box>
     </Dialog>
   );
