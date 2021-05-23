@@ -14,32 +14,29 @@ export const Popup = ({ color }) => {
 
   return (
     <Dialog isOpen={isOpen} onClose={handleClose} style={{ background: '#0f3053' }} >
-      <Box style={{
-        // backgroundColor: 'jade'
-      }} >
-        <Box style={{ marginLeft: "20px", marginRight: "20px", }}>
-          <Box
-            as="img"
-            alt="Elephant"
-            src={`/logos/elephant-pink.png`}
-            onClick={handleClose}
-            style={{
-              cursor: 'pointer',
-              height: "200px",
-              width: "200px",
-              objectFit: "contain",
-            }}
-          />
-          <Box
-            style={{
-              marginBottom: "20px",
-              textAlign: "justify",
-              textAlignLast: "center",
-              color: 'white',
-              fontSize: 'larger'
-            }}
-          >
-            Holà !
+      <Box style={{ marginLeft: "20px", marginRight: "20px", }}>
+        <Box
+          as="img"
+          alt="Elephant"
+          src={`/logos/elephant-${color}.png`}
+          onClick={handleClose}
+          style={{
+            cursor: 'pointer',
+            height: "200px",
+            width: "200px",
+            objectFit: "contain",
+          }}
+        />
+        <Box
+          style={{
+            marginBottom: "20px",
+            textAlign: "justify",
+            textAlignLast: "center",
+            color: 'white',
+            fontSize: 'larger'
+          }}
+        >
+          Holà !
             <br /><br />
             Nous sommes toujours en Click & Collect au <a href='https://joinpulp.com/tigermilkcanal'>Tigermilk Canal</a> et au <a href='https://app.joinpulp.com/shop/f62f0423-c47c-4ceb-9790-9c8710490680'>Tigermilk South Pigalle</a> !
             <br /><br />
@@ -47,7 +44,6 @@ export const Popup = ({ color }) => {
             <br /><br />
             Sinon (et surtout!) venez-nous voir au Tigermilk Sentier en réservant une table sur notre terrasse.
           </Box>
-        </Box>
       </Box>
     </Dialog>
   );
