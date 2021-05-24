@@ -44,7 +44,7 @@ Notre terrasse à Tigermilk Sentier est ouverte !
 <br /><br />
 Vous pouvez aussi commander vos plats à emporter en <a target='_blank' href='https://joinpulp.com/tigermilkcanal'>Click & Collect</a> ou en livraison (<a target='_blank' href="https://deliveroo.fr/fr/menu/paris/paris-10eme-gare-de-lest/tigermilk-paris">ici</a> et <a target='_blank' href="https://www.ubereats.com/fr-en/paris/food-delivery/tigermilk-canal/JVaeD7tFScem3SbwcI5PYw">ici</a>).
 <br /><br />
-El hermanito Nomás de Papa est toujours dispo en Click & Collect et livraison (<a target='_blank' href='https://app.joinpulp.com/shop/f62f0423-c47c-4ceb-9790-9c8710490680'>ici</a> et <a target='_blank' href='https://www.ubereats.com/fr-en/paris/food-delivery/tigermilk-canal/JVaeD7tFScem3SbwcI5PYw'>ici</a>).
+El hermanito Nomás de Papa est toujours dispo en <a target='_blank' href="https://app.joinpulp.com/shop/f62f0423-c47c-4ceb-9790-9c8710490680">Click & Collect</a> ou en livraison (<a target='_blank' href='https://deliveroo.fr/en/menu/paris/9eme-opera/2-ms-lamartine-compte'>ici</a> et <a target='_blank' href='https://www.ubereats.com/fr-en/paris/food-delivery/tigermilk-canal/JVaeD7tFScem3SbwcI5PYw'>ici</a>).
 <br /><br />
 Hasta pronto!
           </Box>
