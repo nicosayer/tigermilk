@@ -63,55 +63,50 @@ export const Header = ({ locale, setLocale, color }) => {
           alignItems: "center",
           textAlign: "center",
           paddingTop: "3px",
-          gridTemplateColumns: isMobile ? "1fr 1fr 1fr" : "1fr 1fr 1fr 1fr",
+          gridTemplateColumns: isMobile ? "1fr 1fr" : "1fr 1fr 1fr",
         }}
       >
         <Popover
-          text={languages[locale]?.header.MENU}
+          text={languages[locale]?.header.RESTAURANTS}
           content={
             <Menu>
-              {RESTAURANTS.map(({ name, menus }) => {
-                if (menus.length === 1) {
-                  return (
-                    <MenuItem
-                      key={name[locale]}
-                      text={name[locale]}
-                      href={`/pdfs/${menus[0].pdf}`}
-                      target={!isMobile && "_blank"}
-                    />
-                  );
-                }
+              {RESTAURANTS.map(({ name, menus, slug, booking }) => {
                 return (
                   <MenuItem
                     key={name[locale]}
                     text={name[locale]}
                     popoverProps={{ openOnTargetFocus: false }}
                   >
-                    {menus.map(({ name, pdf }) => (
-                      <MenuItem
-                        key={name[locale]}
-                        text={name[locale]}
-                        href={`/pdfs/${pdf}`}
-                        target={!isMobile && "_blank"}
-                      />
-                    ))}
+                    {menus.length === 1 ? <MenuItem
+                      key='menu'
+                      text={languages[locale]?.word.Menu}
+                      href={`/pdfs/${menus[0].pdf}`}
+                      target={!isMobile && "_blank"}
+                    /> : <MenuItem
+                      key='menu'
+                      text={languages[locale]?.word.Menu}
+                      popoverProps={{ openOnTargetFocus: false }}
+                    >
+                      {menus.map(({ name, pdf }) => (
+                        <MenuItem
+                          key={name[locale]}
+                          text={name[locale]}
+                          href={`/pdfs/${pdf}`}
+                          target={!isMobile && "_blank"}
+                        />
+                      ))}
+                    </MenuItem>}
+                    <Link key='booking' href={booking}>
+                      <div>
+                        <MenuItem text={languages[locale]?.word.BookATable} />
+                      </div>
+                    </Link>
+                    <Link key='informations' href={`/locations/${slug}`}>
+                      <div>
+                        <MenuItem text={languages[locale]?.word.Informations} />
+                      </div>
+                    </Link>
                   </MenuItem>
-                );
-              })}
-            </Menu>
-          }
-        />
-        <Popover
-          text={languages[locale]?.header.LOCATIONS}
-          content={
-            <Menu>
-              {RESTAURANTS.map(({ name, slug }) => {
-                return (
-                  <Link key={name[locale]} href={`/locations/${slug}`}>
-                    <div>
-                      <MenuItem text={name[locale]} />
-                    </div>
-                  </Link>
                 );
               })}
             </Menu>

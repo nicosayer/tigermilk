@@ -20,7 +20,8 @@
   "header": {
     "FAQ": "FAQ",
     "LOCATIONS": "LOCATIONS",
-    "MENU": "MENU"
+    "MENU": "MENU",
+    "RESTAURANTS": "RESTAURANTS"
   },
   "locations": {
     "noReservations": "The restaurant doesn’t take reservations. Our team welcomes you every day for lunch and dinner."
@@ -30,6 +31,9 @@
     "Contact": "Contact",
     "Delivery": "Delivery",
     "Email": "Email",
+    "BookATable": "Book a table",
+    "Menu": "Menu",
+    "Informations": "Informations",
     "OpeningHours": "Opening hours",
     "Tel": "Tel"
   }

@@ -60,7 +60,6 @@ export default function Location({ params, color, locale }) {
             </Box>
             <Box style={{ marginBottom: "40px" }}>
               <Title color={color}>{languages[locale]?.word.Contact}</Title>
-              <div>{languages[locale]?.locations.noReservations}</div>
               <Box style={{ marginTop: "10px" }}>
                 {restaurant.phone && (
                   <div>

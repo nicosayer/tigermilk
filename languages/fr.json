@@ -20,7 +20,8 @@
   "header": {
     "FAQ": "FAQ",
     "LOCATIONS": "RESTAURANTS",
-    "MENU": "MENU"
+    "MENU": "MENU",
+    "RESTAURANTS": "RESTAURANTS"
   },
   "locations": {
     "noReservations": "Nous ne prenons pas de réservation, nos restaurants vous accueillent tous les jours de la semaine pour le déjeuner et le diner."
@@ -30,6 +31,9 @@
     "Contact": "Contact",
     "Delivery": "Livraison",
     "Email": "Email",
+    "BookATable": "Réserver une table",
+    "Menu": "Menu",
+    "Informations": "Informations",
     "OpeningHours": "Horaires",
     "Tel": "Tél"
   }

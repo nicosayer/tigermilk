@@ -42,6 +42,7 @@ export const RESTAURANTS = [
       saturday: { lunch: "12:00-14:30", diner: "19:00-22:30" },
       sunday: { lunch: "11:30-15:00	", diner: "18:45-22:00" },
     },
+    booking: 'https://www.sevenrooms.com/reservations/tigermilkbrussels',
   },
   {
     name: { en: "Paris - Canal St Martin", fr: "Paris - Canal St Martin" },
@@ -93,6 +94,7 @@ export const RESTAURANTS = [
       saturday: { lunch: "12:30-14:45", diner: "19:15-22:45" },
       sunday: { lunch: "12:00-15:00", diner: "19:15-22:30" },
     },
+    booking: 'https://www.sevenrooms.com/reservations/Tigermilk?venues=tigermilkcanal',
   },
   {
     name: { en: "Paris - Sentier", fr: "Paris - Sentier" },
@@ -121,6 +123,7 @@ export const RESTAURANTS = [
       saturday: { lunch: "12:30-14:45", diner: "19:00-22:45" },
       sunday: { lunch: "12:30-14:45	", diner: "19:00-22:30" },
     },
+    booking: 'https://www.sevenrooms.com/reservations/Tigermilk?venues=tigermilksentier',
   },
   {
     name: { en: "Paris - South Pigalle", fr: "Paris - South Pigalle" },
@@ -152,6 +155,7 @@ export const RESTAURANTS = [
       saturday: { lunch: "12:30-14:45", diner: "19:00-22:45" },
       sunday: { lunch: "12:30-14:45", diner: "19:00-22:30" },
     },
+    booking: 'https://www.sevenrooms.com/reservations/Tigermilk?venues=tigermilksouthpigalle',
   },
 ];
 
@@ -166,18 +170,6 @@ export const DAYS = [
 ];
 
 export const QUESTIONS = [
-  {
-    title: {
-      fr: "Prenez-vous les réservations ?",
-      en: "Can we make a reservation?",
-    },
-    content: {
-      fr:
-        "Nous ne prenons pas de réservation, nos restaurants vous accueillent tous les jours de la semaine pour le déjeuner et le diner.",
-      en:
-        "The restaurant doesn’t take reservations. Our team welcomes you every day for lunch and dinner.",
-    },
-  },
   {
     title: {
       fr: "Acceptez-vous les animaux de compagnie ?",
