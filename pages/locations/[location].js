@@ -60,7 +60,7 @@ export default function Location({ params, color, locale }) {
             </Box>
             <Box style={{ marginBottom: "40px" }}>
               <Title color={color}>{languages[locale]?.word.Contact}</Title>
-              <Box style={{ marginTop: "10px" }}>
+              <Box style={{ marginTop: "10px", marginBottom: "10px" }}>
                 {restaurant.phone && (
                   <div>
                     {languages[locale]?.word.Tel}
@@ -74,6 +74,9 @@ export default function Location({ params, color, locale }) {
                   {restaurant.email}
                 </div>
               </Box>
+              {Boolean(restaurant.booking) && <a href={restaurant.booking} target="_blank">
+                {languages[locale]?.word.BookATable}
+              </a>}
             </Box>
             {restaurant.delivery && (
               <Box style={{ marginBottom: "40px" }}>

@@ -63,7 +63,7 @@ export const Header = ({ locale, setLocale, color }) => {
           alignItems: "center",
           textAlign: "center",
           paddingTop: "3px",
-          gridTemplateColumns: isMobile ? "1fr 1fr" : "1fr 1fr 1fr",
+          gridTemplateColumns: isMobile ? "1fr 1fr 1fr" : "1fr 1fr 1fr 1fr",
         }}
       >
         <Popover
@@ -96,17 +96,28 @@ export const Header = ({ locale, setLocale, color }) => {
                         />
                       ))}
                     </MenuItem>}
-                    <Link key='booking' href={booking}>
-                      <div>
-                        <MenuItem text={languages[locale]?.word.BookATable} />
-                      </div>
-                    </Link>
                     <Link key='informations' href={`/locations/${slug}`}>
                       <div>
                         <MenuItem text={languages[locale]?.word.Informations} />
                       </div>
                     </Link>
                   </MenuItem>
+                );
+              })}
+            </Menu>
+          }
+        />
+        <Popover
+          text={languages[locale]?.header.BOOK_A_TABLE}
+          content={
+            <Menu>
+              {RESTAURANTS.map(({ name, menus, slug, booking }) => {
+                return (
+                  <Link key='booking' href={booking}>
+                    <div>
+                      <MenuItem text={name[locale]} />
+                    </div>
+                  </Link>
                 );
               })}
             </Menu>
