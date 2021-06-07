@@ -22,6 +22,7 @@
     "LOCATIONS": "LOCATIONS",
     "MENU": "MENU",
     "BOOK_A_TABLE": "BOOK A TABLE",
+    "BOOK": "BOOK A TABLE",
     "RESTAURANTS": "RESTAURANTS"
   },
   "locations": {

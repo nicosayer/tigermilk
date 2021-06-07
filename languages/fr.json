@@ -22,6 +22,7 @@
     "LOCATIONS": "RESTAURANTS",
     "MENU": "MENU",
     "BOOK_A_TABLE": "RÉSERVER UNE TABLE",
+    "BOOK": "RÉSERVER",
     "RESTAURANTS": "RESTAURANTS"
   },
   "locations": {
@@ -34,7 +35,7 @@
     "Email": "Email",
     "BookATable": "Réserver une table",
     "Menu": "Menu",
-    "Informations": "Informations",
+    "Informations": "Plus d'infos",
     "OpeningHours": "Horaires",
     "Tel": "Tél"
   }

@@ -67,7 +67,7 @@ export const Header = ({ locale, setLocale, color }) => {
         }}
       >
         <Popover
-          text={languages[locale]?.header.RESTAURANTS}
+          text={languages[locale]?.header.LOCATIONS}
           content={
             <Menu>
               {RESTAURANTS.map(({ name, menus, slug, booking }) => {
@@ -108,7 +108,7 @@ export const Header = ({ locale, setLocale, color }) => {
           }
         />
         <Popover
-          text={languages[locale]?.header.BOOK_A_TABLE}
+          text={isMobile ? languages[locale]?.header.BOOK : languages[locale]?.header.BOOK_A_TABLE}
           content={
             <Menu>
               {RESTAURANTS.map(({ name, menus, slug, booking }) => {
