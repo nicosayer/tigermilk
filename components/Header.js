@@ -59,11 +59,11 @@ export const Header = ({ locale, setLocale, color }) => {
         style={{
           whiteSpace: "nowrap",
           width: "calc(100vw - 62px)",
-          display: "grid",
+          display: "flex",
           alignItems: "center",
           textAlign: "center",
           paddingTop: "3px",
-          gridTemplateColumns: isMobile ? "1fr 1fr 1fr" : "1fr 1fr 1fr 1fr",
+          justifyContent:'space-between'
         }}
       >
         <Popover
