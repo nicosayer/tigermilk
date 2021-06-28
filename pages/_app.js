@@ -12,7 +12,6 @@ import { Header } from "components/Header";
 import { LANGUAGES } from "config/enums";
 import { Logo } from "components/Logo";
 import theme from "config/theme";
-import { Popup } from "components/Popup";
 
 export default function App({ Component, pageProps }) {
   const [color, setColor] = useState("");
@@ -85,7 +84,6 @@ export default function App({ Component, pageProps }) {
         locale={locale}
         setLocale={setLocale}
       />
-      <Popup color={color} />
       <style jsx global>{`
         a {
           color: ${theme.color[color]} !important;
