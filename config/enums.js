@@ -20,10 +20,6 @@ export const RESTAURANTS = [
       },
     ],
     menus: [
-      {
-        name: { en: "Take-away", fr: "À emporter" },
-        pdf: "Menu_Delivery.pdf",
-      },
       { name: { en: "Food", fr: "Menu" }, pdf: "Menu_Food_Brussels.pdf" },
       {
         name: {
@@ -69,10 +65,6 @@ export const RESTAURANTS = [
     phone: "(+33) 1 42 41 17 01",
     email: <Email />,
     menus: [
-      {
-        name: { en: "Take-away", fr: "À emporter" },
-        pdf: "Menu_Delivery.pdf",
-      },
       {
         name: { en: "Food", fr: "Menu" },
         pdf: "Menu_Food_Paris_Canal_St_Martin.pdf",
@@ -140,11 +132,7 @@ export const RESTAURANTS = [
       {
         name: { en: "Food", fr: "Menu" },
         pdf: "Menu_Food_Paris_South_Pigalle.pdf",
-      },
-      {
-        name: { en: "Drinks", fr: "Boissons" },
-        pdf: "Menu_Drinks_South_Pigalle.pdf",
-      },
+      }
     ],
     openingHours: {
       monday: { lunch: "12:00-14:30", diner: "19:00-22:15" },

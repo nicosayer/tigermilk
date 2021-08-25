@@ -63,7 +63,7 @@ export const Header = ({ locale, setLocale, color }) => {
           alignItems: "center",
           textAlign: "center",
           paddingTop: "3px",
-          justifyContent:'space-between'
+          justifyContent:'space-around'
         }}
       >
         <Popover
