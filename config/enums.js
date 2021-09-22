@@ -41,6 +41,19 @@ export const RESTAURANTS = [
     booking: 'https://www.sevenrooms.com/reservations/tigermilkbrussels',
   },
   {
+    name: { en: "Lille", fr: "Lille" },
+    slug: "lille",
+    address: (
+      <span>
+        4 Place Louise de Bettignies
+        <br />
+        59800 Lille
+      </span>
+    ),
+    email: <Email />,
+    booking: 'https://www.sevenrooms.com/reservations/tigermilklille',
+  },
+  {
     name: { en: "Paris - Canal St Martin", fr: "Paris - Canal St Martin" },
     slug: "paris-canal-st-martin",
     address: (

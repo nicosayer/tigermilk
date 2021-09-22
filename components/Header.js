@@ -63,14 +63,14 @@ export const Header = ({ locale, setLocale, color }) => {
           alignItems: "center",
           textAlign: "center",
           paddingTop: "3px",
-          justifyContent:'space-around'
+          justifyContent: 'space-around'
         }}
       >
         <Popover
           text={languages[locale]?.header.LOCATIONS}
           content={
             <Menu>
-              {RESTAURANTS.map(({ name, menus, slug, booking }) => {
+              {RESTAURANTS.filter(({ menus }) => menus?.length).map(({ name, menus, slug, booking }) => {
                 return (
                   <MenuItem
                     key={name[locale]}
