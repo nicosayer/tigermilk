@@ -58,7 +58,7 @@ export default function Location({ params, color, locale }) {
               <Title color={color}>{languages[locale]?.word.Address}</Title>
               <div>{restaurant.address}</div>
             </Box>
-            <Box style={{ marginBottom: "40px" }}>
+            <Box style={{ marginBottom: restaurant.delivery ? "40px" : undefined }}>
               <Title color={color}>{languages[locale]?.word.Contact}</Title>
               <Box style={{ marginTop: "10px", marginBottom: "10px" }}>
                 {restaurant.phone && (
@@ -79,7 +79,7 @@ export default function Location({ params, color, locale }) {
               </a>}
             </Box>
             {restaurant.delivery && (
-              <Box style={{ marginBottom: "40px" }}>
+              <Box style={{ marginBottom: restaurant.openingHours ? "40px" : undefined }}>
                 <Title color={color}>{languages[locale]?.word.Delivery}</Title>
                 {restaurant.delivery
                   .map(({ name, url }) => (
@@ -90,27 +90,27 @@ export default function Location({ params, color, locale }) {
                   .reduce((acc, cur) => [acc, " - ", cur])}
               </Box>
             )}
-            <Title color={color}>{languages[locale]?.word.OpeningHours}</Title>
-            <Box as="table" style={{ width: "100%" }}>
-              <tbody>
-                {DAYS.map(({ slug, index }) => {
-                  return (
-                    <Box
-                      key={slug}
-                      as="tr"
-                      style={{
-                        fontWeight:
-                          new Date().getDay() === index ? "bold" : undefined,
-                      }}
-                    >
-                      <td>{languages[locale]?.days[slug]}</td>
-                      <td>{restaurant.openingHours[slug].lunch}</td>
-                      <td>{restaurant.openingHours[slug].diner}</td>
-                    </Box>
-                  );
-                })}
-              </tbody>
-            </Box>
+            {restaurant.openingHours && <><Title color={color}>{languages[locale]?.word.OpeningHours}</Title>
+              <Box as="table" style={{ width: "100%" }}>
+                <tbody>
+                  {DAYS.map(({ slug, index }) => {
+                    return (
+                      <Box
+                        key={slug}
+                        as="tr"
+                        style={{
+                          fontWeight:
+                            new Date().getDay() === index ? "bold" : undefined,
+                        }}
+                      >
+                        <td>{languages[locale]?.days[slug]}</td>
+                        <td>{restaurant.openingHours?.[slug].lunch}</td>
+                        <td>{restaurant.openingHours?.[slug].diner}</td>
+                      </Box>
+                    );
+                  })}
+                </tbody>
+              </Box></>}
           </Box>
           {!isMobile && (
             <Box style={{ position: "relative", width: "100%" }}>
