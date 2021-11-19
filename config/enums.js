@@ -2,56 +2,32 @@ import { Email } from "components/Email";
 
 export const RESTAURANTS = [
   {
-    name: { en: "Brussels", fr: "Bruxelles" },
-    slug: "brussels",
+    name: { en: "Paris - South Pigalle", fr: "Paris - South Pigalle" },
+    slug: "paris-south-pigalle",
     address: (
       <span>
-        Rue du Bailli 46
+        72 rue Faubourg Montmartre
         <br />
-        1050 Ixelles, Bruxelles
+        75009 Paris, France
       </span>
     ),
-    phone: "(+32) 2 537 37 73",
     email: <Email />,
-    delivery: [
-      {
-        name: "Deliveroo",
-        url: "https://deliveroo.be/fr/menu/brussels/chatelain/2ms-bailli",
-      },
-    ],
     menus: [
-      { name: { en: "Food", fr: "Menu" }, pdf: "Menu_Food_Brussels.pdf" },
       {
-        name: {
-          en: "Sunday brunch (11:30-15:00)",
-          fr: "Brunch du dimanche (11h30-15h)",
-        },
-        pdf: "Menu_Brunch.pdf",
-      },
+        name: { en: "Food", fr: "Menu" },
+        pdf: "Menu_Food_Paris_South_Pigalle.pdf",
+      }
     ],
     openingHours: {
-      monday: { lunch: "11:45-14:00", diner: "18:45-22:00" },
-      tuesday: { lunch: "11:45-14:00", diner: "18:45-22:00" },
-      wednesday: { lunch: "11:45-14:00", diner: "18:45-22:00" },
-      thursday: { lunch: "11:45-14:00", diner: "18:45-22:00" },
-      friday: { lunch: "11:45-14:00", diner: "19:00-22:30" },
-      saturday: { lunch: "12:00-14:30", diner: "19:00-22:30" },
-      sunday: { lunch: "11:30-15:00	", diner: "18:45-22:00" },
+      monday: { lunch: "12:00-14:30", diner: "19:00-22:15" },
+      tuesday: { lunch: "12:00-14:30", diner: "19:00-22:15" },
+      wednesday: { lunch: "12:00-14:30", diner: "19:00-22:15" },
+      thursday: { lunch: "12:00-14:30", diner: "19:00-22:15" },
+      friday: { lunch: "12:00-14:30", diner: "19:00-22:15" },
+      saturday: { lunch: "12:00-14:30", diner: "19:00-22:15" },
+      sunday: { lunch: "12:30-14:45", diner: "19:00-22:15" },
     },
-    booking: 'https://www.sevenrooms.com/reservations/tigermilkbrussels',
-  },
-  {
-    name: { en: "Lille", fr: "Lille" },
-    slug: "lille",
-    address: (
-      <span>
-        4 Place Louise de Bettignies
-        <br />
-        59800 Lille
-      </span>
-    ),
-    email: <Email />,
-    booking: 'https://www.sevenrooms.com/reservations/tigermilklille',
+    booking: 'https://www.sevenrooms.com/reservations/tigermilksouthpigalle',
   },
   {
     name: { en: "Paris - Canal St Martin", fr: "Paris - Canal St Martin" },
@@ -131,32 +107,56 @@ export const RESTAURANTS = [
     booking: 'https://www.sevenrooms.com/reservations/tigermilksentier',
   },
   {
-    name: { en: "Paris - South Pigalle", fr: "Paris - South Pigalle" },
-    slug: "paris-south-pigalle",
+    name: { en: "Lille", fr: "Lille" },
+    slug: "lille",
     address: (
       <span>
-        72 rue Faubourg Montmartre
+        4 Place Louise de Bettignies
         <br />
-        75009 Paris, France
+        59800 Lille
       </span>
     ),
     email: <Email />,
-    menus: [
+    booking: 'https://www.sevenrooms.com/reservations/tigermilklille',
+  },
+  {
+    name: { en: "Brussels", fr: "Bruxelles" },
+    slug: "brussels",
+    address: (
+      <span>
+        Rue du Bailli 46
+        <br />
+        1050 Ixelles, Bruxelles
+      </span>
+    ),
+    phone: "(+32) 2 537 37 73",
+    email: <Email />,
+    delivery: [
       {
-        name: { en: "Food", fr: "Menu" },
-        pdf: "Menu_Food_Paris_South_Pigalle.pdf",
-      }
+        name: "Deliveroo",
+        url: "https://deliveroo.be/fr/menu/brussels/chatelain/2ms-bailli",
+      },
+    ],
+    menus: [
+      { name: { en: "Food", fr: "Menu" }, pdf: "Menu_Food_Brussels.pdf" },
+      {
+        name: {
+          en: "Sunday brunch (11:30-15:00)",
+          fr: "Brunch du dimanche (11h30-15h)",
+        },
+        pdf: "Menu_Brunch.pdf",
+      },
     ],
     openingHours: {
-      monday: { lunch: "12:00-14:30", diner: "19:00-22:15" },
-      tuesday: { lunch: "12:00-14:30", diner: "19:00-22:15" },
-      wednesday: { lunch: "12:00-14:30", diner: "19:00-22:15" },
-      thursday: { lunch: "12:00-14:30", diner: "19:00-22:15" },
-      friday: { lunch: "12:00-14:30", diner: "19:00-22:15" },
-      saturday: { lunch: "12:00-14:30", diner: "19:00-22:15" },
-      sunday: { lunch: "12:30-14:45", diner: "19:00-22:15" },
+      monday: { lunch: "11:45-14:00", diner: "18:45-22:00" },
+      tuesday: { lunch: "11:45-14:00", diner: "18:45-22:00" },
+      wednesday: { lunch: "11:45-14:00", diner: "18:45-22:00" },
+      thursday: { lunch: "11:45-14:00", diner: "18:45-22:00" },
+      friday: { lunch: "11:45-14:00", diner: "19:00-22:30" },
+      saturday: { lunch: "12:00-14:30", diner: "19:00-22:30" },
+      sunday: { lunch: "11:30-15:00	", diner: "18:45-22:00" },
     },
-    booking: 'https://www.sevenrooms.com/reservations/tigermilksouthpigalle',
+    booking: 'https://www.sevenrooms.com/reservations/tigermilkbrussels',
   },
 ];
 
