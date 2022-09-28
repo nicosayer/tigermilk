@@ -63,65 +63,36 @@ export const Header = ({ locale, setLocale, color }) => {
           alignItems: "center",
           textAlign: "center",
           paddingTop: "3px",
-          justifyContent: 'space-around'
+          justifyContent: "space-around",
         }}
       >
         <Popover
           text={languages[locale]?.header.LOCATIONS}
           content={
             <Menu>
-              {RESTAURANTS.map(({ name, menus, slug, booking }) => {
-                if (menus) {
-                  return (
-                    <MenuItem
-                      key={name[locale]}
-                      text={name[locale]}
-                      popoverProps={{ openOnTargetFocus: false }}
-                    >
-                      {menus.length === 1 ? <MenuItem
-                        key='menu'
-                        text={languages[locale]?.word.Menu}
-                        href={`/pdfs/${menus[0].pdf}`}
-                        target={!isMobile && "_blank"}
-                      /> : <MenuItem
-                        key='menu'
-                        text={languages[locale]?.word.Menu}
-                        popoverProps={{ openOnTargetFocus: false }}
-                      >
-                        {menus.map(({ name, pdf }) => (
-                          <MenuItem
-                            key={name[locale]}
-                            text={name[locale]}
-                            href={`/pdfs/${pdf}`}
-                            target={!isMobile && "_blank"}
-                          />
-                        ))}
-                      </MenuItem>}
-                      <Link key='informations' href={`/locations/${slug}`}>
-                        <div>
-                          <MenuItem text={languages[locale]?.word.Informations} />
-                        </div>
-                      </Link>
-                    </MenuItem>
-                  );
-                }
-                return <Link key='informations' href={`/locations/${slug}`}>
-                  <div>
-                    <MenuItem 
-                      text={name[locale]} />
-                  </div>
-                </Link>
+              {RESTAURANTS.map(({ name, slug }) => {
+                return (
+                  <Link key="informations" href={`/locations/${slug}`}>
+                    <div>
+                      <MenuItem text={name[locale]} />
+                    </div>
+                  </Link>
+                );
               })}
             </Menu>
           }
         />
         <Popover
-          text={isMobile ? languages[locale]?.header.BOOK : languages[locale]?.header.BOOK_A_TABLE}
+          text={
+            isMobile
+              ? languages[locale]?.header.BOOK
+              : languages[locale]?.header.BOOK_A_TABLE
+          }
           content={
             <Menu>
               {RESTAURANTS.map(({ name, menus, slug, booking }) => {
                 return (
-                  <Link key='booking' href={booking}>
+                  <Link key="booking" href={booking}>
                     <div>
                       <MenuItem text={name[locale]} />
                     </div>
