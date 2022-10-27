@@ -2,32 +2,26 @@ import { Email } from "components/Email";
 
 export const RESTAURANTS = [
   {
-    name: { en: "Paris - South Pigalle", fr: "Paris - South Pigalle" },
-    slug: "paris-south-pigalle",
+    name: { en: "Paris - Batignolles", fr: "Paris - Batignolles" },
+    slug: "paris-batignolles",
     address: (
       <span>
-        72 rue Faubourg Montmartre
+        30 rue de Lévis
         <br />
-        75009 Paris, France
+        75017 Paris, France
       </span>
     ),
     email: <Email />,
-    menus: [
-      {
-        name: { en: "Food", fr: "Menu" },
-        pdf: "Menu_Food_Paris_South_Pigalle.pdf",
-      }
-    ],
     openingHours: {
-      monday: { lunch: "12:00-14:30", diner: "19:00-22:15" },
-      tuesday: { lunch: "12:00-14:30", diner: "19:00-22:15" },
-      wednesday: { lunch: "12:00-14:30", diner: "19:00-22:15" },
-      thursday: { lunch: "12:00-14:30", diner: "19:00-22:15" },
-      friday: { lunch: "12:00-14:30", diner: "19:00-22:15" },
-      saturday: { lunch: "12:00-14:30", diner: "19:00-22:15" },
-      sunday: { lunch: "12:30-14:45", diner: "19:00-22:15" },
+      monday: { lunch: "12:00-14:30", diner: "19:00-22:30" },
+      tuesday: { lunch: "12:00-14:30", diner: "19:00-22:30" },
+      wednesday: { lunch: "12:00-14:30", diner: "19:00-22:30" },
+      thursday: { lunch: "12:00-14:30", diner: "19:00-22:30" },
+      friday: { lunch: "12:00-14:30", diner: "19:00-22:30" },
+      saturday: { lunch: "12:00-15:00", diner: "19:00-23:00" },
+      sunday: { lunch: "12:00-15:00", diner: "19:00-23:00" },
     },
-    booking: 'https://www.sevenrooms.com/reservations/tigermilksouthpigalle',
+    booking: 'www.sevenrooms.com/reservations/tigermilkvilliers',
   },
   {
     name: { en: "Paris - Canal St Martin", fr: "Paris - Canal St Martin" },
@@ -53,19 +47,6 @@ export const RESTAURANTS = [
     ],
     phone: "(+33) 1 42 41 17 01",
     email: <Email />,
-    menus: [
-      {
-        name: { en: "Food", fr: "Menu" },
-        pdf: "Menu_Food_Paris_Canal_St_Martin.pdf",
-      },
-      {
-        name: {
-          en: "Sunday brunch (12:00-15:00)",
-          fr: "Brunch du dimanche (12h-15h)",
-        },
-        pdf: "Menu_Brunch.pdf",
-      },
-    ],
     openingHours: {
       monday: { lunch: "12:00-14:15", diner: "19:00-22:15" },
       tuesday: { lunch: "12:00-14:15", diner: "19:00-22:15" },
@@ -89,12 +70,6 @@ export const RESTAURANTS = [
     ),
     phone: "(+33) 1 40 15 97 73",
     email: <Email />,
-    menus: [
-      {
-        name: { en: "Food", fr: "Menu" },
-        pdf: "Menu_Food_Paris_Sentier.pdf",
-      },
-    ],
     openingHours: {
       monday: { lunch: "12:00-14:30", diner: "19:00-22:15" },
       tuesday: { lunch: "12:00-14:30", diner: "19:00-22:15" },
@@ -105,6 +80,28 @@ export const RESTAURANTS = [
       sunday: { lunch: "12:30-14:45	", diner: "19:00-22:15" },
     },
     booking: 'https://www.sevenrooms.com/reservations/tigermilksentier',
+  },
+  {
+    name: { en: "Paris - South Pigalle", fr: "Paris - South Pigalle" },
+    slug: "paris-south-pigalle",
+    address: (
+      <span>
+        72 rue Faubourg Montmartre
+        <br />
+        75009 Paris, France
+      </span>
+    ),
+    email: <Email />,
+    openingHours: {
+      monday: { lunch: "12:00-14:30", diner: "19:00-22:15" },
+      tuesday: { lunch: "12:00-14:30", diner: "19:00-22:15" },
+      wednesday: { lunch: "12:00-14:30", diner: "19:00-22:15" },
+      thursday: { lunch: "12:00-14:30", diner: "19:00-22:15" },
+      friday: { lunch: "12:00-14:30", diner: "19:00-22:15" },
+      saturday: { lunch: "12:00-14:30", diner: "19:00-22:15" },
+      sunday: { lunch: "12:30-14:45", diner: "19:00-22:15" },
+    },
+    booking: 'https://www.sevenrooms.com/reservations/tigermilksouthpigalle',
   },
   {
     name: { en: "Lille", fr: "Lille" },
@@ -135,16 +132,6 @@ export const RESTAURANTS = [
       {
         name: "Deliveroo",
         url: "https://deliveroo.be/fr/menu/brussels/chatelain/2ms-bailli",
-      },
-    ],
-    menus: [
-      { name: { en: "Food", fr: "Menu" }, pdf: "Menu_Food_Brussels.pdf" },
-      {
-        name: {
-          en: "Sunday brunch (11:30-15:00)",
-          fr: "Brunch du dimanche (11h30-15h)",
-        },
-        pdf: "Menu_Brunch.pdf",
       },
     ],
     openingHours: {
