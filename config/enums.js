@@ -21,7 +21,7 @@ export const RESTAURANTS = [
       saturday: { lunch: "12:00-15:00", diner: "19:00-23:00" },
       sunday: { lunch: "12:00-15:00", diner: "19:00-23:00" },
     },
-    booking: 'www.sevenrooms.com/reservations/tigermilkvilliers',
+    booking: 'https://www.sevenrooms.com/reservations/tigermilkvilliers',
   },
   {
     name: { en: "Paris - Canal St Martin", fr: "Paris - Canal St Martin" },
